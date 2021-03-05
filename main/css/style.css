@@ -1,0 +1,26 @@
+/** main container**/
+
+body {
+    background-color: #bfbfbf;
+    text-align: center;
+}
+
+#wrapper {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+nav {
+    background: #f4f4f4;
+    margin-bottom: 50px;
+}
+
+.content-container {
+    background: #f4f4f4;
+    margin-top: 50px;
+}
+
+.material-icons.icon {
+    color: #fff;
+}
