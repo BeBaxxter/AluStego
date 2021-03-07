@@ -1,3 +1,3 @@
-# SocialPlattform
+# SocialPlatform
 
 doku hier...
