@@ -1,3 +1,3 @@
 # SocialPlatform
 
-doku hier...
+Das ist eine tolle WebApp
