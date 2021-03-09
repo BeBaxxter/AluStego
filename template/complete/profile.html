@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../main/css/style.css">
+    <link rel="stylesheet" href="../../main/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Profile example</title>
 </head>
 
 <body>
+
+    <!-- back to top button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <!-- structure-container -->
     <main id="wrapper">
@@ -60,29 +63,138 @@
             </header>
 
             <!-- friend-lists -->
-            <section class="friends_list">
-                <ul>
-                    <li>
-                        <span class="material-icons icon">account_circle</span> Roobin Wettstädt</li>
-                    <li>Zweiter Eintrag</li>
-                    <li>Dritter Eintrag</li>
+            <section class="friends_section">
+                <ul class="friends_list">
+                    <li class="friend_entry">
+                        <span class="material-icons icon">account_circle</span>
+                        <span class="friend_name">Roobin Wettstädt</span>
+                        <span class="friend_status">show online</span>
+                    </li>
+                    <li class="friend_entry">
+                        <span class="material-icons icon">account_circle</span>
+                        <span class="friend_name">Roobin Wettstädt</span>
+                        <span class="friend_status">show online</span>
+                    </li>
+                    <li class="friend_entry">
+                        <span class="material-icons icon">account_circle</span>
+                        <span class="friend_name">Roobin Wettstädt</span>
+                        <span class="friend_status">show offline</span>
+                    </li>
                 </ul>
+            </section>
+        </article>
+
+
+        <!-- example news with image -->
+        <article class="content-container">
+
+            <!-- header -->
+            <header class="news_headline">
+                <span class="material-icons">account_circle</span>
+                <span class="news_author">Lucas Carmohn</span>
+                <span class="news_time">3h ago</span>
+            </header>
+
+            <!-- content -->
+            <section class="news_signle">
+
+                <article class="news_content">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span class="material-icons">favorite_border</span>
+                        <span class="material-icons">add_comment</span>
+                        <span class="material-icons">reply</span>
+                    </section>
+
+                    <!-- post with text -->
+                    <img class="news_image" src="../../main/css/images/dummy.jpg" alt="test" title="test">
+
+                </article>
+
             </section>
 
             <!-- comments -->
             <section class="news_comment">
+
+                <!-- signle comment -->
                 <article class="comment">
-                    <span class="material-icons icon">account_circle</span>
+                    <span class="material-icons">account_circle</span>
                     <span class="news_author">Lucas Carmohn</span>
                     <span clas="news_time">3h ago</span>
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                         no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
                         accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                 </article>
+
+                <!-- signle comment with delete -->
+                <article class="comment">
+                    <span class="material-icons icon">account_circle</span>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <span class="material-icons">remove</span>
+                </article>
+
+                <button onclick="" id="myBtn">Read more</button>
+
+            </section>
+
+        </article>
+
+        <!-- settings -->
+        <article class="content-container">
+
+            <!-- settings-lists -->
+            <section class="settings_section">
+                <ul class="setting_list">
+                    <li class="setting_entry">
+                        <button>Logout</button>
+                    </li>
+                    <li class="setting_entry">
+                        Switch
+                    </li>
+                    <li class="setting_entry">
+                        <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="#1">Item 1</a>
+                                <a href="#2">Item 2</a>
+                                <a href="#3">Item 3</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </section>
         </article>
 
     </main>
+
+    <!-- back to top js -->
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
 </body>
 
 </html>
