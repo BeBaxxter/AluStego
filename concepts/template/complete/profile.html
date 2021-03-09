@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../main/css/style.css">
+    <link rel="stylesheet" href="../../../main/css/day_skin.css">
+    <link rel="stylesheet" href="../../../main/css/night_skin.css">
+    <link rel="stylesheet" href="../../../main/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Profile example</title>
 </head>
@@ -19,14 +21,16 @@
     <main id="wrapper">
 
         <!-- navigation -->
-        <nav>
-            <a class="nav-btn" title="Profil" href="#">Profil</a> /
-            <a class="nav-btn" title="Newsfeat" href="#">Newsfeed</a> /
-            <a class="nav-btn" title="Chat" href="#">Chat</a>
+        <nav class="color_day">
+            <ul class="menu">
+                <li class="nav-btn"><a href="#">Profil</a></li> /
+                <li class="nav-btn"><a href="#">News</a></li> /
+                <li class="nav-btn"><a href="#">Chats</a></li>
+            </ul>
         </nav>
 
-        <!-- example post with image-->
-        <article class="content-container">
+        <!-- profile -->
+        <article class="content-container color_day">
 
             <!-- header -->
             <header class="profil_headline">
@@ -54,7 +58,7 @@
 
 
         <!-- friendlist-->
-        <article class="content-container">
+        <article class="content-container color_day">
 
             <!-- header -->
             <header class="friends_headline">
@@ -86,7 +90,7 @@
 
 
         <!-- example news with image -->
-        <article class="content-container">
+        <article class="content-container color_day">
 
             <!-- header -->
             <header class="news_headline">
@@ -143,7 +147,7 @@
         </article>
 
         <!-- settings -->
-        <article class="content-container">
+        <article class="content-container color_day">
 
             <!-- settings-lists -->
             <section class="settings_section">

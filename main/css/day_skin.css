@@ -1,0 +1,14 @@
+.color_day {
+    background: #4B9DA6;
+    color: #fff;
+}
+
+.color_day a:link {
+    color: #fff;
+}
+
+.color_day a:visited {
+    background-color: transparent;
+    text-decoration: none;
+    color: #fff;
+}

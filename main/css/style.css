@@ -3,31 +3,58 @@
 body {
     background-color: #bfbfbf;
     text-align: center;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
 #wrapper {
-    width: 50%;
+    width: 31.25%;
     margin: 0 auto;
     position: relative;
 }
 
+.menu {
+    list-style-type: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 nav {
-    background: #f4f4f4;
+    font-size: xx-large;
     margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.nav-btn {
+    display: inline;
+}
+
+.nav-btn a:link {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.nav-btn a:visited {
+    background-color: transparent;
+    text-decoration: none;
 }
 
 .content-container {
-    background: #f4f4f4;
     margin-top: 50px;
-}
-
-.news-kit {
-    background: #f4f4f4;
+    border-radius: 10px;
 }
 
 .material-icons.icon {
     color: #fff;
 }
+
+
+/** news **/
+
+
+/** profile **/
+
+
+/** chats **/
 
 
 /** back to top button **/
