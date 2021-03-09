@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,9 @@
 
 <body>
 
+    <!-- back to top button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
     <!-- structure-container -->
     <main id="wrapper">
 
@@ -22,67 +25,210 @@
             <a class="nav-btn" title="Chat" href="#">Chat</a>
         </nav>
 
-        <!-- example post with image-->
+        <!-- example news with text -->
         <article class="content-container">
 
             <!-- header -->
-            <header class="profil_headline">
-                <span class="material-icons">format_quote</span>
-                <span>Webdeveloper and Fan of this App!!!</span>
-            </header>
-
-            <!-- Profile info -->
-            <section class="profil_content">
-                <img src="../main/css/images/dummy.jpg" alt="Dummy" title="Dummy" />
+            <header class="news_headline">
+                <span class="material-icons">account_circle</span>
                 <span class="news_author">Lucas Carmohn</span>
-                <span class="material-icons">place</span>
-            </section>
-
-            <!-- Line -->
-            <hr>
-
-            <!-- Profile bar -->
-            <section class="profil_content">
-                <span class="material-icons">supervisor_account</span>
-                <span class="material-icons">article</span>
-                <span class="material-icons">settings</span>
-            </section>
-        </article>
-
-
-        <!-- friendlist-->
-        <article class="content-container">
-
-            <!-- header -->
-            <header class="friends_headline">
-                <span>4 Friends:</span>
-                <span class="material-icons">delete</span>
+                <span class="news_time">3h ago</span>
             </header>
 
-            <!-- friend-lists -->
-            <section class="friends_list">
-                <ul>
-                    <li>
-                        <span class="material-icons icon">account_circle</span> Roobin Wettstädt</li>
-                    <li>Zweiter Eintrag</li>
-                    <li>Dritter Eintrag</li>
-                </ul>
+            <!-- content -->
+            <section class="news_signle">
+
+                <article class="news_content">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span class="material-icons">favorite_border</span>
+                        <span class="material-icons">add_comment</span>
+                        <span class="material-icons">reply</span>
+                    </section>
+
+                    <!-- post with text -->
+                    <p class="news_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+                </article>
+
             </section>
 
             <!-- comments -->
             <section class="news_comment">
+
+                <!-- signle comment -->
                 <article class="comment">
-                    <span class="material-icons icon">account_circle</span>
+                    <span class="material-icons">account_circle</span>
                     <span class="news_author">Lucas Carmohn</span>
                     <span clas="news_time">3h ago</span>
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                         no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
                         accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                 </article>
+
+                <!-- signle comment with delete -->
+                <article class="comment">
+                    <span class="material-icons icon">account_circle</span>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <span class="material-icons">remove</span>
+                </article>
+
+                <button onclick="" id="myBtn">Read more</button>
+
             </section>
+
+        </article>
+
+        <!-- example news with image -->
+        <article class="content-container">
+
+            <!-- header -->
+            <header class="news_headline">
+                <span class="material-icons">account_circle</span>
+                <span class="news_author">Lucas Carmohn</span>
+                <span class="news_time">3h ago</span>
+            </header>
+
+            <!-- content -->
+            <section class="news_signle">
+
+                <article class="news_content">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span class="material-icons">favorite_border</span>
+                        <span class="material-icons">add_comment</span>
+                        <span class="material-icons">reply</span>
+                    </section>
+
+                    <!-- post with text -->
+                    <img class="news_image" src="../../main/css/images/dummy.jpg" alt="test" title="test">
+
+                </article>
+
+            </section>
+
+            <!-- comments -->
+            <section class="news_comment">
+
+                <!-- signle comment -->
+                <article class="comment">
+                    <span class="material-icons">account_circle</span>
+                    <span class="news_author">Lucas Carmohn</span>
+                    <span clas="news_time">3h ago</span>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                </article>
+
+                <!-- signle comment with delete -->
+                <article class="comment">
+                    <span class="material-icons icon">account_circle</span>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <span class="material-icons">remove</span>
+                </article>
+
+                <button onclick="" id="myBtn">Read more</button>
+
+            </section>
+
+        </article>
+
+        <!-- example news with video -->
+        <article class="content-container">
+
+            <!-- header -->
+            <header class="news_headline">
+                <span class="material-icons">account_circle</span>
+                <span class="news_author">Lucas Carmohn</span>
+                <span class="news_time">3h ago</span>
+            </header>
+
+            <!-- content -->
+            <section class="news_signle">
+
+                <article class="news_content">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span class="material-icons">favorite_border</span>
+                        <span class="material-icons">add_comment</span>
+                        <span class="material-icons">reply</span>
+                    </section>
+
+                    <!-- post with text -->
+                    <video class="news_video" src="videofile.ogg" autoplay poster="posterimage.jpg">
+                        Sorry, your browser doesn't support embedded videos,
+                        but don't worry, you can <a href="videofile.ogg">download it</a>
+                        and watch it with your favorite video player!
+                      </video>
+
+                </article>
+
+            </section>
+
+            <!-- comments -->
+            <section class="news_comment">
+
+                <!-- signle comment -->
+                <article class="comment">
+                    <span class="material-icons">account_circle</span>
+                    <span class="news_author">Lucas Carmohn</span>
+                    <span clas="news_time">3h ago</span>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                </article>
+
+                <!-- signle comment with delete -->
+                <article class="comment">
+                    <span class="material-icons icon">account_circle</span>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <span class="material-icons">remove</span>
+                </article>
+
+                <button onclick="" id="myBtn">Read more</button>
+
+            </section>
+
         </article>
 
     </main>
+
+    <!-- back to top js -->
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
 </body>
 
 </html>
