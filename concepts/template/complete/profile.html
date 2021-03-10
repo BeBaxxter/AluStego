@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../../main/css/day_skin.css">
     <link rel="stylesheet" href="../../../main/css/night_skin.css">
     <link rel="stylesheet" href="../../../main/css/style.css">
+    <link rel="javascript" href="../../../main/js/main.js">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Profile example</title>
 </head>
@@ -93,7 +94,9 @@
             <!-- header -->
             <header class="friends_headline">
                 <span>4 Friends:</span>
-                <span class="material-icons">delete</span>
+                <a href="#" class="link" title="default">
+                    <span class="material-icons">delete</span>
+                </a>
             </header>
 
             <!-- friend-lists -->
@@ -101,18 +104,20 @@
                 <ul class="friends_list">
                     <li class="friend_entry">
                         <span class="material-icons icon">account_circle</span>
-                        <span class="friend_name">Roobin Wettstädt</span>
-                        <span class="friend_status">show online</span>
+                        <span class="friend_name">Roobin Wettstädt (online ansicht)</span>
+                        <img class="friend_status" alt="dummy" title="dummy" src="../../../main/css/icons/online_icon.svg">
                     </li>
                     <li class="friend_entry">
                         <span class="material-icons icon">account_circle</span>
-                        <span class="friend_name">Roobin Wettstädt</span>
-                        <span class="friend_status">show online</span>
+                        <span class="friend_name">Roobin Wettstädt (offline ansicht)</span>
+                        <img class="friend_status" alt="dummy" title="dummy" src="../../../main/css/icons/offline_icon.svg">
                     </li>
                     <li class="friend_entry">
                         <span class="material-icons icon">account_circle</span>
-                        <span class="friend_name">Roobin Wettstädt</span>
-                        <span class="friend_status">show offline</span>
+                        <span class="friend_name">Roobin Wettstädt (löschen ansicht)</span>
+                        <a href="#" class="link" title="default">
+                            <img class="friend_status" alt="dummy" title="dummy" src="../../../main/css/icons/close_icon.svg">
+                        </a>
                     </li>
                 </ul>
             </section>
@@ -193,11 +198,13 @@
                     </li>
                     <li class="setting_entry">
                         <div class="dropdown">
-                            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="#1">Item 1</a>
-                                <a href="#2">Item 2</a>
-                                <a href="#3">Item 3</a>
+                            <button class="dropbtn" onclick="handleDropdown()">Auswahl
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="myDropdown">
+                                <a href="#">Option 1</a>
+                                <a href="#">Option 2</a>
+                                <a href="#">Option 3</a>
                             </div>
                         </div>
                     </li>
@@ -229,6 +236,24 @@
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <script>
+        /* When the user clicks on the button, 
+                    toggle between hiding and showing the dropdown content */
+        function handleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
         }
     </script>
 
