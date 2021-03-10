@@ -41,10 +41,28 @@ nav {
 .content-container {
     margin-top: 50px;
     border-radius: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
 }
 
 .material-icons.icon {
     color: #fff;
+}
+
+.material-icons_xxl {
+    font-size: xxx-large !important;
+}
+
+.link {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.link:visited {
+    background-color: transparent;
+    text-decoration: none;
 }
 
 
