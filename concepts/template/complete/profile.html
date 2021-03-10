@@ -34,15 +34,19 @@
 
             <!-- header -->
             <header class="profil_headline">
-                <span class="material-icons">format_quote</span>
-                <span>Webdeveloper and Fan of this App!!!</span>
+                <span class="material-icons material-icons_xxl">format_quote</span>
+                <span id="profile_caption">Webdeveloper and Fan of this App!!!</span>
             </header>
 
             <!-- Profile info -->
             <section class="profil_content">
-                <img src="../main/css/images/dummy.jpg" alt="Dummy" title="Dummy" />
-                <span class="news_author">Lucas Carmohn</span>
-                <span class="material-icons">place</span>
+                <img id="profile_image" src="../../../main/css/images/img_avatar.png" alt="Dummy" title="Dummy" />
+
+                <section>
+                    <span class="material-icons">place</span>
+                    <span class="news_author">Lucas Carmohn</span>
+                </section>
+
             </section>
 
             <!-- Line -->
@@ -50,9 +54,9 @@
 
             <!-- Profile bar -->
             <section class="profil_content">
-                <span class="material-icons">supervisor_account</span>
-                <span class="material-icons">article</span>
-                <span class="material-icons">settings</span>
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">supervisor_account</a></span>
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">article</a></span>
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">settings</a></span>
             </section>
         </article>
 
@@ -89,12 +93,12 @@
         </article>
 
 
-        <!-- example news with image -->
+        <!-- example news with text -->
         <article class="content-container color_day">
 
             <!-- header -->
             <header class="news_headline">
-                <span class="material-icons">account_circle</span>
+                <span class="material-icons material-icons_xxl">account_circle</span>
                 <span class="news_author">Lucas Carmohn</span>
                 <span class="news_time">3h ago</span>
             </header>
@@ -106,13 +110,15 @@
 
                     <!-- toolbar -->
                     <section class="toolbar">
-                        <span class="material-icons">favorite_border</span>
-                        <span class="material-icons">add_comment</span>
-                        <span class="material-icons">reply</span>
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
                     </section>
 
                     <!-- post with text -->
-                    <img class="news_image" src="../../main/css/images/dummy.jpg" alt="test" title="test">
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
                 </article>
 
@@ -123,21 +129,19 @@
 
                 <!-- signle comment -->
                 <article class="comment">
-                    <span class="material-icons">account_circle</span>
+                    <span class="material-icons material-icons_xxl">account_circle</span>
                     <span class="news_author">Lucas Carmohn</span>
                     <span clas="news_time">3h ago</span>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p>Das ist ein Kommentar</p>
                 </article>
 
                 <!-- signle comment with delete -->
                 <article class="comment">
-                    <span class="material-icons icon">account_circle</span>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                    <span class="material-icons">remove</span>
+                    <span class="material-icons material-icons_xxl">account_circle</span>
+                    <span class="news_author">Lucas Carmohn</span>
+                    <span clas="news_time">3h ago</span>
+                    <p>Das ist ein Kommentar mit delete button</p>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">remove</a></span>
                 </article>
 
                 <button onclick="" id="myBtn">Read more</button>
