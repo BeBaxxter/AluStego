@@ -12,6 +12,32 @@
     <title>Profile example</title>
 </head>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $("#friendlist").hide();
+        $("#settings").hide();
+
+        $("#show_friends").click(function() {
+            $("#friendlist").show();
+            $("#newslist").hide();
+            $("#settings").hide();
+        });
+        $("#show_feed").click(function() {
+            $("#newslist").show();
+            $("#friendlist").hide();
+            $("#settings").hide();
+        });
+        $("#show_settings").click(function() {
+            $("#settings").show();
+            $("#newslist").hide();
+            $("#friendlist").hide();
+        });
+    });
+</script>
+
+
 <body>
 
     <!-- back to top button -->
@@ -23,9 +49,9 @@
         <!-- navigation -->
         <nav class="color_day">
             <ul class="menu">
-                <li class="nav-btn"><a href="#">Profil</a></li> /
-                <li class="nav-btn"><a href="#">News</a></li> /
-                <li class="nav-btn"><a href="#">Chats</a></li>
+                <li class="nav-btn"><a href="../complete/profile.html">Profil</a></li> /
+                <li class="nav-btn"><a href="../complete/news.html">News</a></li> /
+                <li class="nav-btn"><a href="../complete/chats.html">Chats</a></li>
             </ul>
         </nav>
 
@@ -54,15 +80,15 @@
 
             <!-- Profile bar -->
             <section class="profil_content">
-                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">supervisor_account</a></span>
-                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">article</a></span>
-                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">settings</a></span>
+                <span class="material-icons material-icons_xxl"><a id="show_friends" href="#" class="link" title="default">supervisor_account</a></span>
+                <span class="material-icons material-icons_xxl"><a id="show_feed" href="#" class="link" title="default">article</a></span>
+                <span class="material-icons material-icons_xxl"><a id="show_settings" href="#" class="link" title="default">settings</a></span>
             </section>
         </article>
 
 
         <!-- friendlist-->
-        <article class="content-container color_day">
+        <article id="friendlist" class="content-container color_day">
 
             <!-- header -->
             <header class="friends_headline">
@@ -92,66 +118,69 @@
             </section>
         </article>
 
+        <!-- newslist-->
+        <article id="newslist" class="content-container color_day">
 
-        <!-- example news with text -->
-        <article class="content-container color_day">
+            <!-- example news with text -->
+            <article id="2" class="content-container color_day">
 
-            <!-- header -->
-            <header class="news_headline">
-                <span class="material-icons material-icons_xxl">account_circle</span>
-                <span class="news_author">Lucas Carmohn</span>
-                <span class="news_time">3h ago</span>
-            </header>
-
-            <!-- content -->
-            <section class="news_signle">
-
-                <article class="news_content">
-
-                    <!-- toolbar -->
-                    <section class="toolbar">
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-                    </section>
-
-                    <!-- post with text -->
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-
-                </article>
-
-            </section>
-
-            <!-- comments -->
-            <section class="news_comment">
-
-                <!-- signle comment -->
-                <article class="comment">
+                <!-- header -->
+                <header class="news_headline">
                     <span class="material-icons material-icons_xxl">account_circle</span>
                     <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar</p>
-                </article>
+                    <span class="news_time">3h ago</span>
+                </header>
 
-                <!-- signle comment with delete -->
-                <article class="comment">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar mit delete button</p>
-                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">remove</a></span>
-                </article>
+                <!-- content -->
+                <section class="news_signle">
 
-                <button onclick="" id="myBtn">Read more</button>
+                    <article class="news_content">
 
-            </section>
+                        <!-- toolbar -->
+                        <section class="toolbar">
+                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
+                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                        </section>
 
+                        <!-- post with text -->
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+                    </article>
+
+                </section>
+
+                <!-- comments -->
+                <section class="news_comment">
+
+                    <!-- signle comment -->
+                    <article class="comment">
+                        <span class="material-icons material-icons_xxl">account_circle</span>
+                        <span class="news_author">Lucas Carmohn</span>
+                        <span clas="news_time">3h ago</span>
+                        <p>Das ist ein Kommentar</p>
+                    </article>
+
+                    <!-- signle comment with delete -->
+                    <article class="comment">
+                        <span class="material-icons material-icons_xxl">account_circle</span>
+                        <span class="news_author">Lucas Carmohn</span>
+                        <span clas="news_time">3h ago</span>
+                        <p>Das ist ein Kommentar mit delete button</p>
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">remove</a></span>
+                    </article>
+
+                    <button onclick="" id="myBtn">Read more</button>
+
+                </section>
+
+            </article>
         </article>
 
         <!-- settings -->
-        <article class="content-container color_day">
+        <article id="settings" class="content-container color_day">
 
             <!-- settings-lists -->
             <section class="settings_section">
