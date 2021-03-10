@@ -65,8 +65,27 @@ nav {
     text-decoration: none;
 }
 
+p {
+    text-align: justify;
+}
+
 
 /** news **/
+
+.toolbar {
+    float: left;
+    width: 5%;
+    margin-right: 25px;
+}
+
+.news_image {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.news_video {
+    width: 88%;
+}
 
 
 /** profile **/
