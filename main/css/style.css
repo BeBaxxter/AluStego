@@ -87,6 +87,10 @@ p {
     width: 88%;
 }
 
+.comment {
+    border-radius: 10px;
+}
+
 
 /** profile **/
 
