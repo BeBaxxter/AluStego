@@ -13,32 +13,6 @@
     <title>Profile example</title>
 </head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-
-        $("#friendlist").hide();
-        $("#settings").hide();
-
-        $("#show_friends").click(function() {
-            $("#friendlist").show();
-            $("#newslist").hide();
-            $("#settings").hide();
-        });
-        $("#show_feed").click(function() {
-            $("#newslist").show();
-            $("#friendlist").hide();
-            $("#settings").hide();
-        });
-        $("#show_settings").click(function() {
-            $("#settings").show();
-            $("#newslist").hide();
-            $("#friendlist").hide();
-        });
-    });
-</script>
-
-
 <body>
 
     <!-- back to top button -->
@@ -46,6 +20,32 @@
 
     <!-- structure-container -->
     <main id="wrapper">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                $("#friendlist").hide();
+                $("#settings").hide();
+
+                $("#show_friends").click(function() {
+                    $("#friendlist").show();
+                    $("#newslist").hide();
+                    $("#settings").hide();
+                });
+                $("#show_feed").click(function() {
+                    $("#newslist").show();
+                    $("#friendlist").hide();
+                    $("#settings").hide();
+                });
+                $("#show_settings").click(function() {
+                    $("#settings").show();
+                    $("#newslist").hide();
+                    $("#friendlist").hide();
+                });
+            });
+        </script>
+
 
         <!-- navigation -->
         <nav class="color_day">
@@ -243,7 +243,7 @@
 
     <script>
         /* When the user clicks on the button, 
-                                                    toggle between hiding and showing the dropdown content */
+                                                                            toggle between hiding and showing the dropdown content */
         function handleDropdown() {
             document.getElementById("myDropdown").classList.toggle("show");
         }
