@@ -1,0 +1,230 @@
+{% extends "main.html" %}
+    {% block preScript %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                $("#friendlist").hide();
+                $("#settings").hide();
+
+                $("#show_friends").click(function() {
+                    $("#friendlist").show();
+                    $("#newslist").hide();
+                    $("#settings").hide();
+                });
+                $("#show_feed").click(function() {
+                    $("#newslist").show();
+                    $("#friendlist").hide();
+                    $("#settings").hide();
+                });
+                $("#show_settings").click(function() {
+                    $("#settings").show();
+                    $("#newslist").hide();
+                    $("#friendlist").hide();
+                });
+            });
+        </script>
+    {% endblock %}
+    {% block main %}
+         <article class="content-container color_day">
+
+            <!-- header -->
+            <header class="profil_headline">
+                <span class="material-icons material-icons_xxl">format_quote</span>
+                <span id="profile_caption">Webdeveloper and Fan of this App!!!</span>
+            </header>
+
+            <!-- Profile info -->
+            <section class="profil_content">
+                <img id="profile_image" src="../static/data/images/img_avatar.png" alt="Dummy" title="Dummy" />
+
+                <section>
+                    <span class="material-icons">place</span>
+                    <span class="news_author">Lucas Carmohn</span>
+                </section>
+
+            </section>
+
+            <!-- Line -->
+            <hr>
+
+            <!-- Profile bar -->
+            <section class="profil_content">
+                <span class="material-icons material-icons_xxl"><a id="show_friends" href="#" class="link" title="default">supervisor_account</a></span>
+                <span class="material-icons material-icons_xxl"><a id="show_feed" href="#" class="link" title="default">article</a></span>
+                <span class="material-icons material-icons_xxl"><a id="show_settings" href="#" class="link" title="default">settings</a></span>
+            </section>
+        </article>
+
+
+        <!-- friendlist-->
+        <article id="friendlist" class="content-container color_day">
+
+            <!-- header -->
+            <header class="friends_headline">
+                <span>4 Friends:</span>
+                <a href="#" class="link" title="default">
+                    <span class="material-icons">delete</span>
+                </a>
+            </header>
+
+            <!-- friend-lists -->
+            <section class="friends_section">
+                <ul class="friends_list">
+                    <li class="friend_entry">
+                        <span class="material-icons icon">account_circle</span>
+                        <span class="friend_name">Roobin Wettstädt (online ansicht)</span>
+                        <img class="friend_status" alt="dummy" title="dummy" src="../static/icons/online_icon.svg">
+                    </li>
+                    <li class="friend_entry">
+                        <span class="material-icons icon">account_circle</span>
+                        <span class="friend_name">Roobin Wettstädt (offline ansicht)</span>
+                        <img class="friend_status" alt="dummy" title="dummy" src="../static/icons/offline_icon.svg">
+                    </li>
+                    <li class="friend_entry">
+                        <span class="material-icons icon">account_circle</span>
+                        <span class="friend_name">Roobin Wettstädt (löschen ansicht)</span>
+                        <a href="#" class="link" title="default">
+                            <img class="friend_status" alt="dummy" title="dummy" src="../static/icons/close_icon.svg">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </article>
+
+        <!-- newslist-->
+        <article id="newslist" class="content-container color_day">
+
+            <!-- example news with text -->
+            <article id="2" class="content-container color_day">
+
+                <!-- header -->
+                <header class="news_headline">
+                    <span class="material-icons material-icons_xxl">account_circle</span>
+                    <span class="news_author">Lucas Carmohn</span>
+                    <span class="news_time">3h ago</span>
+                </header>
+
+                <!-- content -->
+                <section class="news_signle">
+
+                    <article class="news_content">
+
+                        <!-- toolbar -->
+                        <section class="toolbar">
+                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
+                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                        </section>
+
+                        <!-- post with text -->
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+                    </article>
+
+                </section>
+
+                <!-- comments -->
+                <section class="news_comment">
+
+                    <!-- signle comment -->
+                    <article class="comment color_day_comments">
+                        <span class="material-icons material-icons_xxl">account_circle</span>
+                        <span class="news_author">Lucas Carmohn</span>
+                        <span clas="news_time">3h ago</span>
+                        <p>Das ist ein Kommentar</p>
+                    </article>
+
+                    <!-- signle comment with delete -->
+                    <article class="comment color_day_comments">
+                        <span class="material-icons material-icons_xxl">account_circle</span>
+                        <span class="news_author">Lucas Carmohn</span>
+                        <span clas="news_time">3h ago</span>
+                        <p>Das ist ein Kommentar mit delete button</p>
+                        <a href="#" class="link" title="default">
+                            <img class="friend_status" alt="dummy" title="dummy" src="../static/icons/close_icon.svg">
+                        </a>
+                    </article>
+
+                    <button onclick="" id="myBtn">Read more</button>
+
+                </section>
+
+            </article>
+        </article>
+
+        <!-- settings -->
+        <article id="settings" class="content-container color_day">
+
+            <!-- settings-lists -->
+            <section class="settings_section">
+                <ul class="setting_list">
+                    <li class="setting_entry">
+                        <button>Logout</button>
+                    </li>
+                    <li class="setting_entry">
+                        Switch
+                    </li>
+                    <li class="setting_entry">
+                        <div class="dropdown">
+                            <button class="dropbtn" onclick="handleDropdown()">Auswahl
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="myDropdown">
+                                <a href="#">Option 1</a>
+                                <a href="#">Option 2</a>
+                                <a href="#">Option 3</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </article>
+
+    {% endblock %}
+    {% block postScript %}
+         <!-- back to top js -->
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <script>
+        /* When the user clicks on the button,
+                                                                            toggle between hiding and showing the dropdown content */
+        function handleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+    {% endblock %}

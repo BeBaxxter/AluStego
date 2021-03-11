@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/day_skin.css">
+    <link rel="stylesheet" href="../static/night_skin.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>{{title}}</title>
+</head>
+
+<body>
+
+    <!-- back to top button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <!-- structure-container -->
+    <main id="wrapper">
+
+        {% block preScript %}
+        {% endblock %}
+
+        <!-- navigation -->
+        <nav class="color_day">
+            <ul class="menu">
+                <li class="nav-btn"><a href="/profile">Profil</a></li> /
+                <li class="nav-btn"><a href="/feed">News</a></li> /
+                <li class="nav-btn"><a href="/chats">Chats</a></li>
+            </ul>
+        </nav>
+
+        {% block main %}
+        {% endblock %}
+
+    </main>
+        {% block postScript %}
+        {% endblock %}
+</body>
+
+</html>
