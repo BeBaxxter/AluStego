@@ -32,10 +32,73 @@
 
         <!-- add new post toolkit -->
         <article class="content-container color_day">
-            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">post_add</a></span>
-            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_photo_alternate</a></span>
-            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">movie_creation</a></span>
+            <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post" class="link" title="default">post_add</a></span>
+            <span class="material-icons material-icons_xxl"><a href="#" id="show_image_post" class="link" title="default">add_photo_alternate</a></span>
+            <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" class="link" title="default">movie_creation</a></span>
         </article>
+
+        <!-- add new box js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                $("#text_post").hide();
+                $("#image_post").hide();
+                $("#video_post").hide();
+
+                $("#show_text_post").click(function() {
+                    $("#text_post").show();
+                    $("#image_post").hide();
+                    $("#video_post").hide();
+                });
+                $("#show_image_post").click(function() {
+                    $("#image_post").show();
+                    $("#text_post").hide();
+                    $("#video_post").hide();
+                });
+                $("#show_video_post").click(function() {
+                    $("#video_post").show();
+                    $("#image_post").hide();
+                    $("#text_post").hide();
+                });
+            });
+        </script>
+
+        <!-- add new box html -->
+
+        <!-- new post with text -->
+        <article id="text_post" class="content-container color_day">
+
+            <form action="#">
+                <label for="fname">Deine Nachricht:</label><br>
+                <textarea name="message" placeholder="Hier tippen..."></textarea>
+                <input type="submit" value="Submit">
+            </form>
+
+        </article>
+
+        <!-- new post with image -->
+        <article id="image_post" class="content-container color_day">
+
+            <form action="#">
+                <label for="fname">Deine Nachricht:</label><br>
+                <input type="file" id="myFile" name="filename" multiple accept="image/*">
+                <input type="submit" value="Submit">
+            </form>
+
+        </article>
+
+        <!-- new post with video -->
+        <article id="video_post" class="content-container color_day">
+
+            <form action="#">
+                <label for="fname">Deine Nachricht:</label><br>
+                <input type="file" id="myFile" name="filename" multiple accept="video/*">
+                <input type="submit" value="Submit">
+            </form>
+
+        </article>
+
 
         <!-- example news with text -->
         <article class="content-container color_day">

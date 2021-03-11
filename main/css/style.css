@@ -72,6 +72,12 @@ p {
 
 /** news **/
 
+textarea {
+    width: 100%;
+    resize: none;
+    height: 100px;
+}
+
 .toolbar {
     float: left;
     width: 5%;
