@@ -15,13 +15,12 @@
 <body>
 
     <!-- back to top button -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="goTopButton" title="Go to top">Top</button>
 
     <!-- structure-container -->
     <main id="wrapper">
 
-        {% block preScript %}
-        {% endblock %}
+        {% block preScript %} {% endblock %}
 
         <!-- navigation -->
         <nav class="color_day">
@@ -32,12 +31,10 @@
             </ul>
         </nav>
 
-        {% block main %}
-        {% endblock %}
+        {% block main %} {% endblock %}
 
     </main>
-        {% block postScript %}
-        {% endblock %}
+    {% block postScript %} {% endblock %}
 </body>
 
 </html>

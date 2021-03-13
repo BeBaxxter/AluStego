@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../main/css/day_skin.css">
-    <link rel="stylesheet" href="../../main/css/night_skin.css">
-    <link rel="stylesheet" href="../../main/css/style.css">
+    <link rel="stylesheet" href="../../main/python/static/css/day_skin.css">
+    <link rel="stylesheet" href="../../main/python/static/css/night_skin.css">
+    <link rel="stylesheet" href="../../main/python/static/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>News template</title>
 </head>
@@ -15,7 +15,7 @@
 <body>
 
     <!-- back to top button -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="goTopButton" title="Go to top">Top</button>
 
     <!-- structure-container -->
     <main id="wrapper">
@@ -32,9 +32,9 @@
 
         <!-- add new post toolkit -->
         <article class="content-container color_day">
-            <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post" class="link" title="default">post_add</a></span>
-            <span class="material-icons material-icons_xxl"><a href="#" id="show_image_post" class="link" title="default">add_photo_alternate</a></span>
-            <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" class="link" title="default">movie_creation</a></span>
+            <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post"  title="Neuen Textpost hinzufügen">post_add</a></span>
+            <span class="material-icons material-icons_xxl"><a href="#" id="show_image_post" title="Neuen Photopost hinzufügen">add_photo_alternate</a></span>
+            <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" title="Neuen Videopost hinzufügen">movie_creation</a></span>
         </article>
 
         <!-- add new box js -->
@@ -63,8 +63,6 @@
                 });
             });
         </script>
-
-        <!-- add new box html -->
 
         <!-- new post with text -->
         <article id="text_post" class="content-container color_day">
@@ -105,7 +103,7 @@
 
             <!-- header -->
             <header class="news_headline">
-                <span class="material-icons material-icons_xxl">account_circle</span>
+                <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
                 <span class="news_author">Lucas Carmohn</span>
                 <span class="news_time">3h ago</span>
             </header>
@@ -122,7 +120,7 @@
                         <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
                     </section>
 
-                    <!-- post with text -->
+                    <!-- comment with text -->
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                         no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
                         accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
@@ -134,28 +132,69 @@
             <!-- comments -->
             <section class="news_comment">
 
-                <!-- signle comment -->
                 <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl comment_material_icon">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar</p>
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
                 </article>
 
-                <!-- signle comment with delete -->
                 <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar mit delete button</p>
-                    <a href="#" class="link" title="default">
-                        <img class="friend_status" alt="dummy" title="dummy" src="/../../main/css/icons/close_icon.svg">
-                    </a>
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
+                </article>
+
+                <article class="comment color_day_comments">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+                    </section>
+
+                    <!-- post with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
                 </article>
 
                 <!-- read more button -->
-                <article class="comment_button" style="margin-top: 15px;">
-                    <a href="#" title="dummy"><span class="material-icons material-icons_xxl">expand_more</span></a>
+                <article class="comment_button " style="margin-top: 15px; ">
+                    <a href="# " title="dummy "><span class="material-icons material-icons_xxl ">expand_more</span></a>
                 </article>
             </section>
 
@@ -166,66 +205,7 @@
 
             <!-- header -->
             <header class="news_headline">
-                <span class="material-icons material-icons_xxl">account_circle</span>
-                <span class="news_author">Lucas Carmohn</span>
-                <span class="news_time">3h ago</span>
-            </header>
-
-            <!-- content -->
-            <section class="news_signle">
-
-                <article class="news_content">
-
-                    <!-- toolbar -->
-                    <section class="toolbar">
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-                    </section>
-
-                    <!-- post with video -->
-                    <video class="news_video" src="../../main/css/images/dummy.mp4" autoplay poster="posterimage.jpg"></video>
-                </article>
-
-            </section>
-
-            <!-- comments -->
-            <section class="news_comment">
-
-                <!-- signle comment -->
-                <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar</p>
-                </article>
-
-                <!-- signle comment with delete -->
-                <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar mit delete button</p>
-                    <a href="#" class="link" title="default">
-                        <img class="friend_status" alt="dummy" title="dummy" src="../../../main/css/icons/close_icon.svg">
-                    </a>
-                </article>
-
-                <!-- read less button -->
-                <article class="comment_button" style="margin-top: 15px;">
-                    <a href="#" title="dummy"><span class="material-icons material-icons_xxl">expand_less</span></a>
-                </article>
-
-            </section>
-
-        </article>
-
-        <!-- example news with video -->
-        <article class="content-container color_day">
-
-            <!-- header -->
-            <header class="news_headline">
-                <span class="material-icons material-icons_xxl">account_circle</span>
+                <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
                 <span class="news_author">Lucas Carmohn</span>
                 <span class="news_time">3h ago</span>
             </header>
@@ -243,7 +223,8 @@
                     </section>
 
                     <!-- post with image -->
-                    <img class="news_image" src="../../main/css/images/dummy.jpg" alt="test" title="test">
+                    <img class="news_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.jpg" title="Dummy" alt="Dummy">
+
                 </article>
 
             </section>
@@ -251,30 +232,170 @@
             <!-- comments -->
             <section class="news_comment">
 
-                <!-- signle comment -->
                 <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar</p>
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
                 </article>
 
-                <!-- signle comment with delete -->
                 <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar mit delete button</p>
-                    <a href="#" class="link" title="default">
-                        <img class="friend_status" alt="dummy" title="dummy" src="../../../main/css/icons/close_icon.svg">
-                    </a>
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
                 </article>
 
-                <!-- read less button -->
-                <article class="comment_button" style="margin-top: 15px;">
-                    <a href="#" title="dummy"><span class="material-icons material-icons_xxl">expand_less</span></a>
+                <article class="comment color_day_comments">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
                 </article>
 
+                <!-- read more button -->
+                <article class="comment_button " style="margin-top: 15px; ">
+                    <a href="# " title="dummy "><span class="material-icons material-icons_xxl ">expand_more</span></a>
+                </article>
+            </section>
+
+        </article>
+
+        <!-- example news with video -->
+        <article class="content-container color_day">
+
+            <!-- header -->
+            <header class="news_headline">
+                <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                <span class="news_author">Lucas Carmohn</span>
+                <span class="news_time">3h ago</span>
+            </header>
+
+            <!-- content -->
+            <section class="news_signle">
+
+                <article class="news_content">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                    </section>
+
+                    <!-- post with video -->
+                    <video class="news_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.mp4" poster="posterimage.jpg">
+                      </video>
+                </article>
+
+            </section>
+
+            <!-- comments -->
+            <section class="news_comment">
+
+                <article class="comment color_day_comments">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
+                </article>
+
+                <article class="comment color_day_comments">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
+                </article>
+
+                <article class="comment color_day_comments">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
+                </article>
+
+                <!-- read more button -->
+                <article class="comment_button " style="margin-top: 15px; ">
+                    <a href="# " title="dummy "><span class="material-icons material-icons_xxl ">expand_less</span></a>
+                </article>
             </section>
 
         </article>
@@ -284,7 +405,7 @@
     <!-- back to top js -->
     <script>
         //Get the button
-        var mybutton = document.getElementById("myBtn");
+        var mybutton = document.getElementById("goTopButton ");
 
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function() {
@@ -293,9 +414,9 @@
 
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
+                mybutton.style.display = "block ";
             } else {
-                mybutton.style.display = "none";
+                mybutton.style.display = "none ";
             }
         }
 

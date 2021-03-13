@@ -1,279 +1,398 @@
-{% extends "main.html" %}
+{% extends "main.html" %} {% block main %}
 
-    {% block main %}
+<!-- add new post toolkit -->
+<article class="content-container color_day">
+    <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post"  title="Neuen Textpost hinzufügen">post_add</a></span>
+    <span class="material-icons material-icons_xxl"><a href="#" id="show_image_post" title="Neuen Photopost hinzufügen">add_photo_alternate</a></span>
+    <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" title="Neuen Videopost hinzufügen">movie_creation</a></span>
+</article>
 
-        <!-- add new post toolkit -->
-        <article class="content-container color_day">
-            <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post" class="link" title="default">post_add</a></span>
-            <span class="material-icons material-icons_xxl"><a href="#" id="show_image_post" class="link" title="default">add_photo_alternate</a></span>
-            <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" class="link" title="default">movie_creation</a></span>
-        </article>
+<!-- add new box js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
 
-        <!-- add new box js -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function() {
+        $("#text_post").hide();
+        $("#image_post").hide();
+        $("#video_post").hide();
 
-                $("#text_post").hide();
-                $("#image_post").hide();
-                $("#video_post").hide();
+        $("#show_text_post").click(function() {
+            $("#text_post").show();
+            $("#image_post").hide();
+            $("#video_post").hide();
+        });
+        $("#show_image_post").click(function() {
+            $("#image_post").show();
+            $("#text_post").hide();
+            $("#video_post").hide();
+        });
+        $("#show_video_post").click(function() {
+            $("#video_post").show();
+            $("#image_post").hide();
+            $("#text_post").hide();
+        });
+    });
+</script>
 
-                $("#show_text_post").click(function() {
-                    $("#text_post").show();
-                    $("#image_post").hide();
-                    $("#video_post").hide();
-                });
-                $("#show_image_post").click(function() {
-                    $("#image_post").show();
-                    $("#text_post").hide();
-                    $("#video_post").hide();
-                });
-                $("#show_video_post").click(function() {
-                    $("#video_post").show();
-                    $("#image_post").hide();
-                    $("#text_post").hide();
-                });
-            });
-        </script>
+<!-- new post with text -->
+<article id="text_post" class="content-container color_day">
 
-        <!-- add new box html -->
+    <form action="#">
+        <label for="fname">Deine Nachricht:</label><br>
+        <textarea name="message" placeholder="Hier tippen..."></textarea>
+        <input class="submit_button" type="submit" value="Posten">
+    </form>
 
-        <!-- new post with text -->
-        <article id="text_post" class="content-container color_day">
+</article>
 
-            <form action="#">
-                <label for="fname">Deine Nachricht:</label><br>
-                <textarea name="message" placeholder="Hier tippen..."></textarea>
-                <input class="submit_button" type="submit" value="Posten">
-            </form>
+<!-- new post with image -->
+<article id="image_post" class="content-container color_day">
 
-        </article>
+    <form action="#">
+        <label for="fname">Dein Bild:</label><br>
+        <input type="file" id="myFile" name="filename" multiple accept="image/*">
+        <input class="submit_button" type="submit" value="Posten">
+    </form>
 
-        <!-- new post with image -->
-        <article id="image_post" class="content-container color_day">
+</article>
 
-            <form action="#">
-                <label for="fname">Dein Bild:</label><br>
-                <input type="file" id="myFile" name="filename" multiple accept="image/*">
-                <input class="submit_button" type="submit" value="Posten">
-            </form>
+<!-- new post with video -->
+<article id="video_post" class="content-container color_day">
 
-        </article>
+    <form action="#">
+        <label for="fname">Dein Video:</label><br>
+        <input type="file" id="myFile" name="filename" multiple accept="video/*">
+        <input class="submit_button" type="submit" value="Posten">
+    </form>
 
-        <!-- new post with video -->
-        <article id="video_post" class="content-container color_day">
-
-            <form action="#">
-                <label for="fname">Dein Video:</label><br>
-                <input type="file" id="myFile" name="filename" multiple accept="video/*">
-                <input class="submit_button" type="submit" value="Posten">
-            </form>
-
-        </article>
+</article>
 
 
-        <!-- example news with text -->
-        <article class="content-container color_day">
+<!-- example news with text -->
+<article class="content-container color_day">
 
-            <!-- header -->
-            <header class="news_headline">
-                <span class="material-icons material-icons_xxl">account_circle</span>
-                <span class="news_author">Lucas Carmohn</span>
-                <span class="news_time">3h ago</span>
-            </header>
+    <!-- header -->
+    <header class="news_headline">
+        <span><img class="news_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
+        <span class="news_author">Lucas Carmohn</span>
+        <span class="news_time">3h ago</span>
+    </header>
 
-            <!-- content -->
-            <section class="news_signle">
+    <!-- content -->
+    <section class="news_signle">
 
-                <article class="news_content">
+        <article class="news_content">
 
-                    <!-- toolbar -->
-                    <section class="toolbar">
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-                    </section>
-
-                    <!-- post with text -->
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-
-                </article>
-
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
             </section>
 
-            <!-- comments -->
-            <section class="news_comment">
-
-                <!-- signle comment -->
-                <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl comment_material_icon">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar</p>
-                </article>
-
-                <!-- signle comment with delete -->
-                <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar mit delete button</p>
-                    <a href="#" class="link" title="default">
-                        <img class="friend_status" alt="dummy" title="dummy" src="../static/css/icons/close_icon.svg">
-                    </a>
-                </article>
-
-                <!-- read more button -->
-                <article class="comment_button" style="margin-top: 15px;">
-                    <a href="#" title="dummy"><span class="material-icons material-icons_xxl">expand_more</span></a>
-                </article>
-            </section>
+            <!-- comment with text -->
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
         </article>
 
-        <!-- example news with image -->
-        <article class="content-container color_day">
+    </section>
 
-            <!-- header -->
-            <header class="news_headline">
-                <span class="material-icons material-icons_xxl">account_circle</span>
-                <span class="news_author">Lucas Carmohn</span>
-                <span class="news_time">3h ago</span>
-            </header>
+    <!-- comments -->
+    <section class="news_comment">
 
-            <!-- content -->
-            <section class="news_signle">
+        <article class="comment color_day_comments">
 
-                <article class="news_content">
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
-                    <!-- toolbar -->
-                    <section class="toolbar">
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-                    </section>
-
-                    <!-- post with video -->
-                    <video class="news_video" src="../static/data/images/lcarmohn/dummy.mp4" autoplay poster="posterimage.jpg"></video>
-                </article>
-
+                <!-- delete comment -->
+                <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
             </section>
 
-            <!-- comments -->
-            <section class="news_comment">
-
-                <!-- signle comment -->
-                <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar</p>
-                </article>
-
-                <!-- signle comment with delete -->
-                <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar mit delete button</p>
-                    <a href="#" class="link" title="default">
-                        <img class="friend_status" alt="dummy" title="dummy" src="../static/css/icons/close_icon.svg">
-                    </a>
-                </article>
-
-                <!-- read less button -->
-                <article class="comment_button" style="margin-top: 15px;">
-                    <a href="#" title="dummy"><span class="material-icons material-icons_xxl">expand_less</span></a>
-                </article>
-
+            <!-- comment with text -->
+            <section>
+                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
             </section>
+        </article>
+
+        <article class="comment color_day_comments">
+
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                <!-- delete comment -->
+                <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+            </section>
+
+            <!-- comment with text -->
+            <section>
+                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+            </section>
+        </article>
+
+        <article class="comment color_day_comments">
+
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                <!-- delete comment -->
+                <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+            </section>
+
+            <!-- post with text -->
+            <section>
+                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+            </section>
+        </article>
+
+        <!-- read more button -->
+        <article class="comment_button " style="margin-top: 15px; ">
+            <a href="# " title="dummy "><span class="material-icons material-icons_xxl ">expand_more</span></a>
+        </article>
+    </section>
+
+</article>
+
+<!-- example news with image -->
+<article class="content-container color_day">
+
+    <!-- header -->
+    <header class="news_headline">
+        <span><img class="news_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
+        <span class="news_author">Lucas Carmohn</span>
+        <span class="news_time">3h ago</span>
+    </header>
+
+    <!-- content -->
+    <section class="news_signle">
+
+        <article class="news_content">
+
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+            </section>
+
+            <!-- post with image -->
+            <img class="news_post_image_video" src="../static/data/images/lcarmohn/dummy.jpg" title="Dummy" alt="Dummy">
 
         </article>
 
-        <!-- example news with video -->
-        <article class="content-container color_day">
+    </section>
 
-            <!-- header -->
-            <header class="news_headline">
-                <span class="material-icons material-icons_xxl">account_circle</span>
-                <span class="news_author">Lucas Carmohn</span>
-                <span class="news_time">3h ago</span>
-            </header>
+    <!-- comments -->
+    <section class="news_comment">
 
-            <!-- content -->
-            <section class="news_signle">
+        <article class="comment color_day_comments">
 
-                <article class="news_content">
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
-                    <!-- toolbar -->
-                    <section class="toolbar">
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-                    </section>
-
-                    <!-- post with image -->
-                    <img class="news_image" src="../static/data/images/lcarmohn/dummy.jpg" alt="test" title="test">
-                </article>
-
+                <!-- delete comment -->
+                <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
             </section>
 
-            <!-- comments -->
-            <section class="news_comment">
-
-                <!-- signle comment -->
-                <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar</p>
-                </article>
-
-                <!-- signle comment with delete -->
-                <article class="comment color_day_comments">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span clas="news_time">3h ago</span>
-                    <p>Das ist ein Kommentar mit delete button</p>
-                    <a href="#" class="link" title="default">
-                        <img class="friend_status" alt="dummy" title="dummy" src="../static/css/icons/close_icon.svg">
-                    </a>
-                </article>
-
-                <!-- read less button -->
-                <article class="comment_button" style="margin-top: 15px;">
-                    <a href="#" title="dummy"><span class="material-icons material-icons_xxl">expand_less</span></a>
-                </article>
-
+            <!-- comment with text -->
+            <section>
+                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
             </section>
-
         </article>
-    {% endblock %}
-    {% block postScript %}
-        <!-- back to top js -->
-        <script>
-            //Get the button
-            var mybutton = document.getElementById("myBtn");
 
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function() {
-                scrollFunction()
-            };
+        <article class="comment color_day_comments">
 
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    mybutton.style.display = "block";
-                } else {
-                    mybutton.style.display = "none";
-                }
-            }
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-        </script>
-    {% endblock %}
+                <!-- delete comment -->
+                <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+            </section>
+
+            <!-- comment with text -->
+            <section>
+                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+            </section>
+        </article>
+
+        <article class="comment color_day_comments">
+
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                <!-- delete comment -->
+                <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+            </section>
+
+            <!-- comment with text -->
+            <section>
+                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+            </section>
+        </article>
+
+        <!-- read more button -->
+        <article class="comment_button " style="margin-top: 15px; ">
+            <a href="# " title="dummy "><span class="material-icons material-icons_xxl ">expand_more</span></a>
+        </article>
+    </section>
+
+</article>
+
+<!-- example news with video -->
+<article class="content-container color_day">
+
+    <!-- header -->
+    <header class="news_headline">
+        <span><img class="news_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
+        <span class="news_author">Lucas Carmohn</span>
+        <span class="news_time">3h ago</span>
+    </header>
+
+    <!-- content -->
+    <section class="news_signle">
+
+        <article class="news_content">
+
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+            </section>
+
+            <!-- post with video -->
+            <video class="news_post_image_video" src="../static/data/images/lcarmohn/dummy.mp4" poster="posterimage.jpg">
+                      </video>
+        </article>
+
+    </section>
+
+    <!-- comments -->
+    <section class="news_comment">
+
+        <article class="comment color_day_comments">
+
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                <!-- delete comment -->
+                <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+            </section>
+
+            <!-- comment with text -->
+            <section>
+                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+            </section>
+        </article>
+
+        <article class="comment color_day_comments">
+
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                <!-- delete comment -->
+                <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+            </section>
+
+            <!-- comment with text -->
+            <section>
+                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+            </section>
+        </article>
+
+        <article class="comment color_day_comments">
+
+            <!-- toolbar -->
+            <section class="toolbar">
+                <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                <!-- delete comment -->
+                <span>
+                            <a href="# " title="default ">
+                                <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                            </a>
+                        </span>
+            </section>
+
+            <!-- comment with text -->
+            <section>
+                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+            </section>
+        </article>
+
+        <!-- read more button -->
+        <article class="comment_button " style="margin-top: 15px; ">
+            <a href="# " title="dummy "><span class="material-icons material-icons_xxl ">expand_less</span></a>
+        </article>
+    </section>
+
+</article>
+
+{% endblock %} {% block postScript %}
+<!-- back to top js -->
+<script>
+    //Get the button
+    var mybutton = document.getElementById("goTopButton");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+{% endblock %}
