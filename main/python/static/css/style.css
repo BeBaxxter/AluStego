@@ -195,6 +195,41 @@ textarea {
     background-color: #4B9DA6;
 }
 
+.comment_list {
+    padding-left: 0px;
+}
+
+.read-more-state {
+    display: none;
+}
+
+.read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+}
+
+.read-more-state:checked~.read-more-wrap .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+}
+
+.read-more-state~.read-more-trigger:before {
+    content: 'expand_more';
+    display: flex;
+    justify-content: center;
+}
+
+.read-more-state:checked~.read-more-trigger:before {
+    content: 'expand_less';
+}
+
+.read-more-trigger {
+    cursor: pointer;
+}
+
 
 /** profile **/
 
