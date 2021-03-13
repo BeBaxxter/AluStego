@@ -64,6 +64,7 @@
             });
         </script>
 
+
         <!-- new post with text -->
         <article id="text_post" class="content-container color_day">
 
@@ -98,6 +99,7 @@
         </article>
 
 
+
         <!-- example news with text -->
         <article class="content-container color_day">
 
@@ -120,7 +122,7 @@
                         <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
                     </section>
 
-                    <!-- comment with text -->
+                    <!-- post with text -->
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                         no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
                         accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
@@ -136,7 +138,7 @@
 
                 <ul class="comment_list read-more-wrap">
 
-                    <!-- new post with text -->
+                    <!-- new comment with text -->
                     <article class="comment">
 
                         <form action="#" class="add_comment">
@@ -230,6 +232,20 @@
                 <span class="news_time">3h ago</span>
             </header>
 
+            <article class="news_content">
+
+                <!-- toolbar -->
+                <section class="toolbar">
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                </section>
+
+                <!-- post with image -->
+                <img class="news_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.jpg" title="dummy" alt="dummy">
+            </article>
+
+
             <!-- comments -->
             <section class="news_comment">
 
@@ -237,7 +253,7 @@
 
                 <ul class="comment_list read-more-wrap">
 
-                    <!-- new post with text -->
+                    <!-- new comment with text -->
                     <article class="comment">
 
                         <form action="#" class="add_comment">
@@ -335,643 +351,111 @@
             <section class="news_signle">
 
                 <article class="news_content">
-                    <!-- new post with text -->
-                    <article id="text_post" class="content-container color_day">
 
-                        <form action="#">
-                            <label for="fname">Deine Nachricht:</label><br>
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                    </section>
+
+                    <!-- post with video -->
+                    <video class="news_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.mp4" poster="posterimage.jpg">
+                      </video>
+                </article>
+
+            </section>
+
+            <!-- comments -->
+            <section class="news_comment">
+
+                <input type="checkbox" class="read-more-state" id="post-3" />
+
+                <ul class="comment_list read-more-wrap">
+
+                    <!-- new comment with text -->
+                    <article class="comment">
+
+                        <form action="#" class="add_comment">
+                            <label for="fname">Kommentar:</label><br>
                             <textarea name="message" placeholder="Hier tippen..."></textarea>
                             <input class="submit_button" type="submit" value="Posten">
                         </form>
 
                     </article>
 
-                    <!-- new post with image -->
-                    <article id="image_post" class="content-container color_day">
+                    <!-- comment -->
+                    <article class="comment read-more-target">
 
-                        <form action="#">
-                            <label for="fname">Dein Bild:</label><br>
-                            <input type="file" id="myFile" name="filename" multiple accept="image/*">
-                            <input class="submit_button" type="submit" value="Posten">
-                        </form>
+                        <!-- toolbar -->
+                        <section class="toolbar">
+                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
-                    </article>
-
-                    <!-- new post with video -->
-                    <article id="video_post" class="content-container color_day">
-
-                        <form action="#">
-                            <label for="fname">Dein Video:</label><br>
-                            <input type="file" id="myFile" name="filename" multiple accept="video/*">
-                            <input class="submit_button" type="submit" value="Posten">
-                        </form>
-
-                    </article>
-
-
-                    <!-- example news with text -->
-                    <article class="content-container color_day">
-
-                        <!-- header -->
-                        <header class="news_headline">
-                            <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                            <span class="news_author">Lucas Carmohn</span>
-                            <span class="news_time">3h ago</span>
-                        </header>
-
-                        <!-- content -->
-                        <section class="news_signle">
-
-                            <article class="news_content">
-
-                                <!-- toolbar -->
-                                <section class="toolbar">
-                                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
-                                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-                                </section>
-
-                                <!-- comment with text -->
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-                                    kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-
-                            </article>
-
+                            <!-- delete comment -->
+                            <span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
                         </section>
 
-                        <!-- comments -->
-                        <section class="news_comment">
-
-                            <input type="checkbox" class="read-more-state" id="post-1" />
-
-                            <ul class="comment_list read-more-wrap">
-
-                                <!-- new post with text -->
-                                <article class="comment">
-
-                                    <form action="#" class="add_comment">
-                                        <label for="fname">Kommentar:</label><br>
-                                        <textarea name="message" placeholder="Hier tippen..."></textarea>
-                                        <input class="submit_button" type="submit" value="Posten">
-                                    </form>
-
-                                </article>
-
-                                <!-- comment -->
-                                <article class="comment read-more-target">
-
-                                    <!-- toolbar -->
-                                    <section class="toolbar">
-                                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                        <!-- delete comment -->
-                                        <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                    </section>
-
-                                    <!-- comment with text -->
-                                    <section>
-                                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                    </section>
-                                </article>
-
-                                <!-- comment -->
-                                <article class="comment read-more-target">
-
-                                    <!-- toolbar -->
-                                    <section class="toolbar">
-                                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                        <!-- delete comment -->
-                                        <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                    </section>
-
-                                    <!-- comment with text -->
-                                    <section>
-                                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                    </section>
-                                </article>
-
-
-                                <!-- comment -->
-                                <article class="comment read-more-target">
-
-                                    <!-- toolbar -->
-                                    <section class="toolbar">
-                                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                        <!-- delete comment -->
-                                        <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                    </section>
-
-                                    <!-- comment with text -->
-                                    <section>
-                                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                    </section>
-                                </article>
-
-                            </ul>
-
-                            <label for="post-1" class="read-more-trigger material-icons material-icons_xxl"></label>
-
-
+                        <!-- comment with text -->
+                        <section>
+                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
                         </section>
-
                     </article>
 
-                    <!-- example news with image -->
-                    <article class="content-container color_day">
+                    <!-- comment -->
+                    <article class="comment read-more-target">
 
-                        <!-- header -->
-                        <header class="news_headline">
-                            <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                            <span class="news_author">Lucas Carmohn</span>
-                            <span class="news_time">3h ago</span>
-                        </header>
+                        <!-- toolbar -->
+                        <section class="toolbar">
+                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
-                        <!-- comments -->
-                        <section class="news_comment">
-
-                            <input type="checkbox" class="read-more-state" id="post-2" />
-
-                            <ul class="comment_list read-more-wrap">
-
-                                <!-- new post with text -->
-                                <article class="comment">
-
-                                    <form action="#" class="add_comment">
-                                        <label for="fname">Kommentar:</label><br>
-                                        <textarea name="message" placeholder="Hier tippen..."></textarea>
-                                        <input class="submit_button" type="submit" value="Posten">
-                                    </form>
-
-                                </article>
-
-                                <!-- comment -->
-                                <article class="comment read-more-target">
-
-                                    <!-- toolbar -->
-                                    <section class="toolbar">
-                                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                        <!-- delete comment -->
-                                        <span>
+                            <!-- delete comment -->
+                            <span>
                                 <a href="# " title="default ">
                                     <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
                                 </a>
                             </span>
-                                    </section>
-
-                                    <!-- comment with text -->
-                                    <section>
-                                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                    </section>
-                                </article>
-
-                                <!-- comment -->
-                                <article class="comment read-more-target">
-
-                                    <!-- toolbar -->
-                                    <section class="toolbar">
-                                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                        <!-- delete comment -->
-                                        <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                    </section>
-
-                                    <!-- comment with text -->
-                                    <section>
-                                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                    </section>
-                                </article>
-
-
-                                <!-- comment -->
-                                <article class="comment read-more-target">
-
-                                    <!-- toolbar -->
-                                    <section class="toolbar">
-                                        <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                        <!-- delete comment -->
-                                        <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                    </section>
-
-                                    <!-- comment with text -->
-                                    <section>
-                                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                    </section>
-                                </article>
-
-                            </ul>
-
-                            <label for="post-2" class="read-more-trigger material-icons material-icons_xxl"></label>
-
-
                         </section>
 
+                        <!-- comment with text -->
+                        <section>
+                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                        </section>
                     </article>
 
-                    <!-- example news with video -->
-                    <article class="content-container color_day">
 
-                        <!-- header -->
-                        <!-- new post with text -->
-                        <article id="text_post" class="content-container color_day">
+                    <!-- comment -->
+                    <article class="comment read-more-target">
 
-                            <form action="#">
-                                <label for="fname">Deine Nachricht:</label><br>
-                                <textarea name="message" placeholder="Hier tippen..."></textarea>
-                                <input class="submit_button" type="submit" value="Posten">
-                            </form>
+                        <!-- toolbar -->
+                        <section class="toolbar">
+                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
-                        </article>
-
-                        <!-- new post with image -->
-                        <article id="image_post" class="content-container color_day">
-
-                            <form action="#">
-                                <label for="fname">Dein Bild:</label><br>
-                                <input type="file" id="myFile" name="filename" multiple accept="image/*">
-                                <input class="submit_button" type="submit" value="Posten">
-                            </form>
-
-                        </article>
-
-                        <!-- new post with video -->
-                        <article id="video_post" class="content-container color_day">
-
-                            <form action="#">
-                                <label for="fname">Dein Video:</label><br>
-                                <input type="file" id="myFile" name="filename" multiple accept="video/*">
-                                <input class="submit_button" type="submit" value="Posten">
-                            </form>
-
-                        </article>
-
-
-                        <!-- example news with text -->
-                        <article class="content-container color_day">
-
-                            <!-- header -->
-                            <header class="news_headline">
-                                <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                                <span class="news_author">Lucas Carmohn</span>
-                                <span class="news_time">3h ago</span>
-                            </header>
-
-                            <!-- content -->
-                            <section class="news_signle">
-
-                                <article class="news_content">
-
-                                    <!-- toolbar -->
-                                    <section class="toolbar">
-                                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
-                                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-                                    </section>
-
-                                    <!-- comment with text -->
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-                                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                                        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-
-                                </article>
-
-                            </section>
-
-                            <!-- comments -->
-                            <section class="news_comment">
-
-                                <input type="checkbox" class="read-more-state" id="post-1" />
-
-                                <ul class="comment_list read-more-wrap">
-
-                                    <!-- new post with text -->
-                                    <article class="comment">
-
-                                        <form action="#" class="add_comment">
-                                            <label for="fname">Kommentar:</label><br>
-                                            <textarea name="message" placeholder="Hier tippen..."></textarea>
-                                            <input class="submit_button" type="submit" value="Posten">
-                                        </form>
-
-                                    </article>
-
-                                    <!-- comment -->
-                                    <article class="comment read-more-target">
-
-                                        <!-- toolbar -->
-                                        <section class="toolbar">
-                                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                            <!-- delete comment -->
-                                            <span>
+                            <!-- delete comment -->
+                            <span>
                                 <a href="# " title="default ">
                                     <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
                                 </a>
                             </span>
-                                        </section>
+                        </section>
 
-                                        <!-- comment with text -->
-                                        <section>
-                                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                        </section>
-                                    </article>
+                        <!-- comment with text -->
+                        <section>
+                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                        </section>
+                    </article>
 
-                                    <!-- comment -->
-                                    <article class="comment read-more-target">
+                </ul>
 
-                                        <!-- toolbar -->
-                                        <section class="toolbar">
-                                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                <label for="post-3" class="read-more-trigger material-icons material-icons_xxl"></label>
 
-                                            <!-- delete comment -->
-                                            <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                        </section>
 
-                                        <!-- comment with text -->
-                                        <section>
-                                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                        </section>
-                                    </article>
+            </section>
 
-
-                                    <!-- comment -->
-                                    <article class="comment read-more-target">
-
-                                        <!-- toolbar -->
-                                        <section class="toolbar">
-                                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                            <!-- delete comment -->
-                                            <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                        </section>
-
-                                        <!-- comment with text -->
-                                        <section>
-                                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                        </section>
-                                    </article>
-
-                                </ul>
-
-                                <label for="post-1" class="read-more-trigger material-icons material-icons_xxl"></label>
-
-
-                            </section>
-
-                        </article>
-
-                        <!-- example news with image -->
-                        <article class="content-container color_day">
-
-                            <!-- header -->
-                            <header class="news_headline">
-                                <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                                <span class="news_author">Lucas Carmohn</span>
-                                <span class="news_time">3h ago</span>
-                            </header>
-
-                            <!-- comments -->
-                            <section class="news_comment">
-
-                                <input type="checkbox" class="read-more-state" id="post-2" />
-
-                                <ul class="comment_list read-more-wrap">
-
-                                    <!-- new post with text -->
-                                    <article class="comment">
-
-                                        <form action="#" class="add_comment">
-                                            <label for="fname">Kommentar:</label><br>
-                                            <textarea name="message" placeholder="Hier tippen..."></textarea>
-                                            <input class="submit_button" type="submit" value="Posten">
-                                        </form>
-
-                                    </article>
-
-                                    <!-- comment -->
-                                    <article class="comment read-more-target">
-
-                                        <!-- toolbar -->
-                                        <section class="toolbar">
-                                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                            <!-- delete comment -->
-                                            <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                        </section>
-
-                                        <!-- comment with text -->
-                                        <section>
-                                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                        </section>
-                                    </article>
-
-                                    <!-- comment -->
-                                    <article class="comment read-more-target">
-
-                                        <!-- toolbar -->
-                                        <section class="toolbar">
-                                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                            <!-- delete comment -->
-                                            <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                        </section>
-
-                                        <!-- comment with text -->
-                                        <section>
-                                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                        </section>
-                                    </article>
-
-
-                                    <!-- comment -->
-                                    <article class="comment read-more-target">
-
-                                        <!-- toolbar -->
-                                        <section class="toolbar">
-                                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                            <!-- delete comment -->
-                                            <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                        </section>
-
-                                        <!-- comment with text -->
-                                        <section>
-                                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                        </section>
-                                    </article>
-
-                                </ul>
-
-                                <label for="post-2" class="read-more-trigger material-icons material-icons_xxl"></label>
-
-
-                            </section>
-
-                        </article>
-
-                        <!-- example news with video -->
-                        <article class="content-container color_day">
-
-                            <!-- header -->
-                            <header class="news_headline">
-                                <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                                <span class="news_author">Lucas Carmohn</span>
-                                <span class="news_time">3h ago</span>
-                            </header>
-
-                            <!-- content -->
-                            <section class="news_signle">
-
-                                <article class="news_content">
-
-                                    <!-- toolbar -->
-                                    <section class="toolbar">
-                                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
-                                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-                                    </section>
-
-                                    <!-- post with video -->
-                                    <video class="news_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.mp4" poster="posterimage.jpg">
-                      </video>
-                                </article>
-
-                            </section>
-
-                            <!-- comments -->
-                            <section class="news_comment">
-
-                                <input type="checkbox" class="read-more-state" id="post-3" />
-
-                                <ul class="comment_list read-more-wrap">
-
-                                    <!-- new post with text -->
-                                    <article class="comment">
-
-                                        <form action="#" class="add_comment">
-                                            <label for="fname">Kommentar:</label><br>
-                                            <textarea name="message" placeholder="Hier tippen..."></textarea>
-                                            <input class="submit_button" type="submit" value="Posten">
-                                        </form>
-
-                                    </article>
-
-                                    <!-- comment -->
-                                    <article class="comment read-more-target">
-
-                                        <!-- toolbar -->
-                                        <section class="toolbar">
-                                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                            <!-- delete comment -->
-                                            <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                        </section>
-
-                                        <!-- comment with text -->
-                                        <section>
-                                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                        </section>
-                                    </article>
-
-                                    <!-- comment -->
-                                    <article class="comment read-more-target">
-
-                                        <!-- toolbar -->
-                                        <section class="toolbar">
-                                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                            <!-- delete comment -->
-                                            <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                        </section>
-
-                                        <!-- comment with text -->
-                                        <section>
-                                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                        </section>
-                                    </article>
-
-
-                                    <!-- comment -->
-                                    <article class="comment read-more-target">
-
-                                        <!-- toolbar -->
-                                        <section class="toolbar">
-                                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                                            <!-- delete comment -->
-                                            <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../../main/python/static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                                        </section>
-
-                                        <!-- comment with text -->
-                                        <section>
-                                            <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                                        </section>
-                                    </article>
-
-                                </ul>
-
-                                <label for="post-3" class="read-more-trigger material-icons material-icons_xxl"></label>
-
-
-                            </section>
-
-                        </article>
+        </article>
 
     </main>
 

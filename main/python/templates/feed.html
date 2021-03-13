@@ -1,38 +1,39 @@
 {% extends "main.html" %} {% block main %}
 
-        <!-- add new post toolkit -->
-        <article class="content-container color_day">
-            <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post"  title="Neuen Textpost hinzufügen">post_add</a></span>
-            <span class="material-icons material-icons_xxl"><a href="#" id="show_image_post" title="Neuen Photopost hinzufügen">add_photo_alternate</a></span>
-            <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" title="Neuen Videopost hinzufügen">movie_creation</a></span>
-        </article>
+<!-- add new post toolkit -->
+<article class="content-container color_day">
+    <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post"  title="Neuen Textpost hinzufügen">post_add</a></span>
+    <span class="material-icons material-icons_xxl"><a href="#" id="show_image_post" title="Neuen Photopost hinzufügen">add_photo_alternate</a></span>
+    <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" title="Neuen Videopost hinzufügen">movie_creation</a></span>
+</article>
 
-        <!-- add new box js -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function() {
+<!-- add new box js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
 
-                $("#text_post").hide();
-                $("#image_post").hide();
-                $("#video_post").hide();
+        $("#text_post").hide();
+        $("#image_post").hide();
+        $("#video_post").hide();
 
-                $("#show_text_post").click(function() {
-                    $("#text_post").show();
-                    $("#image_post").hide();
-                    $("#video_post").hide();
-                });
-                $("#show_image_post").click(function() {
-                    $("#image_post").show();
-                    $("#text_post").hide();
-                    $("#video_post").hide();
-                });
-                $("#show_video_post").click(function() {
-                    $("#video_post").show();
-                    $("#image_post").hide();
-                    $("#text_post").hide();
-                });
-            });
-        </script>
+        $("#show_text_post").click(function() {
+            $("#text_post").show();
+            $("#image_post").hide();
+            $("#video_post").hide();
+        });
+        $("#show_image_post").click(function() {
+            $("#image_post").show();
+            $("#text_post").hide();
+            $("#video_post").hide();
+        });
+        $("#show_video_post").click(function() {
+            $("#video_post").show();
+            $("#image_post").hide();
+            $("#text_post").hide();
+        });
+    });
+</script>
+
 
 <!-- new post with text -->
 <article id="text_post" class="content-container color_day">
@@ -68,6 +69,7 @@
 </article>
 
 
+
 <!-- example news with text -->
 <article class="content-container color_day">
 
@@ -90,7 +92,7 @@
                 <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
             </section>
 
-            <!-- comment with text -->
+            <!-- post with text -->
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                 no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
                 et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
@@ -106,7 +108,7 @@
 
         <ul class="comment_list read-more-wrap">
 
-            <!-- new post with text -->
+            <!-- new comment with text -->
             <article class="comment">
 
                 <form action="#" class="add_comment">
@@ -126,10 +128,10 @@
 
                     <!-- delete comment -->
                     <span>
-                        <a href="# " title="default ">
-                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                        </a>
-                    </span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
                 </section>
 
                 <!-- comment with text -->
@@ -147,10 +149,10 @@
 
                     <!-- delete comment -->
                     <span>
-                        <a href="# " title="default ">
-                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                        </a>
-                    </span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
                 </section>
 
                 <!-- comment with text -->
@@ -169,10 +171,10 @@
 
                     <!-- delete comment -->
                     <span>
-                        <a href="# " title="default ">
-                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                        </a>
-                    </span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
                 </section>
 
                 <!-- comment with text -->
@@ -200,6 +202,20 @@
         <span class="news_time">3h ago</span>
     </header>
 
+    <article class="news_content">
+
+        <!-- toolbar -->
+        <section class="toolbar">
+            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
+            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+        </section>
+
+        <!-- post with image -->
+        <img class="news_post_image_video" src="../static/data/images/lcarmohn/dummy.jpg" title="dummy" alt="dummy">
+    </article>
+
+
     <!-- comments -->
     <section class="news_comment">
 
@@ -207,7 +223,7 @@
 
         <ul class="comment_list read-more-wrap">
 
-            <!-- new post with text -->
+            <!-- new comment with text -->
             <article class="comment">
 
                 <form action="#" class="add_comment">
@@ -227,10 +243,10 @@
 
                     <!-- delete comment -->
                     <span>
-                        <a href="# " title="default ">
-                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                        </a>
-                    </span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
                 </section>
 
                 <!-- comment with text -->
@@ -248,10 +264,10 @@
 
                     <!-- delete comment -->
                     <span>
-                        <a href="# " title="default ">
-                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                        </a>
-                    </span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
                 </section>
 
                 <!-- comment with text -->
@@ -270,10 +286,10 @@
 
                     <!-- delete comment -->
                     <span>
-                        <a href="# " title="default ">
-                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                        </a>
-                    </span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
                 </section>
 
                 <!-- comment with text -->
@@ -315,7 +331,7 @@
 
             <!-- post with video -->
             <video class="news_post_image_video" src="../static/data/images/lcarmohn/dummy.mp4" poster="posterimage.jpg">
-              </video>
+                      </video>
         </article>
 
     </section>
@@ -327,7 +343,7 @@
 
         <ul class="comment_list read-more-wrap">
 
-            <!-- new post with text -->
+            <!-- new comment with text -->
             <article class="comment">
 
                 <form action="#" class="add_comment">
@@ -347,10 +363,10 @@
 
                     <!-- delete comment -->
                     <span>
-                        <a href="# " title="default ">
-                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                        </a>
-                    </span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
                 </section>
 
                 <!-- comment with text -->
@@ -368,10 +384,10 @@
 
                     <!-- delete comment -->
                     <span>
-                        <a href="# " title="default ">
-                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                        </a>
-                    </span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
                 </section>
 
                 <!-- comment with text -->
@@ -390,10 +406,10 @@
 
                     <!-- delete comment -->
                     <span>
-                        <a href="# " title="default ">
-                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                        </a>
-                    </span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
                 </section>
 
                 <!-- comment with text -->

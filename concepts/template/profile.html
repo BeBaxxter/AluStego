@@ -15,7 +15,7 @@
 <body>
 
     <!-- back to top button -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="goTopButton" title="Go to top">Top</button>
 
     <!-- structure-container -->
     <main id="wrapper">
@@ -60,13 +60,13 @@
         <article class="content-container color_day">
 
             <!-- header -->
-            <header class="profil_headline">
+            <header>
                 <span class="material-icons material-icons_xxl">format_quote</span>
                 <span id="profile_caption">Webdeveloper and Fan of this App!!!</span>
             </header>
 
             <!-- Profile info -->
-            <section class="profil_content">
+            <section>
                 <img id="profile_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
 
                 <section>
@@ -80,7 +80,7 @@
             <hr>
 
             <!-- Profile bar -->
-            <section class="profil_content">
+            <section>
                 <span class="material-icons material-icons_xxl"><a id="show_friends" href="#" class="link" title="default">supervisor_account</a></span>
                 <span class="material-icons material-icons_xxl"><a id="show_feed" href="#" class="link" title="default">article</a></span>
                 <span class="material-icons material-icons_xxl"><a id="show_settings" href="#" class="link" title="default">settings</a></span>
@@ -92,7 +92,7 @@
         <article id="friendlist" class="content-container color_day">
 
             <!-- header -->
-            <header class="friends_headline">
+            <header>
                 <span>4 Friends:</span>
                 <a href="#" class="link" title="default">
                     <span class="material-icons">delete</span>
@@ -100,7 +100,7 @@
             </header>
 
             <!-- friend-lists -->
-            <section class="friends_section">
+            <section>
                 <ul class="friends_list">
                     <li class="friend_entry">
                         <span class="material-icons icon">account_circle</span>
@@ -123,67 +123,14 @@
             </section>
         </article>
 
-        <!-- newslist-->
+        <!-- newslist -->
         <article id="newslist" class="content-container color_day">
 
-            <!-- example news with text -->
-            <article id="2" class="content-container color_day">
 
-                <!-- header -->
-                <header class="news_headline">
-                    <span class="material-icons material-icons_xxl">account_circle</span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span class="news_time">3h ago</span>
-                </header>
+            <!-- todo -->
 
-                <!-- content -->
-                <section class="news_signle">
 
-                    <article class="news_content">
 
-                        <!-- toolbar -->
-                        <section class="toolbar">
-                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
-                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-                        </section>
-
-                        <!-- post with text -->
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-
-                    </article>
-
-                </section>
-
-                <!-- comments -->
-                <section class="news_comment">
-
-                    <!-- signle comment -->
-                    <article class="comment color_day_comments">
-                        <span class="material-icons material-icons_xxl">account_circle</span>
-                        <span class="news_author">Lucas Carmohn</span>
-                        <span clas="news_time">3h ago</span>
-                        <p>Das ist ein Kommentar</p>
-                    </article>
-
-                    <!-- signle comment with delete -->
-                    <article class="comment color_day_comments">
-                        <span class="material-icons material-icons_xxl">account_circle</span>
-                        <span class="news_author">Lucas Carmohn</span>
-                        <span clas="news_time">3h ago</span>
-                        <p>Das ist ein Kommentar mit delete button</p>
-                        <a href="#" class="link" title="default">
-                            <img class="friend_status" alt="dummy" title="dummy" src="../../main/python/static/css/icons/close_icon.svg">
-                        </a>
-                    </article>
-
-                    <button onclick="" id="myBtn">Read more</button>
-
-                </section>
-
-            </article>
         </article>
 
         <!-- settings -->
@@ -192,24 +139,9 @@
             <!-- settings-lists -->
             <section class="settings_section">
                 <ul class="setting_list">
-                    <li class="setting_entry">
-                        <button>Logout</button>
-                    </li>
-                    <li class="setting_entry">
-                        Switch
-                    </li>
-                    <li class="setting_entry">
-                        <div class="dropdown">
-                            <button class="dropbtn" onclick="handleDropdown()">Auswahl
-                              <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="dropdown-content" id="myDropdown">
-                                <a href="#">Option 1</a>
-                                <a href="#">Option 2</a>
-                                <a href="#">Option 3</a>
-                            </div>
-                        </div>
-                    </li>
+                    <li class="setting_entry"></li>
+                    <li class="setting_entry"></li>
+                    <li class="setting_entry"></li>
                 </ul>
             </section>
         </article>
@@ -219,7 +151,7 @@
     <!-- back to top js -->
     <script>
         //Get the button
-        var mybutton = document.getElementById("myBtn");
+        var mybutton = document.getElementById("goTopButton");
 
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function() {
@@ -228,9 +160,9 @@
 
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
+                mybutton.style.display = "block ";
             } else {
-                mybutton.style.display = "none";
+                mybutton.style.display = "none ";
             }
         }
 
@@ -238,24 +170,6 @@
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
-        }
-    </script>
-
-    <script>
-        /* When the user clicks on the button, 
-                                                                                                                                                                                                    toggle between hiding and showing the dropdown content */
-        function handleDropdown() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(e) {
-            if (!e.target.matches('.dropbtn')) {
-                var myDropdown = document.getElementById("myDropdown");
-                if (myDropdown.classList.contains('show')) {
-                    myDropdown.classList.remove('show');
-                }
-            }
         }
     </script>
 
