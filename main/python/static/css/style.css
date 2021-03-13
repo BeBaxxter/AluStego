@@ -183,6 +183,18 @@ textarea {
     padding-left: 15px;
 }
 
+.add_comment {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.add_comment .submit_button {
+    color: #fff;
+    background-color: #4B9DA6;
+}
+
 
 /** profile **/
 
