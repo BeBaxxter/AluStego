@@ -7,34 +7,6 @@
     <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" title="Neuen Videopost hinzufügen">movie_creation</a></span>
 </article>
 
-<!-- add new box js -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-
-        $("#text_post").hide();
-        $("#image_post").hide();
-        $("#video_post").hide();
-
-        $("#show_text_post").click(function() {
-            $("#text_post").show();
-            $("#image_post").hide();
-            $("#video_post").hide();
-        });
-        $("#show_image_post").click(function() {
-            $("#image_post").show();
-            $("#text_post").hide();
-            $("#video_post").hide();
-        });
-        $("#show_video_post").click(function() {
-            $("#video_post").show();
-            $("#image_post").hide();
-            $("#text_post").hide();
-        });
-    });
-</script>
-
-
 <!-- new post with text -->
 <article id="text_post" class="content-container color_day">
 
@@ -428,28 +400,5 @@
 </article>
 
 {% endblock %} {% block postScript %}
-<!-- back to top js -->
-<script>
-    //Get the button
-    var mybutton = document.getElementById("goTopButton");
 
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
 {% endblock %}
