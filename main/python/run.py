@@ -25,7 +25,7 @@ def allowed_file(filename):
 
 @app.route('/')
 def start():
-    return render_template("login.html", colorTheme=colorTheme)
+    return render_template("auth.html", colorTheme=colorTheme)
 
 @app.route('/feed', methods = ['POST', 'GET'])
 def feed():

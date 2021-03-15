@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../main/python/static/css/day_skin.css">
+    <link rel="stylesheet" href="../../main/python/static/css/night_skin.css">
+    <link rel="stylesheet" href="../../main/python/static/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Core template</title>
+</head>
+
+<body>
+
+    <!-- javascript box / DONT TOUCH -->
+    <script src="../../main/python/static/js/query.min.js"></script>
+    <script src="../../main/python/static/js/main.js"></script>
+    <!-- / javascript box / DONT TOUCH -->
+
+    <!-- structure-container -->
+    <main id="wrapper">
+
+        <!-- login-home -->
+        <article class="content-container color_day">
+
+            <!-- header -->
+            <header class="head_box">
+                <h1>Welchome!</h1>
+                <img id="profile_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
+            </header>
+
+            <!-- login / signup switch -->
+            <section class="mid_box">
+                <ul class="">
+                    <li><a href="#" id="show_login">Login</a></li>
+                    <li><a href="#" id="show_register">Signup</a></li>
+                    <li><a href="#" id="show_pwv">Passwort vergessen</a></li>
+                </ul>
+            </section>
+
+
+            <!-- footer -->
+            <section class="bottom_box">
+                <a href="#">About</a> |
+                <a href="https://github.com/BeBaxxter/AluStego/blob/main/Impressum.md" target="_blank">Impressum</a>
+            </section>
+        </article>
+
+        <!-- login-field -->
+        <article id="login" class="content-container color_day">
+
+            <!-- header -->
+            <header class="head_box">
+                <h1>Welchome!</h1>
+                <h3>Login!</h3>
+            </header>
+
+            <!-- login -->
+            <section class="mid_box">
+                <form action="#">
+                    <label for="lun">Username:</label><br>
+                    <input type="text" id="lun" name="lun" placeholder="Username"><br>
+
+                    <label for="lpw">Passwort:</label><br>
+                    <input type="text" id="lpw" name="lpw" placeholder="Passwort"><br>
+
+                    <input class="" type="submit" value="Anmelden">
+                </form>
+
+                <a href="#">Passwort vergessen</a>
+            </section>
+
+        </article>
+
+        <!-- register -->
+        <article id="register" class="content-container color_day">
+
+            <!-- header -->
+            <header class="head_box">
+                <h1>Welchome!</h1>
+                <h3>Registrieren</h3>
+            </header>
+
+            <!-- register -->
+            <section class="mid_box">
+                <form action="#">
+                    <label for="run">Username:</label><br>
+                    <input type="text" id="run" name="run" placeholder="Username"><br>
+
+                    <label for="rem">E-Mail:</label><br>
+                    <input type="email" id="rem" name="rem" placeholder="E-Mail"><br>
+
+                    <label for="rpw">Passwort:</label><br>
+                    <input type="text" id="rpw" name="rpw" placeholder="Passwort"><br>
+
+                    <input class="" type="submit" value="Registrieren">
+                </form>
+
+                <a href="#">Passwort vergessen</a>
+            </section>
+
+        </article>
+
+        <!-- passwordV -->
+        <article id="pwv" class="content-container color_day">
+
+            <!-- header -->
+            <header class="head_box">
+                <h1>Welchome!</h1>
+                <h3>Passwort vergessen</h3>
+            </header>
+
+            <!-- passwortV -->
+            <section class="mid_box">
+                <form action="#">
+                    <label for="pvun">Username:</label><br>
+                    <input type="text" id="pvun" name="pvun" placeholder="Username"><br>
+
+                    <label for="pvem">E-Mail:</label><br>
+                    <input type="email" id="pvem" name="pvem" placeholder="E-Mail"><br>
+
+                    <input class="" type="submit" value="Passwort vergessen">
+                </form>
+
+                <a href="#">Passwort vergessen</a>
+            </section>
+
+        </article>
+
+    </main>
+    <!-- / structure-container -->
+
+</body>
+
+</html>

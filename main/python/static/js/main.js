@@ -82,3 +82,36 @@ $(document).ready(function() {
 /**
  * / NEWS SHOW / HIDE NEW POST FUNCTION
  */
+
+
+/**
+ * AUTH SHOW / HIDE FUNCTION
+ */
+$(document).ready(function() {
+
+    $("#login").hide();
+    $("#register").hide();
+    $("#pwv").hide();
+
+    $("#show_login").click(function() {
+        $("#login").show();
+        $("#register").hide();
+        $("#pwv").hide();
+
+    });
+    $("#show_register").click(function() {
+        $("#register").show();
+        $("#login").hide();
+        $("#pwv").hide();
+
+    });
+    $("#show_pwv").click(function() {
+        $("#pwv").show();
+        $("#login").hide();
+        $("#register").hide();
+
+    });
+});
+/**
+ * / AUTH SHOW / HIDE FUNCTION
+ */
