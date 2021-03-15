@@ -25,10 +25,9 @@
     <!-- structure-container -->
     <main id="wrapper">
 
-        {% block preScript %} {% endblock %}
 
         <!-- navigation -->
-        <nav class="color_day">
+        <nav class="{{colorTheme}}">
             <ul class="menu">
                 <li class="nav-btn"><a href="/profile">Profil</a></li> /
                 <li class="nav-btn"><a href="/feed">News</a></li> /
@@ -39,7 +38,6 @@
         {% block main %} {% endblock %}
 
     </main>
-    {% block postScript %} {% endblock %}
 </body>
 
 </html>

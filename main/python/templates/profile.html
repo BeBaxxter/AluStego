@@ -1,9 +1,9 @@
-{% extends "main.html" %} {% block preScript %}
+{% extends "main.html" %}
 
-{% endblock %} {% block main %}
+{% block main %}
 
 <!-- profile -->
-<article class="content-container color_day">
+<article class="content-container {{colorTheme}}">
 
     <!-- header -->
     <header>
@@ -35,7 +35,7 @@
 
 
 <!-- friendlist-->
-<article id="friendlist" class="content-container color_day">
+<article id="friendlist" class="content-container {{colorTheme}}">
 
     <!-- header -->
     <header>
@@ -76,7 +76,7 @@
 </script>
 
 <!-- newslist -->
-<article id="newslist" class="content-container color_day">
+<article id="newslist" class="content-container {{colorTheme}}">
 
 
     <!-- todo -->
@@ -86,7 +86,7 @@
 </article>
 
 <!-- settings -->
-<article id="settings" class="content-container color_day">
+<article id="settings" class="content-container {{colorTheme}}">
 
     <!-- settings-lists -->
     <section class="settings_section">
@@ -103,6 +103,5 @@
 
 </article>
 
-{% endblock %} {% block postScript %}
 
 {% endblock %}

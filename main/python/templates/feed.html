@@ -1,14 +1,15 @@
-{% extends "main.html" %} {% block main %}
+{% extends "main.html" %}
+{% block main %}
 
 <!-- add new post toolkit -->
-<article class="content-container color_day">
+<article class="content-container {{colorTheme}}">
     <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post"  title="Neuen Textpost hinzufügen">post_add</a></span>
     <span class="material-icons material-icons_xxl"><a href="#" id="show_image_post" title="Neuen Photopost hinzufügen">add_photo_alternate</a></span>
     <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" title="Neuen Videopost hinzufügen">movie_creation</a></span>
 </article>
 
 <!-- new post with text -->
-<article id="text_post" class="content-container color_day">
+<article id="text_post" class="content-container {{colorTheme}}">
 
     <form action="#">
         <label for="fname">Deine Nachricht:</label><br>
@@ -19,7 +20,7 @@
 </article>
 
 <!-- new post with image -->
-<article id="image_post" class="content-container color_day">
+<article id="image_post" class="content-container {{colorTheme}}">
 
     <form action="#">
         <label for="fname">Dein Bild:</label><br>
@@ -30,7 +31,7 @@
 </article>
 
 <!-- new post with video -->
-<article id="video_post" class="content-container color_day">
+<article id="video_post" class="content-container {{colorTheme}}">
 
     <form action="#">
         <label for="fname">Dein Video:</label><br>
@@ -40,16 +41,17 @@
 
 </article>
 
+{% for post in posts %}
 
-
-<!-- example news with text -->
-<article class="content-container color_day">
+<!-- text post -->
+{% if post.type == "text" %}
+<article class="content-container {{colorTheme}}">
 
     <!-- header -->
     <header class="news_headline">
-        <span><img class="news_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
-        <span class="news_author">Lucas Carmohn</span>
-        <span class="news_time">3h ago</span>
+        <span><img class="news_image" src="{{post.avatar}}"></span>
+        <span class="news_author">{{post.author}}</span>
+        <span class="news_time">{{post.time}}</span>
     </header>
 
     <!-- content -->
@@ -65,9 +67,7 @@
             </section>
 
             <!-- post with text -->
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>{{post.text}}</p>
 
         </article>
 
@@ -91,12 +91,14 @@
 
             </article>
 
+            {% for comment in post.comments %}
+
             <!-- comment -->
             <article class="comment read-more-target">
 
                 <!-- toolbar -->
                 <section class="toolbar">
-                    <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                    <span><img class="comment_user_icon" src="{{comment.avatar}}" title="Dummy" alt="Dummy"></span>
 
                     <!-- delete comment -->
                     <span>
@@ -108,54 +110,14 @@
 
                 <!-- comment with text -->
                 <section>
-                    <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    <p>{{comment.text}}</p>
                 </section>
             </article>
 
-            <!-- comment -->
-            <article class="comment read-more-target">
-
-                <!-- toolbar -->
-                <section class="toolbar">
-                    <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                    <!-- delete comment -->
-                    <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                </section>
-
-                <!-- comment with text -->
-                <section>
-                    <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                </section>
-            </article>
-
-
-            <!-- comment -->
-            <article class="comment read-more-target">
-
-                <!-- toolbar -->
-                <section class="toolbar">
-                    <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                    <!-- delete comment -->
-                    <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                </section>
-
-                <!-- comment with text -->
-                <section>
-                    <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                </section>
-            </article>
+            {% endfor %}
 
         </ul>
+
 
         <label for="post-1" class="read-more-trigger material-icons material-icons_xxl"></label>
 
@@ -164,14 +126,17 @@
 
 </article>
 
-<!-- example news with image -->
-<article class="content-container color_day">
+{% endif %}
+
+<!-- image post -->
+{% if post.type == "image" %}
+<article class="content-container {{colorTheme}}">
 
     <!-- header -->
     <header class="news_headline">
-        <span><img class="news_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
-        <span class="news_author">Lucas Carmohn</span>
-        <span class="news_time">3h ago</span>
+        <span><img class="news_image" src="{{post.avatar}}"></span>
+        <span class="news_author">{{post.author}}</span>
+        <span class="news_time">{{post.time}}</span>
     </header>
 
     <article class="news_content">
@@ -184,7 +149,7 @@
         </section>
 
         <!-- post with image -->
-        <img class="news_post_image_video" src="../static/data/images/lcarmohn/dummy.jpg" title="dummy" alt="dummy">
+        <img class="news_post_image_video" src="{{post.photo}}" title="{{post.title}}" alt="{{post.alt}}">
     </article>
 
 
@@ -206,12 +171,14 @@
 
             </article>
 
+            {% for comment in post.comments %}
+
             <!-- comment -->
             <article class="comment read-more-target">
 
                 <!-- toolbar -->
                 <section class="toolbar">
-                    <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                    <span><img class="comment_user_icon" src="{{comment.avatar}}" title="Dummy" alt="Dummy"></span>
 
                     <!-- delete comment -->
                     <span>
@@ -223,52 +190,11 @@
 
                 <!-- comment with text -->
                 <section>
-                    <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    <p>{{comment.text}}</p>
                 </section>
             </article>
 
-            <!-- comment -->
-            <article class="comment read-more-target">
-
-                <!-- toolbar -->
-                <section class="toolbar">
-                    <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                    <!-- delete comment -->
-                    <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                </section>
-
-                <!-- comment with text -->
-                <section>
-                    <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                </section>
-            </article>
-
-
-            <!-- comment -->
-            <article class="comment read-more-target">
-
-                <!-- toolbar -->
-                <section class="toolbar">
-                    <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                    <!-- delete comment -->
-                    <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                </section>
-
-                <!-- comment with text -->
-                <section>
-                    <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                </section>
-            </article>
+            {% endfor %}
 
         </ul>
 
@@ -278,15 +204,17 @@
     </section>
 
 </article>
+{% endif %}
 
-<!-- example news with video -->
-<article class="content-container color_day">
+<!-- video post -->
+{% if post.type == "video" %}
+<article class="content-container {{colorTheme}}">
 
     <!-- header -->
     <header class="news_headline">
-        <span><img class="news_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
-        <span class="news_author">Lucas Carmohn</span>
-        <span class="news_time">3h ago</span>
+        <span><img class="news_image" src="{{post.avatar}}"></span>
+        <span class="news_author">{{post.author}}</span>
+        <span class="news_time">{{post.time}}</span>
     </header>
 
     <!-- content -->
@@ -302,7 +230,7 @@
             </section>
 
             <!-- post with video -->
-            <video class="news_post_image_video" src="../static/data/images/lcarmohn/dummy.mp4" poster="posterimage.jpg">
+            <video class="news_post_image_video" src="{{post.video}}" poster="{{post.poster}}">
                       </video>
         </article>
 
@@ -326,12 +254,14 @@
 
             </article>
 
+            {% for comment in post.comments %}
+
             <!-- comment -->
             <article class="comment read-more-target">
 
                 <!-- toolbar -->
                 <section class="toolbar">
-                    <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                    <span><img class="comment_user_icon" src="{{comment.avatar}}" title="Dummy" alt="Dummy"></span>
 
                     <!-- delete comment -->
                     <span>
@@ -343,52 +273,11 @@
 
                 <!-- comment with text -->
                 <section>
-                    <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    <p>{{comment.text}}</p>
                 </section>
             </article>
 
-            <!-- comment -->
-            <article class="comment read-more-target">
-
-                <!-- toolbar -->
-                <section class="toolbar">
-                    <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                    <!-- delete comment -->
-                    <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                </section>
-
-                <!-- comment with text -->
-                <section>
-                    <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                </section>
-            </article>
-
-
-            <!-- comment -->
-            <article class="comment read-more-target">
-
-                <!-- toolbar -->
-                <section class="toolbar">
-                    <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
-
-                    <!-- delete comment -->
-                    <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                </section>
-
-                <!-- comment with text -->
-                <section>
-                    <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
-                </section>
-            </article>
+            {% endfor %}
 
         </ul>
 
@@ -397,8 +286,11 @@
 
     </section>
 
-</article>
 
-{% endblock %} {% block postScript %}
+
+</article>
+{% endif %}
+
+{% endfor %}
 
 {% endblock %}
