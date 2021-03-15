@@ -11,7 +11,7 @@
 <!-- new post with text -->
 <article id="text_post" class="content-container {{colorTheme}}">
 
-    <form action="#">
+    <form action="/uploadText" method = "post">
         <label for="fname">Deine Nachricht:</label><br>
         <textarea name="message" placeholder="Hier tippen..."></textarea>
         <input class="submit_button" type="submit" value="Posten">
@@ -22,9 +22,9 @@
 <!-- new post with image -->
 <article id="image_post" class="content-container {{colorTheme}}">
 
-    <form action="#">
+    <form action="/uploadImage" method = "post">
         <label for="fname">Dein Bild:</label><br>
-        <input type="file" id="myFile" name="filename" multiple accept="image/*">
+        <input type="file" id="myFile" name="file" multiple accept="image/*">
         <input class="submit_button" type="submit" value="Posten">
     </form>
 
@@ -33,9 +33,9 @@
 <!-- new post with video -->
 <article id="video_post" class="content-container {{colorTheme}}">
 
-    <form action="#">
+    <form action="/uploadVideo" method = "post">
         <label for="fname">Dein Video:</label><br>
-        <input type="file" id="myFile" name="filename" multiple accept="video/*">
+        <input type="file" id="myFile" name="file" multiple accept="video/*">
         <input class="submit_button" type="submit" value="Posten">
     </form>
 
@@ -83,9 +83,10 @@
             <!-- new comment with text -->
             <article class="comment">
 
-                <form action="#" class="add_comment">
+                <form action="/addComment" method = "post" class="add_comment">
                     <label for="fname">Kommentar:</label><br>
                     <textarea name="message" placeholder="Hier tippen..."></textarea>
+                    <input type="hidden" name="postId" value="{{post.id}}">
                     <input class="submit_button" type="submit" value="Posten">
                 </form>
 
@@ -163,9 +164,10 @@
             <!-- new comment with text -->
             <article class="comment">
 
-                <form action="#" class="add_comment">
+                <form action="/addComment" method = "post" class="add_comment">
                     <label for="fname">Kommentar:</label><br>
                     <textarea name="message" placeholder="Hier tippen..."></textarea>
+                    <input type="hidden" name="postId" value="{{post.id}}">
                     <input class="submit_button" type="submit" value="Posten">
                 </form>
 
@@ -246,9 +248,10 @@
             <!-- new comment with text -->
             <article class="comment">
 
-                <form action="#" class="add_comment">
+                <form action="/addComment" method = "post" class="add_comment">
                     <label for="fname">Kommentar:</label><br>
                     <textarea name="message" placeholder="Hier tippen..."></textarea>
+                    <input type="hidden" name="postId" value="{{post.id}}">
                     <input class="submit_button" type="submit" value="Posten">
                 </form>
 

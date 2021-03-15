@@ -1,38 +1,86 @@
-from flask import Flask, render_template, request, Markup
-from SocialNetwork import PostsReader, Comment
+import os
+from flask import Flask, render_template, request, Markup, redirect, url_for, flash
+from werkzeug.utils import secure_filename
+from SocialNetwork import TextPost, PhotoPost, VideoPost, PostsReader, Comment
+
+
+UPLOAD_FOLDER = '../static/data/images/mdecken'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
-
-#Setup blow just for testing!!! (placeholder post and comments)
-reader = PostsReader()
-posts = reader.readPosts()
-posts[0].addComment(Comment("../static/data/images/lcarmohn/img_avatar.png", "name", "Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?"))
-posts[0].addComment(Comment("../static/data/images/lcarmohn/img_avatar.png", "name", "Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?"))
-posts[0].addComment(Comment("../static/data/images/lcarmohn/img_avatar.png", "name", "Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?"))
-
-posts[1].addComment(Comment("../static/data/images/lcarmohn/img_avatar.png", "name", "Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?"))
-posts[1].addComment(Comment("../static/data/images/lcarmohn/img_avatar.png", "name", "Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?"))
-posts[1].addComment(Comment("../static/data/images/lcarmohn/img_avatar.png", "name", "Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?"))
-
-posts[2].addComment(Comment("../static/data/images/lcarmohn/img_avatar.png", "name", "Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?"))
-posts[2].addComment(Comment("../static/data/images/lcarmohn/img_avatar.png", "name", "Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?"))
-posts[2].addComment(Comment("../static/data/images/lcarmohn/img_avatar.png", "name", "Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?"))
-#end test setup
 
 
 #change the color theme here "color_day" or "color_night"
 colorTheme = "color_day"
 #colorTheme = "color_night"
 
+currentUser = "Max Decken"
+currentUserName ="mdecken"
+
+
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @app.route('/')
 def start():
     return render_template("login.html", colorTheme=colorTheme)
 
-@app.route('/feed')
+@app.route('/feed', methods = ['POST', 'GET'])
 def feed():
+    reader = PostsReader()
+    posts = reader.readPosts()
+    #posts.reverse()
+
     title = "Feed"
     return render_template("feed.html", title=title, posts=posts, colorTheme=colorTheme)
+
+@app.route('/uploadText', methods = ['POST', 'GET'])
+def uploadText():
+    if request.method == 'POST':
+        message = request.form["message"]
+        reader = PostsReader()
+        reader.addPost(TextPost("text", currentUser, "../static/data/images/lcarmohn/img_avatar.png", "3h ago", message))
+        return redirect("/feed")
+
+@app.route('/uploadImage', methods = ['POST', 'GET'])
+def uploadImage():
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit an empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect("/feed")
+
+
+@app.route('/uploadVideo', methods=['POST', 'GET'])
+def uploadVideo():
+    return
+
+@app.route('/addComment', methods=['POST', 'GET'])
+def addComment():
+    if request.method == 'POST':
+        postID = request.form["postId"]
+        message = request.form["message"]
+        print(postID, message)
+    else:
+        postID = request.args.get('postId')
+        message = request.args.get("message")
+        return redirect(url_for('success', name=user))
+    reader = PostsReader()
+    id = reader.lenComments() + 1
+    reader.addComment(Comment(id, postID, "../static/data/images/lcarmohn/img_avatar.png", currentUser, message))
+    return redirect("/feed")
 
 @app.route('/profile')
 def profile():
