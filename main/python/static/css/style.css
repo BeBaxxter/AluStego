@@ -93,6 +93,7 @@ p {
 .news_author {
     padding-right: 2px;
     padding-left: 2px;
+    font-size: 26px;
 }
 
 textarea {
@@ -262,6 +263,40 @@ textarea {
 
 .show {
     display: block;
+}
+
+hr {
+    background: #fff;
+    height: 4px;
+    border: none;
+    border-radius: 4px;
+    width: 60%;
+    display: inline-block;
+}
+
+#profile_header {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#profile_quote {
+    top: 13%;
+    position: fixed;
+    right: 58%;
+}
+
+#profile_caption {
+    width: 55%;
+    display: inline-block;
+}
+
+#profile_town {
+    font-size: 18px;
+}
+
+#profile_location {
+    left: 44%;
+    position: absolute;
 }
 
 
