@@ -4,6 +4,7 @@ Datenschutzerklärung
 Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:
 
 Lucas Carmohn
+spacedev@tuta.io
 
 Ihre Betroffenenrechte
 ----------------------
@@ -120,6 +121,7 @@ Legen Sie Widerspruch ein, werden wir Ihre personenbezogenen Daten nicht mehr ve
 ### Empfänger eines Widerspruchs
 
 Lucas Carmohn
+spacedev@tuta.io
 
 * * *
 
@@ -132,5 +134,8 @@ Fragen an den Datenschutzbeauftragten
 -------------------------------------
 
 Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die für den Datenschutz verantwortliche Person in unserer Organisation:
+
+Lucas Carmohn
+spacedev@tuta.io
 
 _Die Datenschutzerklärung wurde mithilfe der activeMind AG erstellt, den Experten für [externe Datenschutzbeauftragte](https://www.activemind.de/datenschutz/datenschutzbeauftragter/) (Version #2020-09-30)._
