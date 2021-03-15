@@ -78,12 +78,250 @@
 </script>
 
 <!-- newslist -->
-<article id="newslist" class="content-container {{colorTheme}}">
+<article id="newslist">
+
+    <!-- example news with text -->
+    <article class="content-container color_day">
+
+        <!-- header -->
+        <header class="news_headline">
+            <span><img class="news_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
+            <span class="news_author">Lucas Carmohn</span>
+            <span class="news_time">3h ago</span>
+        </header>
+
+        <!-- content -->
+        <section class="news_signle">
+
+            <article class="news_content">
+
+                <!-- toolbar -->
+                <section class="toolbar">
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                </section>
+
+                <!-- post with text -->
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+            </article>
+
+        </section>
+
+        <!-- comments -->
+        <section class="news_comment">
+
+            <input type="checkbox" class="read-more-state" id="post-1" />
+
+            <ul class="comment_list read-more-wrap">
+
+                <!-- new comment with text -->
+                <article class="comment">
+
+                    <form action="#" class="add_comment">
+                        <label for="fname">Kommentar:</label><br>
+                        <textarea name="message" placeholder="Hier tippen..."></textarea>
+                        <input class="submit_button" type="submit" value="Posten">
+                    </form>
+
+                </article>
+
+                <!-- comment -->
+                <article class="comment read-more-target">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
+                </article>
+
+                <!-- comment -->
+                <article class="comment read-more-target">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
+                </article>
 
 
-    <!-- todo -->
+                <!-- comment -->
+                <article class="comment read-more-target">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                                <a href="# " title="default ">
+                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                </a>
+                            </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
+                </article>
+
+            </ul>
+
+            <label for="post-1" class="read-more-trigger material-icons material-icons_xxl"></label>
 
 
+        </section>
+
+    </article>
+    <!-- example news with text -->
+    <article class="content-container color_day">
+
+        <!-- header -->
+        <header class="news_headline">
+            <span><img class="news_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
+            <span class="news_author">Lucas Carmohn</span>
+            <span class="news_time">3h ago</span>
+        </header>
+
+        <!-- content -->
+        <section class="news_signle">
+
+            <article class="news_content">
+
+                <!-- toolbar -->
+                <section class="toolbar">
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                </section>
+
+                <!-- post with text -->
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+            </article>
+
+        </section>
+
+        <!-- comments -->
+        <section class="news_comment">
+
+            <input type="checkbox" class="read-more-state" id="post-1" />
+
+            <ul class="comment_list read-more-wrap">
+
+                <!-- new comment with text -->
+                <article class="comment">
+
+                    <form action="#" class="add_comment">
+                        <label for="fname">Kommentar:</label><br>
+                        <textarea name="message" placeholder="Hier tippen..."></textarea>
+                        <input class="submit_button" type="submit" value="Posten">
+                    </form>
+
+                </article>
+
+                <!-- comment -->
+                <article class="comment read-more-target">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                                        <a href="# " title="default ">
+                                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                        </a>
+                                    </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
+                </article>
+
+                <!-- comment -->
+                <article class="comment read-more-target">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                                        <a href="# " title="default ">
+                                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                        </a>
+                                    </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
+                </article>
+
+
+                <!-- comment -->
+                <article class="comment read-more-target">
+
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="../static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span>
+                                        <a href="# " title="default ">
+                                            <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
+                                        </a>
+                                    </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                    </section>
+                </article>
+
+            </ul>
+
+            <label for="post-1" class="read-more-trigger material-icons material-icons_xxl"></label>
+
+
+        </section>
+
+    </article>
 
 </article>
 
