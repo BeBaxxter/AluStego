@@ -3,7 +3,7 @@ Datenschutzerklärung
 
 Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:
 
-Max
+Lucas Carmohn
 
 Ihre Betroffenenrechte
 ----------------------
@@ -119,7 +119,7 @@ Legen Sie Widerspruch ein, werden wir Ihre personenbezogenen Daten nicht mehr ve
 
 ### Empfänger eines Widerspruchs
 
-Max
+Lucas Carmohn
 
 * * *
 
