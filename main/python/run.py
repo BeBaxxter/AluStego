@@ -12,7 +12,8 @@ colorTheme = "color_day"
 currentUser = "Max Decken"
 currentUserName ="mdecken"
 
-
+app.config["IMAGE_UPLOADS"] = "D:/Git_Projects/AluStego/main/python/static/data/uploads/"
+app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG", "GIF"]
 
 
 @app.route('/')
@@ -42,7 +43,13 @@ def uploadImage():
         if request.files:
             image = request.files["image"]
             print(image)
-    return redirect("/feed")
+            path = image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
+            reader = PostsReader()
+            id = reader.lenPosts() + 1
+            alt = str(image.filename)
+            title = "Posted by " + currentUser
+            reader.addPost(PhotoPost(id, "image", currentUser, "../static/data/images/lcarmohn/img_avatar.png", "3h ago", path, alt, title))
+            return redirect("/feed")
 
 
 
@@ -55,7 +62,6 @@ def addComment():
     if request.method == 'POST':
         postID = request.form["postId"]
         message = request.form["message"]
-        print(postID, message)
     reader = PostsReader()
     id = reader.lenComments() + 1
     reader.addComment(Comment(id, postID, "../static/data/images/lcarmohn/img_avatar.png", currentUserName, message))
