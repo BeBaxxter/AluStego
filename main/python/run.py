@@ -41,7 +41,8 @@ def uploadText():
     if request.method == 'POST':
         message = request.form["message"]
         reader = PostsReader()
-        reader.addPost(TextPost("text", currentUser, "../static/data/images/lcarmohn/img_avatar.png", "3h ago", message))
+        id = reader.lenPosts() + 1
+        reader.addPost(TextPost(id, "text", currentUser, "../static/data/images/lcarmohn/img_avatar.png", "3h ago", message))
         return redirect("/feed")
 
 @app.route('/uploadImage', methods = ['POST', 'GET'])

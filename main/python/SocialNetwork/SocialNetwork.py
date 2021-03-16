@@ -32,7 +32,16 @@ class PostsReader():
         with open('testPosts.csv', 'a', newline='') as csvfile:
             writer = csv.writer(csvfile, delimiter=';',
                                     quotechar='"', quoting=csv.QUOTE_MINIMAL)
-            writer.writerow([post.type, post.author, post.avatar, post.time, post.text])
+            writer.writerow([post.id, post.type, post.author, post.avatar, post.time, post.text])
+
+    def lenPosts(self):
+        with open('testPosts.csv', "r", newline='') as csvfile:
+            reader = csv.reader(csvfile, delimiter=';', quotechar='"')
+            i = 0
+            for row in reader:
+                i = i + 1
+
+        return i
 
     def readComments(self):
         comments = []
