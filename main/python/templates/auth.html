@@ -5,24 +5,38 @@
 
     <!-- header -->
     <header class="head_box">
-        <h1>Welchome!</h1>
-        <img id="profile_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
+        <h1>Willkommen!</h1>
+        <img id="login_logo" src="../static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
     </header>
 
     <!-- login / signup switch -->
     <section class="mid_box">
-        <ul class="">
-            <li><a href="#" id="show_login">Login</a></li>
-            <li><a href="#" id="show_register">Signup</a></li>
-            <li><a href="#" id="show_pwv">Passwort vergessen</a></li>
+        <ul id="login_selection">
+            <li>
+                <a href="#" id="show_login">
+                    <label class="button_label color_day font_d_n">Anmelden</label>
+                    <span class="material-icons color_day font_d_n right_icon">login</span>
+                </a>
+            </li><br>
+            <li>
+                <a href="#" id="show_register">
+                    <label class="button_label color_day font_d_n">Registrieren</label>
+                    <span class="material-icons color_day font_d_n right_icon">add</span>
+                </a>
+            </li><br>
+            <li>
+                <a href="#" id="show_pwv">
+                    <label class="button_label color_day font_d_n">Passwort vergessen</label>
+                    <span class="material-icons color_day font_d_n right_icon">password</span>
+                </a>
         </ul>
     </section>
 
 
     <!-- footer -->
     <section class="bottom_box">
-        <a href="#">About</a> |
-        <a href="https://github.com/BeBaxxter/AluStego/blob/main/Impressum.md" target="_blank">Impressum</a>
+        <a href="https://github.com/BeBaxxter/AluStego/blob/main/README.md" title="Über uns" target="_blank">Über uns</a> |
+        <a href="https://github.com/BeBaxxter/AluStego/blob/main/Impressum.md" title="Impressum" target="_blank">Impressum</a>
     </section>
 </article>
 
@@ -31,20 +45,20 @@
 
     <!-- header -->
     <header class="head_box">
-        <h1>Welchome!</h1>
-        <h3>Login!</h3>
+        <h1>Willkommen!</h1>
+        <h3>Anmelden:</h3>
     </header>
 
     <!-- login -->
     <section class="mid_box">
         <form action="#">
-            <label for="lun">Username:</label><br>
-            <input type="text" id="lun" name="lun" placeholder="Username"><br>
+            <label class="auth_label" for="lun">Nutzername:</label><br>
+            <input class="auth_label input" type="text" id="lun" name="lun"><br>
 
-            <label for="lpw">Passwort:</label><br>
-            <input type="text" id="lpw" name="lpw" placeholder="Passwort"><br>
+            <label class="auth_label" for="lpw">Passwort:</label><br>
+            <input class="auth_label input" type="text" id="lpw" name="lpw"><br>
 
-            <input class="" type="submit" value="Anmelden">
+            <input class="submit_button" type="submit" value="Anmelden">
         </form>
     </section>
 
@@ -55,23 +69,23 @@
 
     <!-- header -->
     <header class="head_box">
-        <h1>Welchome!</h1>
+        <h1>Willkommen!</h1>
         <h3>Registrieren</h3>
     </header>
 
     <!-- register -->
     <section class="mid_box">
         <form action="#">
-            <label for="run">Username:</label><br>
-            <input type="text" id="run" name="run" placeholder="Username"><br>
+            <label class="auth_label" for="run">Nutzername:</label><br>
+            <input class="auth_label input" type="text" id="run" name="run"><br>
 
-            <label for="rem">E-Mail:</label><br>
-            <input type="email" id="rem" name="rem" placeholder="E-Mail"><br>
+            <label class="auth_label" for="rem">E-Mail:</label><br>
+            <input class="auth_label input" type="email" id="rem" name="rem"><br>
 
-            <label for="rpw">Passwort:</label><br>
-            <input type="text" id="rpw" name="rpw" placeholder="Passwort"><br>
+            <label class="auth_label" for="rpw">Passwort:</label><br>
+            <input class="auth_label input" type="text" id="rpw" name="rpw"><br>
 
-            <input class="" type="submit" value="Registrieren">
+            <input class="submit_button" type="submit" value="Registrieren">
         </form>
     </section>
 
@@ -82,20 +96,20 @@
 
     <!-- header -->
     <header class="head_box">
-        <h1>Welchome!</h1>
+        <h1>Willkommen!</h1>
         <h3>Passwort vergessen</h3>
     </header>
 
     <!-- passwortV -->
     <section class="mid_box">
         <form action="#">
-            <label for="pvun">Username:</label><br>
-            <input type="text" id="pvun" name="pvun" placeholder="Username"><br>
+            <label class="auth_label" for="pvun">Nutzername:</label><br>
+            <input class="auth_label input" type="text" id="pvun" name="pvun"><br>
 
-            <label for="pvem">E-Mail:</label><br>
-            <input type="email" id="pvem" name="pvem" placeholder="E-Mail"><br>
+            <label class="auth_label" for="pvem">E-Mail:</label><br>
+            <input class="auth_label input" type="email" id="pvem" name="pvem"><br>
 
-            <input class="" type="submit" value="Passwort vergessen">
+            <input class="submit_button" type="submit" value="Passwort vergessen">
         </form>
     </section>
 

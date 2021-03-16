@@ -358,6 +358,28 @@ hr {
     position: absolute;
 }
 
+.auth_label {
+    width: 100%;
+    display: inline-flex;
+    margin-bottom: 15px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+.input {
+    background: none;
+    border: none;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-bottom: 3px solid #fff;
+    font-size: 15px;
+    color: #fff;
+}
+
+.input:focus {
+    outline: none;
+}
+
 
 /** back to top button **/
 
