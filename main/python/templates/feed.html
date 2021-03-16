@@ -21,9 +21,9 @@
 <!-- new post with image -->
 <article id="image_post" class="content-container {{colorTheme}}">
 
-    <form action="/uploadImage" method="post">
+    <form action="/uploadImage" method="post" enctype="multipart/form-data">
         <label for="myimage">Dein Bild:</label><br>
-        <input type="file" id="myimage" name="file" multiple accept="image/*">
+        <input type="file" id="myimage" name="image" multiple accept="image/*">
         <input class="submit_button" type="submit" value="Posten">
     </form>
 
@@ -32,9 +32,9 @@
 <!-- new post with video -->
 <article id="video_post" class="content-container {{colorTheme}}">
 
-    <form action="/uploadVideo" method="post">
+    <form action="/uploadVideo" method="post" enctype="multipart/form-data">
         <label for="myvideo">Dein Video:</label><br>
-        <input type="file" id="myvideo" name="file" multiple accept="video/*">
+        <input type="file" id="myvideo" name="video" multiple accept="video/*">
         <input class="submit_button" type="submit" value="Posten">
     </form>
 

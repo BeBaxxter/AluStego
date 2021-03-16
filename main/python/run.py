@@ -1,14 +1,9 @@
 import os
-from flask import Flask, render_template, request, Markup, redirect, url_for, flash
-from werkzeug.utils import secure_filename
+from flask import Flask, render_template, request, Markup, redirect
 from SocialNetwork import TextPost, PhotoPost, VideoPost, PostsReader, Comment
 
 
-UPLOAD_FOLDER = '../static/data/images/mdecken'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-
 app = Flask(__name__)
-
 
 #change the color theme here "color_day" or "color_night"
 colorTheme = "color_day"
@@ -18,9 +13,6 @@ currentUser = "Max Decken"
 currentUserName ="mdecken"
 
 
-
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @app.route('/')
@@ -47,20 +39,11 @@ def uploadText():
 @app.route('/uploadImage', methods = ['POST', 'GET'])
 def uploadImage():
     if request.method == 'POST':
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            flash('No file part')
-            return redirect(request.url)
-        file = request.files['file']
-        # if user does not select file, browser also
-        # submit an empty part without filename
-        if file.filename == '':
-            flash('No selected file')
-            return redirect(request.url)
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect("/feed")
+        if request.files:
+            image = request.files["image"]
+            print(image)
+    return redirect("/feed")
+
 
 
 @app.route('/uploadVideo', methods=['POST', 'GET'])
@@ -88,6 +71,5 @@ def chats():
     title = "Chats"
     return render_template('chats.html', title=title, colorTheme=colorTheme)
 
-@app.route('/test')
-def test():
-    return posts[0].author
+if __name__ == "__main__":
+  app.run()
