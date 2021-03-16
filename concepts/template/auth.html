@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../main/python/static/css/night_skin.css">
     <link rel="stylesheet" href="../../main/python/static/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Core template</title>
+    <title>Auth</title>
 </head>
 
 <body>
@@ -28,23 +28,37 @@
             <!-- header -->
             <header class="head_box">
                 <h1>Welchome!</h1>
-                <img id="profile_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
+                <img id="login_logo" src="../../main/python/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
             </header>
 
             <!-- login / signup switch -->
             <section class="mid_box">
-                <ul class="">
-                    <li><a href="#" id="show_login">Login</a></li>
-                    <li><a href="#" id="show_register">Signup</a></li>
-                    <li><a href="#" id="show_pwv">Passwort vergessen</a></li>
+                <ul id="login_selection">
+                    <li>
+                        <a href="#" id="show_login">
+                            <label class="button_label color_day font_d_n">Anmelden</label>
+                            <span class="material-icons color_day font_d_n right_icon">login</span>
+                        </a>
+                    </li><br>
+                    <li>
+                        <a href="#" id="show_register">
+                            <label class="button_label color_day font_d_n">Registrieren</label>
+                            <span class="material-icons color_day font_d_n right_icon">add</span>
+                        </a>
+                    </li><br>
+                    <li>
+                        <a href="#" id="show_pwv">
+                            <label class="button_label color_day font_d_n">Passwort vergessen</label>
+                            <span class="material-icons color_day font_d_n right_icon">password</span>
+                        </a>
                 </ul>
             </section>
 
 
             <!-- footer -->
             <section class="bottom_box">
-                <a href="#">About</a> |
-                <a href="https://github.com/BeBaxxter/AluStego/blob/main/Impressum.md" target="_blank">Impressum</a>
+                <a href="https://github.com/BeBaxxter/AluStego/blob/main/README.md" title="Über uns" target="_blank">Über uns</a> |
+                <a href="https://github.com/BeBaxxter/AluStego/blob/main/Impressum.md" title="Impressum" target="_blank">Impressum</a>
             </section>
         </article>
 

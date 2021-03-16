@@ -13,7 +13,11 @@
     color: #fff;
 }
 
-.color_night_comments {
+.color_night .comment {
     background-color: #fff;
+    color: #49798C;
+}
+
+.color_night .font_d_n {
     color: #49798C;
 }

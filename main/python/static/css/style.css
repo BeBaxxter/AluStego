@@ -300,7 +300,63 @@ hr {
 }
 
 
-/** chats **/
+/** login / register **/
+
+.mid_box {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.bottom_box {
+    font-size: 11px;
+}
+
+#login_logo {
+    border-radius: 50%;
+    width: 30%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#login_selection {
+    list-style: none;
+    padding-left: 0px;
+}
+
+#login_selection li {
+    display: inline-block;
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#login_selection li a {
+    width: 100%;
+    display: inline-flex;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    font-size: 18px;
+}
+
+.button_label {
+    cursor: pointer;
+}
+
+.right_icon {
+    right: 17%;
+    position: absolute;
+}
 
 
 /** back to top button **/
