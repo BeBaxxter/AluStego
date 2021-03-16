@@ -42,8 +42,7 @@
 
 {% for post in posts %}
 
-<!-- text post -->
-{% if post.type == "text" %}
+
 <article class="content-container {{colorTheme}}">
 
     <!-- header -->
@@ -65,8 +64,23 @@
                 <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
             </section>
 
+            <!-- text post -->
+            {% if post.type == "text" %}
             <!-- post with text -->
             <p>{{post.text}}</p>
+            {% endif %}
+            <!-- image post -->
+            {% if post.type == "image" %}
+            <!-- post with image -->
+            <img class="news_post_image_video" src="{{post.photo}}" title="{{post.title}}" alt="{{post.alt}}">
+            {% endif %}
+
+            <!-- video post -->
+            {% if post.type == "video" %}
+            <!-- post with video -->
+            <video class="news_post_image_video" src="{{post.video}}" poster="{{post.poster}}">
+                      </video>
+            {% endif %}
 
         </article>
 
@@ -126,169 +140,5 @@
 
 </article>
 
-{% endif %}
-
-<!-- image post -->
-{% if post.type == "image" %}
-<article class="content-container {{colorTheme}}">
-
-    <!-- header -->
-    <header class="news_headline">
-        <span><img class="news_image" src="{{post.avatar}}"></span>
-        <span class="news_author">{{post.author}}</span>
-        <span class="news_time">{{post.time}}</span>
-    </header>
-
-    <article class="news_content">
-
-        <!-- toolbar -->
-        <section class="toolbar">
-            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
-            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-        </section>
-
-        <!-- post with image -->
-        <img class="news_post_image_video" src="{{post.photo}}" title="{{post.title}}" alt="{{post.alt}}">
-    </article>
-
-
-    <!-- comments -->
-    <section class="news_comment">
-
-        <input type="checkbox" class="read-more-state" id="post-2" />
-
-        <ul class="comment_list read-more-wrap">
-
-            <!-- new comment with text -->
-            <article class="comment">
-
-                <form action="/addComment" method="post" class="add_comment">
-                    <label>Kommentar:</label><br>
-                    <textarea name="message" placeholder="Hier tippen..."></textarea>
-                    <input type="hidden" name="postId" value="{{post.id}}">
-                    <input class="submit_button" type="submit" value="Posten">
-                </form>
-
-            </article>
-
-            {% for comment in post.comments %}
-
-            <!-- comment -->
-            <article class="comment read-more-target">
-
-                <!-- toolbar -->
-                <section class="toolbar">
-                    <span><img class="comment_user_icon" src="{{comment.avatar}}" title="Dummy" alt="Dummy"></span>
-
-                    <!-- delete comment -->
-                    <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                </section>
-
-                <!-- comment with text -->
-                <section>
-                    <p>{{comment.text}}</p>
-                </section>
-            </article>
-
-            {% endfor %}
-
-        </ul>
-
-        <label for="post-2" class="read-more-trigger material-icons material-icons_xxl"></label>
-
-
-    </section>
-
-</article>
-{% endif %}
-
-<!-- video post -->
-{% if post.type == "video" %}
-<article class="content-container {{colorTheme}}">
-
-    <!-- header -->
-    <header class="news_headline">
-        <span><img class="news_image" src="{{post.avatar}}"></span>
-        <span class="news_author">{{post.author}}</span>
-        <span class="news_time">{{post.time}}</span>
-    </header>
-
-    <!-- content -->
-    <section class="news_signle">
-
-        <article class="news_content">
-
-            <!-- toolbar -->
-            <section class="toolbar">
-                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
-                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-            </section>
-
-            <!-- post with video -->
-            <video class="news_post_image_video" src="{{post.video}}" poster="{{post.poster}}">
-                      </video>
-        </article>
-
-    </section>
-
-    <!-- comments -->
-    <section class="news_comment">
-
-        <input type="checkbox" class="read-more-state" id="post-3" />
-
-        <ul class="comment_list read-more-wrap">
-
-            <!-- new comment with text -->
-            <article class="comment">
-
-                <form action="/addComment" method="post" class="add_comment">
-                    <label>Kommentar:</label><br>
-                    <textarea name="message" placeholder="Hier tippen..."></textarea>
-                    <input type="hidden" name="postId" value="{{post.id}}">
-                    <input class="submit_button" type="submit" value="Posten">
-                </form>
-
-            </article>
-
-            {% for comment in post.comments %}
-
-            <!-- comment -->
-            <article class="comment read-more-target">
-
-                <!-- toolbar -->
-                <section class="toolbar">
-                    <span><img class="comment_user_icon" src="{{comment.avatar}}" title="Dummy" alt="Dummy"></span>
-
-                    <!-- delete comment -->
-                    <span>
-                                <a href="# " title="default ">
-                                    <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
-                                </a>
-                            </span>
-                </section>
-
-                <!-- comment with text -->
-                <section>
-                    <p>{{comment.text}}</p>
-                </section>
-            </article>
-
-            {% endfor %}
-
-        </ul>
-
-        <label for="post-3" class="read-more-trigger material-icons material-icons_xxl"></label>
-
-
-    </section>
-
-
-
-</article>
-{% endif %} {% endfor %} {% endblock %}
+{% endfor %}
+{% endblock %}
