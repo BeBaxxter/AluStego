@@ -31,7 +31,6 @@ def start():
 def feed():
     reader = PostsReader()
     posts = reader.readPosts()
-    #posts.reverse()
 
     title = "Feed"
     return render_template("feed.html", title=title, posts=posts, colorTheme=colorTheme)
@@ -74,13 +73,9 @@ def addComment():
         postID = request.form["postId"]
         message = request.form["message"]
         print(postID, message)
-    else:
-        postID = request.args.get('postId')
-        message = request.args.get("message")
-        return redirect(url_for('success', name=user))
     reader = PostsReader()
     id = reader.lenComments() + 1
-    reader.addComment(Comment(id, postID, "../static/data/images/lcarmohn/img_avatar.png", currentUser, message))
+    reader.addComment(Comment(id, postID, "../static/data/images/lcarmohn/img_avatar.png", currentUserName, message))
     return redirect("/feed")
 
 @app.route('/profile')
