@@ -1,0 +1,23 @@
+.color_night {
+    background: #49798C;
+    color: #fff;
+}
+
+.color_night a:link {
+    color: #fff;
+}
+
+.color_night a:visited {
+    background-color: transparent;
+    text-decoration: none;
+    color: #fff;
+}
+
+.color_night .comment {
+    background-color: #fff;
+    color: #49798C;
+}
+
+.color_night .font_d_n {
+    color: #49798C;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/css/icons/favicon.ico">
+    <link rel="stylesheet" href="../static/css/day_skin.css">
+    <link rel="stylesheet" href="../static/css/night_skin.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>{{title}}</title>
+</head>
+
+<body>
+
+    <!-- back to top button -->
+    <button class="color_day" onclick="topFunction()" id="goTopButton" title="Go to top"><label class="material-icons material-icons_xxl" id="expandless">expand_less</label></button>
+
+    <!-- javascript box / DONT TOUCH -->
+    <script src="../static/js/query.min.js"></script>
+    <script src="../static/js/functions.js"></script>
+    <!-- / javascript box / DONT TOUCH -->
+
+    <!-- structure-container -->
+    <main id="wrapper">
+
+
+        <!-- navigation -->
+        <nav id="navigation" class="{{colorTheme}}">
+            <ul class="menu">
+                <li class="nav-btn"><a href="/profile">Profil</a></li> /
+                <li class="nav-btn active article_arrow"><a href="/feed">Feed</a></li> /
+                <li class="nav-btn"><a href="/chats">Chats</a></li>
+            </ul>
+        </nav>
+
+        {% block main %} {% endblock %}
+
+    </main>
+</body>
+
+</html>
