@@ -9,16 +9,19 @@
     <link rel="stylesheet" href="../../main/python/static/css/night_skin.css">
     <link rel="stylesheet" href="../../main/python/static/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Profile example</title>
+    <title>Profile</title>
 </head>
 
 <body>
     <!-- back to top button -->
-    <button onclick="topFunction()" id="goTopButton" title="Go to top">Top</button>
+    <button class="color_day" onclick="topFunction()" id="goTopButton" title="Go to top"><label class="material-icons material-icons_xxl" id="expandless">expand_less</label></button>
 
     <!-- javascript box / DONT TOUCH -->
     <script src="../../main/python/static/js/query.min.js"></script>
-    <script src="../../main/python/static/js/main.js"></script>
+    <script src="../../main/python/static/js/functions.js"></script>
+    <script type="text/javascript">
+        profile_selection();
+    </script>
     <!-- / javascript box / DONT TOUCH -->
 
     <!-- structure-container -->
@@ -26,10 +29,16 @@
         <nav id="navigation" class="color_day">
             <ul class="menu">
                 <li class="nav-btn"><a href="profile.html">Profil</a></li> /
-                <li class="nav-btn active article_arrow"><a href="news.html">News</a></li> /
+                <li class="nav-btn active article_arrow"><a href="feed.html">feed</a></li> /
                 <li class="nav-btn"><a href="auth.html">Chats</a></li>
             </ul>
         </nav>
+
+        <!-- call profile switch -->
+        <script type="text/javascript">
+            profile_selection();
+        </script>
+
 
         <!-- profile -->
         <article class="content-container color_day article_arrow">
@@ -45,7 +54,7 @@
                 <img id="profile_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
 
                 <section>
-                    <span class="news_author">Lucas Carmohn</span>
+                    <span class="feed_author">Lucas Carmohn</span>
                 </section>
 
                 <section>
@@ -108,23 +117,23 @@
         <script>
         </script>
 
-        <!-- newslist -->
-        <article id="newslist">
+        <!-- feedlist -->
+        <article id="feedlist">
 
-            <!-- example news with text -->
+            <!-- example feed with text -->
             <article class="content-container color_day article_arrow">
 
                 <!-- header -->
-                <header class="news_headline">
-                    <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span class="news_time">3h ago</span>
+                <header class="feed_headline">
+                    <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                    <span class="feed_author">Lucas Carmohn</span>
+                    <span class="feed_time">3h ago</span>
                 </header>
 
                 <!-- content -->
-                <section class="news_signle">
+                <section class="feed_signle">
 
-                    <article class="news_content">
+                    <article class="feed_content">
 
                         <!-- toolbar -->
                         <section class="toolbar">
@@ -143,7 +152,7 @@
                 </section>
 
                 <!-- comments -->
-                <section class="news_comment">
+                <section class="feed_comment">
 
                     <input type="checkbox" class="read-more-state" id="post-1" />
 
@@ -232,20 +241,20 @@
                 </section>
 
             </article>
-            <!-- example news with text -->
+            <!-- example feed with text -->
             <article class="content-container color_day">
 
                 <!-- header -->
-                <header class="news_headline">
-                    <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                    <span class="news_author">Lucas Carmohn</span>
-                    <span class="news_time">3h ago</span>
+                <header class="feed_headline">
+                    <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                    <span class="feed_author">Lucas Carmohn</span>
+                    <span class="feed_time">3h ago</span>
                 </header>
 
                 <!-- content -->
-                <section class="news_signle">
+                <section class="feed_signle">
 
-                    <article class="news_content">
+                    <article class="feed_content">
 
                         <!-- toolbar -->
                         <section class="toolbar">
@@ -264,7 +273,7 @@
                 </section>
 
                 <!-- comments -->
-                <section class="news_comment">
+                <section class="feed_comment">
 
                     <input type="checkbox" class="read-more-state" id="post-1" />
 

@@ -1,5 +1,10 @@
 {% extends "main.html" %} {% block main %}
 
+<!-- call feed switch -->
+<script type="text/javascript">
+    feed_selection();
+</script>
+
 <!-- add new post toolkit -->
 <article class="content-container {{colorTheme}} article_arrow">
     <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post"  title="Neuen Textpost hinzufügen">post_add</a></span>
@@ -46,16 +51,16 @@
 <article class="content-container {{colorTheme}} article_arrow">
 
     <!-- header -->
-    <header class="news_headline">
-        <span><img class="news_image" src="{{post.avatar}}"></span>
-        <span class="news_author">{{post.author}}</span>
-        <span class="news_time">{{post.time}}</span>
+    <header class="feed_headline">
+        <span><img class="feed_image" src="{{post.avatar}}"></span>
+        <span class="feed_author">{{post.author}}</span>
+        <span class="feed_time">{{post.time}}</span>
     </header>
 
     <!-- content -->
-    <section class="news_signle">
+    <section class="feed_signle">
 
-        <article class="news_content">
+        <article class="feed_content">
 
             <!-- toolbar -->
             <section class="toolbar">
@@ -72,22 +77,20 @@
             <!-- image post -->
             {% if post.type == "image" %}
             <!-- post with image -->
-            <img class="news_post_image_video" src="{{post.photo}}" title="{{post.title}}" alt="{{post.alt}}">
-            {% endif %}
+            <img class="feed_post_image_video" src="{{post.photo}}" title="{{post.title}}" alt="{{post.alt}}"> {% endif %}
 
             <!-- video post -->
             {% if post.type == "video" %}
             <!-- post with video -->
-            <video class="news_post_image_video" src="{{post.video}}" poster="{{post.poster}}">
-                      </video>
-            {% endif %}
+            <video class="feed_post_image_video" src="{{post.video}}" poster="{{post.poster}}">
+                      </video> {% endif %}
 
         </article>
 
     </section>
 
     <!-- comments -->
-    <section class="news_comment">
+    <section class="feed_comment">
 
         <input type="checkbox" class="read-more-state" id="post-1" />
 
@@ -140,5 +143,4 @@
 
 </article>
 
-{% endfor %}
-{% endblock %}
+{% endfor %} {% endblock %}

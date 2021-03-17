@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../main/python/static/css/night_skin.css">
     <link rel="stylesheet" href="../../main/python/static/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>News template</title>
+    <title>Feed</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 
     <!-- javascript box / DONT TOUCH -->
     <script src="../../main/python/static/js/query.min.js"></script>
-    <script src="../../main/python/static/js/main.js"></script>
+    <script src="../../main/python/static/js/functions.js"></script>
     <!-- / javascript box / DONT TOUCH -->
 
     <!-- structure-container -->
@@ -29,11 +29,15 @@
         <nav class="color_day">
             <ul class="menu">
                 <li class="nav-btn"><a href="profile.html">Profil</a></li> /
-                <li class="nav-btn"><a href="news.html">News</a></li> /
+                <li class="nav-btn"><a href="feed.html">feed</a></li> /
                 <li class="nav-btn"><a href="#">Chats</a></li>
             </ul>
         </nav>
 
+        <!-- call feed switch -->
+        <script type="text/javascript">
+            feed_selection();
+        </script>
 
         <!-- add new post toolkit -->
         <article class="content-container color_day article_arrow">
@@ -47,7 +51,7 @@
 
             <form action="#">
                 <label for="message">Deine Nachricht:</label><br>
-                <textarea name="message" placeholder="Hier tippen..."></textarea>
+                <textarea name="message" id="message" placeholder="Hier tippen..."></textarea>
                 <input class="submit_button" type="submit" value="Posten">
             </form>
 
@@ -77,20 +81,20 @@
 
 
 
-        <!-- example news with text -->
+        <!-- example feed with text -->
         <article class="content-container color_day article_arrow">
 
             <!-- header -->
-            <header class="news_headline">
-                <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                <span class="news_author">Lucas Carmohn</span>
-                <span class="news_time">3h ago</span>
+            <header class="feed_headline">
+                <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                <span class="feed_author">Lucas Carmohn</span>
+                <span class="feed_time">3h ago</span>
             </header>
 
             <!-- content -->
-            <section class="news_signle">
+            <section class="feed_signle">
 
-                <article class="news_content">
+                <article class="feed_content">
 
                     <!-- toolbar -->
                     <section class="toolbar">
@@ -109,7 +113,7 @@
             </section>
 
             <!-- comments -->
-            <section class="news_comment">
+            <section class="feed_comment">
 
                 <input type="checkbox" class="read-more-state" id="post-1" />
 
@@ -199,17 +203,17 @@
 
         </article>
 
-        <!-- example news with image -->
+        <!-- example feed with image -->
         <article class="content-container color_day article_arrow">
 
             <!-- header -->
-            <header class="news_headline">
-                <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                <span class="news_author">Lucas Carmohn</span>
-                <span class="news_time">3h ago</span>
+            <header class="feed_headline">
+                <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                <span class="feed_author">Lucas Carmohn</span>
+                <span class="feed_time">3h ago</span>
             </header>
 
-            <article class="news_content">
+            <article class="feed_content">
 
                 <!-- toolbar -->
                 <section class="toolbar">
@@ -219,12 +223,12 @@
                 </section>
 
                 <!-- post with image -->
-                <img class="news_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.jpg" title="dummy" alt="dummy">
+                <img class="feed_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.jpg" title="dummy" alt="dummy">
             </article>
 
 
             <!-- comments -->
-            <section class="news_comment">
+            <section class="feed_comment">
 
                 <input type="checkbox" class="read-more-state" id="post-2" />
 
@@ -314,20 +318,20 @@
 
         </article>
 
-        <!-- example news with video -->
+        <!-- example feed with video -->
         <article class="content-container color_day">
 
             <!-- header -->
-            <header class="news_headline">
-                <span><img class="news_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                <span class="news_author">Lucas Carmohn</span>
-                <span class="news_time">3h ago</span>
+            <header class="feed_headline">
+                <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                <span class="feed_author">Lucas Carmohn</span>
+                <span class="feed_time">3h ago</span>
             </header>
 
             <!-- content -->
-            <section class="news_signle">
+            <section class="feed_signle">
 
-                <article class="news_content">
+                <article class="feed_content">
 
                     <!-- toolbar -->
                     <section class="toolbar">
@@ -337,14 +341,14 @@
                     </section>
 
                     <!-- post with video -->
-                    <video class="news_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.mp4" poster="posterimage.jpg">
+                    <video class="feed_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.mp4" poster="posterimage.jpg">
                       </video>
                 </article>
 
             </section>
 
             <!-- comments -->
-            <section class="news_comment">
+            <section class="feed_comment">
 
                 <input type="checkbox" class="read-more-state" id="post-3" />
 

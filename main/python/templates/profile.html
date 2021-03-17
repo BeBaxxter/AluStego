@@ -1,5 +1,11 @@
 {% extends "main.html" %} {% block main %}
 
+
+<!-- call profile switch -->
+<script type="text/javascript">
+    profile_selection();
+</script>
+
 <!-- profile -->
 <article class="content-container color_day article_arrow">
 
@@ -14,7 +20,7 @@
         <img id="profile_image" src="../static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
 
         <section>
-            <span class="news_author">Lucas Carmohn</span>
+            <span class="feed_author">Lucas Carmohn</span>
         </section>
 
         <section>
@@ -77,23 +83,23 @@
 <script>
 </script>
 
-<!-- newslist -->
-<article id="newslist">
+<!-- feedlist -->
+<article id="feedlist">
 
-    <!-- example news with text -->
+    <!-- example feed with text -->
     <article class="content-container color_day">
 
         <!-- header -->
-        <header class="news_headline">
-            <span><img class="news_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
-            <span class="news_author">Lucas Carmohn</span>
-            <span class="news_time">3h ago</span>
+        <header class="feed_headline">
+            <span><img class="feed_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
+            <span class="feed_author">Lucas Carmohn</span>
+            <span class="feed_time">3h ago</span>
         </header>
 
         <!-- content -->
-        <section class="news_signle">
+        <section class="feed_signle">
 
-            <article class="news_content">
+            <article class="feed_content">
 
                 <!-- toolbar -->
                 <section class="toolbar">
@@ -112,7 +118,7 @@
         </section>
 
         <!-- comments -->
-        <section class="news_comment">
+        <section class="feed_comment">
 
             <input type="checkbox" class="read-more-state" id="post-1" />
 
@@ -201,20 +207,20 @@
         </section>
 
     </article>
-    <!-- example news with text -->
+    <!-- example feed with text -->
     <article class="content-container color_day">
 
         <!-- header -->
-        <header class="news_headline">
-            <span><img class="news_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
-            <span class="news_author">Lucas Carmohn</span>
-            <span class="news_time">3h ago</span>
+        <header class="feed_headline">
+            <span><img class="feed_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
+            <span class="feed_author">Lucas Carmohn</span>
+            <span class="feed_time">3h ago</span>
         </header>
 
         <!-- content -->
-        <section class="news_signle">
+        <section class="feed_signle">
 
-            <article class="news_content">
+            <article class="feed_content">
 
                 <!-- toolbar -->
                 <section class="toolbar">
@@ -233,7 +239,7 @@
         </section>
 
         <!-- comments -->
-        <section class="news_comment">
+        <section class="feed_comment">
 
             <input type="checkbox" class="read-more-state" id="post-1" />
 
