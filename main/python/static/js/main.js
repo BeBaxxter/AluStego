@@ -89,7 +89,7 @@ $(document).ready(function() {
  */
 $(document).ready(function() {
 
-    $("#login").hide();
+    $("#login").show();
     $("#register").hide();
     $("#pwv").hide();
 

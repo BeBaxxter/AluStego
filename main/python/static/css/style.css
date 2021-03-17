@@ -373,6 +373,30 @@
     .input:focus {
         outline: none;
     }
+    /** box arrows **/
+    
+    .article_arrow {
+        position: relative;
+    }
+    
+    .article_arrow:after,
+    .article_arrow:before {
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    
+    .article_arrow:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-top-color: #4B9DA6;
+        border-width: 30px;
+        margin-left: -30px;
+    }
     /** back to top button **/
     
     #goTopButton {

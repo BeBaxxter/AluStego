@@ -1,7 +1,7 @@
 {% extends "main.html" %} {% block main %}
 
 <!-- add new post toolkit -->
-<article class="content-container {{colorTheme}}">
+<article class="content-container {{colorTheme}} article_arrow">
     <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post"  title="Neuen Textpost hinzufügen">post_add</a></span>
     <span class="material-icons material-icons_xxl"><a href="#" id="show_image_post" title="Neuen Photopost hinzufügen">add_photo_alternate</a></span>
     <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" title="Neuen Videopost hinzufügen">movie_creation</a></span>
@@ -43,7 +43,7 @@
 {% for post in posts %}
 
 
-<article class="content-container {{colorTheme}}">
+<article class="content-container {{colorTheme}} article_arrow">
 
     <!-- header -->
     <header class="news_headline">
