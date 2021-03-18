@@ -30,9 +30,9 @@
         <!-- navigation -->
         <nav id="navigation" class="{{colorTheme}}">
             <ul class="menu">
-                <li class="nav-btn"><a href="/profile">Profil</a></li> /
-                <li class="nav-btn active article_arrow"><a href="/feed">Feed</a></li> /
-                <li class="nav-btn"><a href="/chats">Chats</a></li>
+                <li class="nav-btn {% if site == "profile" %} active article_arrow {% endif %}"><a href="/profile">Profil</a></li> /
+                <li class="nav-btn {% if site == "feed" %} active article_arrow {% endif %}"><a href="/feed">Feed</a></li> /
+                <li class="nav-btn {% if site == "chats" %} active article_arrow {% endif %}"><a href="/chats">Chats</a></li>
             </ul>
         </nav>
 

@@ -60,7 +60,8 @@ def feed():
     posts = reader.readPosts()
 
     title = "Feed"
-    return render_template("feed.html", title=title, posts=posts, colorTheme=colorTheme)
+    site = "feed"
+    return render_template("feed.html", title=title, site=site, posts=posts, colorTheme=colorTheme)
 
 @app.route('/uploadText', methods = ['POST', 'GET'])
 def uploadText():
@@ -138,18 +139,20 @@ def addComment():
 @app.route('/profile')
 def profile():
     title = "Profile"
+    site = "profile"
     reader = PostsReader()
     allPosts = reader.readPosts()
     posts = []
     for post in allPosts:
         if post.author == currentUser.name:
             posts.append(post)
-    return render_template("profile.html", title=title, colorTheme=colorTheme, posts=posts)
+    return render_template("profile.html", site=site, title=title, colorTheme=colorTheme, posts=posts)
 
 @app.route('/chats')
 def chats():
     title = "Chats"
-    return render_template('chats.html', title=title, colorTheme=colorTheme)
+    site = "chats"
+    return render_template('chats.html', site=site, title=title, colorTheme=colorTheme)
 
 if __name__ == "__main__":
   app.run()
