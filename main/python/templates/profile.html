@@ -89,7 +89,7 @@
     {% for post in posts %}
 
 
-        <article class="content-container {{colorTheme}} article_arrow">
+        <article class="content-container {{colorTheme}} {{"article_arrow" if not loop.last}}">
 
             <!-- header -->
             <header class="feed_headline">

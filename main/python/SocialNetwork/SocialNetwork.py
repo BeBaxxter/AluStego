@@ -1,5 +1,6 @@
 from SocialNetwork import TextPost, VideoPost, PhotoPost, Comment
 import csv
+from datetime import datetime
 
 class PostsReader():
     def readPosts(self):
@@ -9,19 +10,22 @@ class PostsReader():
             reader = csv.reader(csvfile, delimiter=';', quotechar='"')
             for row in reader:
                 if row[1] == "text":
-                    post = TextPost(row[0], row[1], row[2], row[3], row[4], row[5])
+                    time = self.getTime(int(row[4]))
+                    post = TextPost(row[0], row[1], row[2], row[3], time, row[5])
                     for comment in comments:
                         if comment.postID == post.id:
                             post.addComment(comment)
                     posts.append(post)
                 if row[1] == "image":
-                    post = PhotoPost(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
+                    time = self.getTime(int(row[4]))
+                    post = PhotoPost(row[0], row[1], row[2], row[3], time, row[5], row[6], row[7])
                     for comment in comments:
                         if comment.postID == post.id:
                             post.addComment(comment)
                     posts.append(post)
                 if row[1] == "video":
-                    post = VideoPost(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
+                    time = self.getTime(int(row[4]))
+                    post = VideoPost(row[0], row[1], row[2], row[3], time, row[5], row[6])
                     for comment in comments:
                         if comment.postID == post.id:
                             post.addComment(comment)
@@ -74,3 +78,15 @@ class PostsReader():
                 i = i + 1
 
         return i
+
+    def getTime(self, timestamp):
+        now = datetime.now().timestamp()
+        time = int(now) - timestamp
+        if time < 60:
+            return str(int(time)) + "sec ago"
+        elif time > 59 and time < 3600:
+            return str(int(time/60)) + "min ago"
+        elif time > 3599 and time < 86400:
+            return str(int(time/3600)) + "h ago"
+        elif time > 86399:
+            return str(int(time/86400)) + "d ago"

@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, request, Markup, redirect
 from werkzeug.utils import secure_filename
-from SocialNetwork import TextPost, PhotoPost, VideoPost, PostsReader, Comment
+from SocialNetwork import User, TextPost, PhotoPost, VideoPost, PostsReader, Comment
 from datetime import datetime
 
 
@@ -11,8 +11,7 @@ app = Flask(__name__)
 colorTheme = "color_day"
 #colorTheme = "color_night"
 
-currentUser = "Max Decken"
-currentUserName ="mdecken"
+currentUser = User(1, "Max Decken", "mdecken", "1234", "../static/data/images/lcarmohn/img_avatar.png")
 
 
 app.config["IMAGE_UPLOADS"] = "static/data/uploads/"
@@ -48,7 +47,7 @@ def allowed_video(filename):
 def renameFile(filename):
     ext = filename.rsplit(".", 1)[1]
     name = filename.rsplit(".", 1)[0]
-    newName = currentUserName + datetime.today().strftime('%Y-%m-%d') + "_" + name.lower()
+    newName = currentUser.userName + datetime.today().strftime('%Y-%m-%d') + "_" + name.lower()
     return newName + "." + ext
 
 @app.route('/')
@@ -69,7 +68,8 @@ def uploadText():
         message = request.form["message"]
         reader = PostsReader()
         id = reader.lenPosts() + 1
-        reader.addPost(TextPost(id, "text", currentUser, "../static/data/images/lcarmohn/img_avatar.png", "3h ago", message))
+        time = int(datetime.now().timestamp())
+        reader.addPost(TextPost(id, "text", currentUser.name, currentUser.avatar, time, message))
         return redirect("/feed")
 
 @app.route('/uploadImage', methods = ['POST', 'GET'])
@@ -92,7 +92,8 @@ def uploadImage():
                 id = reader.lenPosts() + 1
                 alt = str(image.filename)
                 title = "Posted by " + currentUser
-                reader.addPost(PhotoPost(id, "image", currentUser, "../static/data/images/lcarmohn/img_avatar.png", "3h ago", "../" + path, alt, title))
+                time = int(datetime.now().timestamp())
+                reader.addPost(PhotoPost(id, "image", currentUser.name, currentUser.avatar, time, "../" + path, alt, title))
                 return redirect("/feed")
             else:
                 print("That file extension is not allowed")
@@ -117,7 +118,8 @@ def uploadVideo():
                 video.save(os.path.join(os.path.dirname(__file__), path))
                 reader = PostsReader()
                 id = reader.lenPosts() + 1
-                reader.addPost(VideoPost(id, "video", currentUser, "../static/data/images/lcarmohn/img_avatar.png", "3h ago", "../" + path, "posterimage.jpg"))
+                time = int(datetime.now().timestamp())
+                reader.addPost(VideoPost(id, "video", currentUser.name, currentUser.avatar, time, "../" + path, "posterimage.jpg"))
                 return redirect("/feed")
             else:
                 print("That file extension is not allowed")
@@ -130,7 +132,7 @@ def addComment():
         message = request.form["message"]
     reader = PostsReader()
     id = reader.lenComments() + 1
-    reader.addComment(Comment(id, postID, "../static/data/images/lcarmohn/img_avatar.png", currentUserName, message))
+    reader.addComment(Comment(id, postID, currentUser.avatar, currentUser.userName, message))
     return redirect("/feed")
 
 @app.route('/profile')
@@ -140,7 +142,7 @@ def profile():
     allPosts = reader.readPosts()
     posts = []
     for post in allPosts:
-        if post.author == currentUser:
+        if post.author == currentUser.name:
             posts.append(post)
     return render_template("profile.html", title=title, colorTheme=colorTheme, posts=posts)
 
