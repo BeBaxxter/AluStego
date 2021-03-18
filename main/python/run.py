@@ -52,7 +52,9 @@ def renameFile(filename):
 
 @app.route('/')
 def start():
-    return render_template("auth.html", colorTheme=colorTheme)
+    title = "Welcome!"
+    site = "start"
+    return render_template("auth.html", title=title, site=site, colorTheme=colorTheme)
 
 @app.route('/feed', methods = ['POST', 'GET'])
 def feed():
