@@ -30,12 +30,16 @@ class PostsReader():
 
     def addPost(self, post):
         with open('testPosts.csv', 'a', newline='') as csvfile:
-            writer = csv.writer(csvfile, delimiter=';',
-                                    quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            writer = csv.writer(csvfile, delimiter=';', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             if post.type == "text":
                 writer.writerow([post.id, post.type, post.author, post.avatar, post.time, post.text])
+
             if post.type == "image":
                 writer.writerow([post.id, post.type, post.author, post.avatar, post.time, post.photo, post.alt, post.title])
+
+            if post.type == "video":
+                writer.writerow([post.id, post.type, post.author, post.avatar, post.time, post.video, post.poster])
+
     def lenPosts(self):
         with open('testPosts.csv', "r", newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=';', quotechar='"')
