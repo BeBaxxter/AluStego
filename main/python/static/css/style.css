@@ -67,7 +67,6 @@
     }
     
     .feed_image {
-        width: 20%;
         top: 15px;
         position: relative;
         border-radius: 50%;
@@ -83,7 +82,8 @@
     /** feed **/
     
     .feed_headline {
-        width: 30%;
+        margin-left: 16px;
+        margin-right: 16px;
         padding-bottom: 15px;
         padding-right: 15px;
     }
@@ -184,7 +184,7 @@
         padding-left: 15px;
         padding-right: 15px;
     }
-
+    
     .likebutton {
         cursor: pointer;
     }
