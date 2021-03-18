@@ -184,6 +184,10 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+
+    .likebutton {
+        cursor: pointer;
+    }
     
     .add_comment .submit_button {
         color: #fff;
@@ -192,6 +196,10 @@
     
     .comment_list {
         padding-left: 0px;
+    }
+    
+    .comment_box {
+        display: none;
     }
     
     .read-more-state {

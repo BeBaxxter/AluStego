@@ -107,3 +107,12 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+/**
+ * 
+ * @param {*} id 
+ */
+function showCommentBox(id) {
+    console.log("GEIL");
+    document.getElementById(id).style.display = 'block';
+}

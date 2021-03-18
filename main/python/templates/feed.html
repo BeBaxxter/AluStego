@@ -6,7 +6,7 @@
 </script>
 
 <!-- add new post toolkit -->
-<article class="content-container {{colorTheme}} article_arrow>
+<article class="content-container {{colorTheme}} article_arrow">
     <span class="material-icons material-icons_xxl"><a href="#" id="show_text_post"  title="Neuen Textpost hinzufügen">post_add</a></span>
     <span class="material-icons material-icons_xxl"><a href="#" id="show_image_post" title="Neuen Photopost hinzufügen">add_photo_alternate</a></span>
     <span class="material-icons material-icons_xxl"><a href="#" id="show_video_post" title="Neuen Videopost hinzufügen">movie_creation</a></span>
@@ -48,7 +48,7 @@
 {% for post in posts %}
 
 
-<article class="content-container {{colorTheme}} {{"article_arrow" if not loop.last}}">
+<article class="content-container {{colorTheme}} {{" article_arrow " if not loop.last}}">
 
     <!-- header -->
     <header class="feed_headline">
@@ -65,7 +65,7 @@
             <!-- toolbar -->
             <section class="toolbar">
                 <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
-                <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                <span class="material-icons material-icons_xxl"><a onclick="showCommentBox('comment-box-{{post.id}}');" class="link likebutton" title="default">add_comment</a></span>
                 <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
             </section>
 
@@ -97,7 +97,7 @@
         <ul class="comment_list read-more-wrap">
 
             <!-- new comment with text -->
-            <article class="comment">
+            <article id="comment-box-{{post.id}}" class="comment comment_box">
 
                 <form action="/addComment" method="post" class="add_comment">
                     <label>Kommentar:</label><br>

@@ -89,102 +89,102 @@
     {% for post in posts %}
 
 
-        <article class="content-container {{colorTheme}} {{"article_arrow" if not loop.last}}">
+    <article class="content-container {{colorTheme}} {{" article_arrow " if not loop.last}}">
 
-            <!-- header -->
-            <header class="feed_headline">
-                <span><img class="feed_image" src="{{post.avatar}}"></span>
-                <span class="feed_author">{{post.author}}</span>
-                <span class="feed_time">{{post.time}}</span>
-            </header>
+        <!-- header -->
+        <header class="feed_headline">
+            <span><img class="feed_image" src="{{post.avatar}}"></span>
+            <span class="feed_author">{{post.author}}</span>
+            <span class="feed_time">{{post.time}}</span>
+        </header>
 
-            <!-- content -->
-            <section class="feed_signle">
+        <!-- content -->
+        <section class="feed_signle">
 
-                <article class="feed_content">
+            <article class="feed_content">
 
-                    <!-- toolbar -->
-                    <section class="toolbar">
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
-                        <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
-                    </section>
+                <!-- toolbar -->
+                <section class="toolbar">
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
+                    <span class="material-icons material-icons_xxl"><a onclick="showCommentBox('comment-box-1');"href="#" class="link" title="default">add_comment</a></span>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                </section>
 
-                    <!-- text post -->
-                    {% if post.type == "text" %}
-                    <!-- post with text -->
-                    <p>{{post.text}}</p>
-                    {% endif %}
-                    <!-- image post -->
-                    {% if post.type == "image" %}
-                    <!-- post with image -->
-                    <img class="feed_post_image_video" src="{{post.photo}}" title="{{post.title}}" alt="{{post.alt}}"> {% endif %}
+                <!-- text post -->
+                {% if post.type == "text" %}
+                <!-- post with text -->
+                <p>{{post.text}}</p>
+                {% endif %}
+                <!-- image post -->
+                {% if post.type == "image" %}
+                <!-- post with image -->
+                <img class="feed_post_image_video" src="{{post.photo}}" title="{{post.title}}" alt="{{post.alt}}"> {% endif %}
 
-                    <!-- video post -->
-                    {% if post.type == "video" %}
-                    <!-- post with video -->
-                    <video class="feed_post_image_video" src="{{post.video}}" poster="{{post.poster}}">
+                <!-- video post -->
+                {% if post.type == "video" %}
+                <!-- post with video -->
+                <video class="feed_post_image_video" src="{{post.video}}" poster="{{post.poster}}">
                               </video> {% endif %}
+
+            </article>
+
+        </section>
+
+        <!-- comments -->
+        <section class="feed_comment">
+
+            <input type="checkbox" class="read-more-state" id="post-{{post.id}}" />
+
+            <ul class="comment_list read-more-wrap">
+
+                <!-- new comment with text -->
+                <article id="comment-box-1" class="comment">
+
+                    <form action="/addComment" method="post" class="add_comment">
+                        <label>Kommentar:</label><br>
+                        <textarea name="message" placeholder="Hier tippen..."></textarea>
+                        <input type="hidden" name="postId" value="{{post.id}}">
+                        <input class="submit_button" type="submit" value="Posten">
+                    </form>
 
                 </article>
 
-            </section>
+                {% for comment in post.comments %}
 
-            <!-- comments -->
-            <section class="feed_comment">
+                <!-- comment -->
+                <article class="comment read-more-target">
 
-                <input type="checkbox" class="read-more-state" id="post-{{post.id}}" />
+                    <!-- toolbar -->
+                    <section class="toolbar">
+                        <span><img class="comment_user_icon" src="{{comment.avatar}}" title="Dummy" alt="Dummy"></span>
 
-                <ul class="comment_list read-more-wrap">
-
-                    <!-- new comment with text -->
-                    <article class="comment">
-
-                        <form action="/addComment" method="post" class="add_comment">
-                            <label>Kommentar:</label><br>
-                            <textarea name="message" placeholder="Hier tippen..."></textarea>
-                            <input type="hidden" name="postId" value="{{post.id}}">
-                            <input class="submit_button" type="submit" value="Posten">
-                        </form>
-
-                    </article>
-
-                    {% for comment in post.comments %}
-
-                    <!-- comment -->
-                    <article class="comment read-more-target">
-
-                        <!-- toolbar -->
-                        <section class="toolbar">
-                            <span><img class="comment_user_icon" src="{{comment.avatar}}" title="Dummy" alt="Dummy"></span>
-
-                            <!-- delete comment -->
-                            <span>
+                        <!-- delete comment -->
+                        <span>
                                         <a href="# " title="default ">
                                             <img class="delete_comment " alt="dummy " title="dummy " src="../static/css/icons/close_icon.svg ">
                                         </a>
                                     </span>
-                        </section>
+                    </section>
 
-                        <!-- comment with text -->
-                        <section>
-                            <p>{{comment.text}}</p>
-                        </section>
-                    </article>
+                    <!-- comment with text -->
+                    <section>
+                        <p>{{comment.text}}</p>
+                    </section>
+                </article>
 
-                    {% endfor %}
+                {% endfor %}
 
-                </ul>
-
-
-                <label for="post-{{post.id}}" class="read-more-trigger material-icons material-icons_xxl"></label>
+            </ul>
 
 
-            </section>
+            <label for="post-{{post.id}}" class="read-more-trigger material-icons material-icons_xxl"></label>
 
-        </article>
 
-        {% endfor %}
+        </section>
+
+    </article>
+
+    {% endfor %}
 
 </article>
 
