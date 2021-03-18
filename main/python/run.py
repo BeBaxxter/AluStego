@@ -12,7 +12,7 @@ colorTheme = "color_day"
 currentUser = "Max Decken"
 currentUserName ="mdecken"
 
-app.config["IMAGE_UPLOADS"] = "D:/Git_Projects/AluStego/main/python/static/data/uploads/"
+app.config["IMAGE_UPLOADS"] = os.path.join(os.path.dirname(__file__) ,"static/data/uploads/")
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG", "GIF"]
 
 
@@ -70,7 +70,13 @@ def addComment():
 @app.route('/profile')
 def profile():
     title = "Profile"
-    return render_template("profile.html", title=title, colorTheme=colorTheme)
+    reader = PostsReader()
+    allPosts = reader.readPosts()
+    posts = []
+    for post in allPosts:
+        if post.author == currentUser:
+            posts.append(post)
+    return render_template("profile.html", title=title, colorTheme=colorTheme, posts=posts)
 
 @app.route('/chats')
 def chats():

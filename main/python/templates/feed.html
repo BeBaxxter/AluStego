@@ -16,8 +16,8 @@
 <article id="text_post" class="content-container {{colorTheme}}">
 
     <form action="/uploadText" method="post">
-        <label for="mymessage">Deine Nachricht:</label><br>
-        <textarea name="message" placeholder="Hier tippen..."></textarea>
+        <label for="upload-message">Deine Nachricht:</label><br>
+        <textarea id="upload-message" name="message" placeholder="Hier tippen..."></textarea>
         <input class="submit_button" type="submit" value="Posten">
     </form>
 
@@ -92,7 +92,7 @@
     <!-- comments -->
     <section class="feed_comment">
 
-        <input type="checkbox" class="read-more-state" id="post-1" />
+        <input type="checkbox" class="read-more-state" id="post-{{post.id}}" />
 
         <ul class="comment_list read-more-wrap">
 
@@ -136,7 +136,7 @@
         </ul>
 
 
-        <label for="post-1" class="read-more-trigger material-icons material-icons_xxl"></label>
+        <label for="post-{{post.id}}" class="read-more-trigger material-icons material-icons_xxl"></label>
 
 
     </section>
