@@ -110,12 +110,20 @@ textarea {
 }
 
 .feed_comment {
+    clear: both;
     padding-top: 6px;
 }
 
 .feed_content p {
-    margin-left: 16px;
+    background-color: #fff;
+    color: #4B9DA6;
+    margin-left: 56px;
     margin-right: 16px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
 }
 
 .toolbar {
