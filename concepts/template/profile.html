@@ -29,7 +29,7 @@
         <nav id="navigation" class="color_day">
             <ul class="menu">
                 <li class="nav-btn"><a href="profile.html">Profil</a></li> /
-                <li class="nav-btn active article_arrow"><a href="feed.html">Feed</a></li> /
+                <li class="nav-btn article_arrow"><a href="feed.html">Feed</a></li> /
                 <li class="nav-btn"><a href="auth.html">Chats</a></li>
             </ul>
         </nav>
@@ -126,7 +126,7 @@
                 <!-- header -->
                 <header class="feed_headline">
                     <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                    <span class="feed_author">Lucas Carmohn</span>
+                    <span class="feed_author">Lucas Carmohn</span><br>
                     <span class="feed_time">3h ago</span>
                 </header>
 
@@ -138,7 +138,7 @@
                         <!-- toolbar -->
                         <section class="toolbar">
                             <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
-                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                            <span class="material-icons material-icons_xxl"><a onclick="showCommentBox('comment-box-1');" href="#" class="link" title="default">add_comment</a></span>
                             <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
                         </section>
 
@@ -159,7 +159,7 @@
                     <ul class="comment_list read-more-wrap">
 
                         <!-- new comment with text -->
-                        <article class="comment">
+                        <article id="comment-box-1" class="comment comment_box">
 
                             <form action="#" class="add_comment">
                                 <label>Kommentar:</label><br>
@@ -187,6 +187,26 @@
                             </section>
                         </article>
 
+
+                        <!-- comment -->
+                        <article class="comment read-more-target">
+
+                            <!-- toolbar -->
+                            <section class="toolbar read-more-hide">
+                                <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                                <!-- delete comment -->
+                                <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
+                                </span>
+                            </section>
+
+                            <!-- comment with text -->
+                            <section>
+                                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                            </section>
+                        </article>
+
+
                         <!-- comment -->
                         <article class="comment read-more-target">
 
@@ -223,22 +243,23 @@
                                 <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
                             </section>
                         </article>
+
 
                     </ul>
 
                     <label for="post-1" class="read-more-trigger material-icons material-icons_xxl"></label>
-
 
                 </section>
 
             </article>
+
             <!-- example feed with text -->
-            <article class="content-container color_day">
+            <article class="content-container color_day article_arrow">
 
                 <!-- header -->
                 <header class="feed_headline">
                     <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
-                    <span class="feed_author">Lucas Carmohn</span>
+                    <span class="feed_author">Lucas Carmohn</span><br>
                     <span class="feed_time">3h ago</span>
                 </header>
 
@@ -250,7 +271,7 @@
                         <!-- toolbar -->
                         <section class="toolbar">
                             <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
-                            <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
+                            <span class="material-icons material-icons_xxl"><a onclick="showCommentBox('comment-box-1');" href="#" class="link" title="default">add_comment</a></span>
                             <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
                         </section>
 
@@ -271,7 +292,7 @@
                     <ul class="comment_list read-more-wrap">
 
                         <!-- new comment with text -->
-                        <article class="comment">
+                        <article id="comment-box-1" class="comment comment_box">
 
                             <form action="#" class="add_comment">
                                 <label>Kommentar:</label><br>
@@ -299,6 +320,26 @@
                             </section>
                         </article>
 
+
+                        <!-- comment -->
+                        <article class="comment read-more-target">
+
+                            <!-- toolbar -->
+                            <section class="toolbar read-more-hide">
+                                <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+
+                                <!-- delete comment -->
+                                <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
+                                </span>
+                            </section>
+
+                            <!-- comment with text -->
+                            <section>
+                                <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
+                            </section>
+                        </article>
+
+
                         <!-- comment -->
                         <article class="comment read-more-target">
 
@@ -335,11 +376,11 @@
                                 <p>Das ist ein Kommmentar indem ich irgendwas tolles über deinen Beitrag schreibe. Eigentlich ist das ein Dummytext um vernünftige CSS Style zu testen. Warum liest du das eigentlich noch? Hast du nichts zu tun?</p>
                             </section>
                         </article>
+
 
                     </ul>
 
                     <label for="post-1" class="read-more-trigger material-icons material-icons_xxl"></label>
-
 
                 </section>
 

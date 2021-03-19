@@ -106,7 +106,7 @@
                 <!-- toolbar -->
                 <section class="toolbar">
                     <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
-                    <span class="material-icons material-icons_xxl"><a onclick="showCommentBox('comment-box-1');"href="#" class="link" title="default">add_comment</a></span>
+                    <span class="material-icons material-icons_xxl"><a onclick="showCommentBox('comment-box-{{post.id}}');" class="link likebutton" title="default">add_comment</a></span>
                     <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
                 </section>
 
@@ -138,7 +138,7 @@
             <ul class="comment_list read-more-wrap">
 
                 <!-- new comment with text -->
-                <article id="comment-box-1" class="comment">
+                <article id="comment-box-{{post.id}}" class="comment comment_box">
 
                     <form action="/addComment" method="post" class="add_comment">
                         <label>Kommentar:</label><br>
