@@ -136,7 +136,8 @@ def addComment():
     reader = PostsReader()
     id = reader.lenComments() + 1
     reader.addComment(Comment(id, postID, currentUser.avatar, currentUser.userName, message))
-    return redirect("/feed")
+    url = "/feed#post_" + str(postID)
+    return redirect(url)
 
 @app.route('/profile')
 def profile():
