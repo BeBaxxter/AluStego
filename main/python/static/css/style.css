@@ -135,6 +135,7 @@ textarea {
     float: left;
     width: 5%;
     padding-right: 20px;
+    clear: both;
 }
 
 .feed_video {
@@ -228,6 +229,10 @@ textarea {
     transition: .25s ease;
 }
 
+.read-more-hide {
+    max-height: 0;
+}
+
 .read-more-state:checked~.read-more-wrap .read-more-target {
     opacity: 1;
     font-size: inherit;
@@ -238,10 +243,12 @@ textarea {
     content: 'expand_more';
     display: flex;
     justify-content: center;
+    float: right;
 }
 
 .read-more-state:checked~.read-more-trigger:before {
     content: 'expand_less';
+    float: none;
 }
 
 .read-more-trigger {
