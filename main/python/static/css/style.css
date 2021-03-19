@@ -1,438 +1,451 @@
-    /** main container**/
-    
-    body {
-        background-color: #bfbfbf;
-        text-align: center;
-        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    }
-    
-    #wrapper {
-        width: 31.25%;
-        margin: 0 auto;
-        position: relative;
-    }
-    
-    .menu {
-        list-style-type: none;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-right: 40px;
-    }
-    
-    nav {
-        font-size: xx-large;
-        margin-bottom: 50px;
-        border-radius: 10px;
-    }
-    
-    .nav-btn {
-        display: inline;
-    }
-    
-    .nav-btn a:link {
-        background-color: transparent;
-        text-decoration: none;
-    }
-    
-    .nav-btn a:visited {
-        background-color: transparent;
-        text-decoration: none;
-    }
-    
-    .content-container {
-        margin-top: 50px;
-        border-radius: 10px;
-        padding-top: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 15px;
-    }
-    
-    .material-icons_xxl {
-        font-size: xxx-large !important;
-    }
-    
-    a {
-        background-color: transparent;
-        text-decoration: none;
-    }
-    
-    a:visited {
-        background-color: transparent;
-        text-decoration: none;
-    }
-    
-    p {
-        text-align: justify;
-    }
-    
-    .feed_image {
-        top: 15px;
-        position: relative;
-        border-radius: 50%;
-    }
-    
-    .feed_post_image_video {
-        width: 88%;
-        padding-right: 15px;
-        padding-left: 15px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-    /** feed **/
-    
-    .feed_headline {
-        margin-left: 16px;
-        margin-right: 16px;
-        padding-bottom: 15px;
-        padding-right: 15px;
-    }
-    
-    .feed_author {
-        padding-right: 2px;
-        padding-left: 2px;
-        font-size: 26px;
-    }
-    
-    textarea {
-        width: 95%;
-        resize: none;
-        height: 100px;
-        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-        margin-top: 15px;
-        padding-top: 11px;
-        padding-left: 11px;
-        padding-right: 11px;
-        padding-bottom: 11px;
-        margin-bottom: 15px;
-    }
-    
-    .feed_comment {
-        padding-top: 6px;
-    }
-    
-    .feed_content p {
-        margin-left: 16px;
-        margin-right: 16px;
-    }
-    
-    .toolbar {
-        float: left;
-        width: 5%;
-        padding-right: 20px;
-    }
-    
-    .feed_video {
-        width: 88%;
-    }
-    
-    .comment {
-        border-radius: 10px;
-    }
-    
-    .comment_material_icon {
-        top: 15px;
-        position: relative;
-        padding-right: 5px;
-    }
-    
-    .comment_user_icon {
-        width: 100%;
-        margin-top: 19px;
-        margin-left: 9px;
-        border-radius: 50%;
-    }
-    
-    .comment p {
-        padding-left: 15px;
-        padding-top: 15px;
-        padding-right: 15px;
-        padding-bottom: 15px;
-        margin-left: 42px;
-        margin-right: 42px;
-    }
-    
-    .submit_button {
-        border: 1px;
-        border-radius: 10%;
-        color: #4B9DA6;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-    }
-    
-    .feed_user_image {
-        border-radius: 50%;
-        width: 10%;
-        margin-top: 15px;
-        margin-left: 15px;
-        margin-right: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .delete_comment {
-        padding-left: 15px;
-    }
-    
-    .add_comment {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    
-    .likebutton {
-        cursor: pointer;
-    }
-    
-    .add_comment .submit_button {
-        color: #fff;
-        background-color: #4B9DA6;
-    }
-    
-    .comment_list {
-        padding-left: 0px;
-    }
-    
-    .comment_box {
-        display: none;
-    }
-    
-    .read-more-state {
-        display: none;
-    }
-    
-    .read-more-target {
-        opacity: 0;
-        max-height: 0;
-        font-size: 0;
-        transition: .25s ease;
-    }
-    
-    .read-more-state:checked~.read-more-wrap .read-more-target {
-        opacity: 1;
-        font-size: inherit;
-        max-height: 999em;
-    }
-    
-    .read-more-state~.read-more-trigger:before {
-        content: 'expand_more';
-        display: flex;
-        justify-content: center;
-    }
-    
-    .read-more-state:checked~.read-more-trigger:before {
-        content: 'expand_less';
-    }
-    
-    .read-more-trigger {
-        cursor: pointer;
-    }
-    /** profile **/
-    
-    #profile_caption {
-        font-size: x-large;
-    }
-    
-    #profile_image {
-        border-radius: 50%;
-        width: 25%;
-        margin-top: 15px;
-        margin-left: 15px;
-        margin-right: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .friend_status {
-        width: 3%;
-        padding-left: 15px;
-    }
-    
-    .friends_list {
-        list-style-type: none;
-    }
-    
-    .setting_list {
-        list-style-type: none;
-    }
-    
-    .setting_entry {
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .show {
-        display: block;
-    }
-    
-    hr {
-        background: #fff;
-        height: 4px;
-        border: none;
-        border-radius: 4px;
-        width: 60%;
-        display: inline-block;
-    }
-    
-    #profile_header {
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    
-    #profile_quote {
-        top: 13%;
-        position: fixed;
-        right: 58%;
-    }
-    
-    #profile_caption {
-        width: 55%;
-        display: inline-block;
-    }
-    
-    #profile_town {
-        font-size: 18px;
-    }
-    
-    #profile_location {
-        left: 44%;
-        position: absolute;
-    }
-    /** login / register **/
-    
-    .mid_box {
-        margin-left: 60px;
-        margin-right: 60px;
-    }
-    
-    .bottom_box {
-        font-size: 11px;
-    }
-    
-    #login_logo {
-        border-radius: 50%;
-        width: 30%;
-        margin-top: 5px;
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-bottom: 5px;
-    }
-    
-    #login_selection {
-        list-style: none;
-        padding-left: 0px;
-    }
-    
-    #login_selection li {
-        display: inline-block;
-        background-color: #fff;
-        width: 100%;
-        margin-bottom: 15px;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-top: 5px;
-        border-radius: 7px;
-        cursor: pointer;
-    }
-    
-    #login_selection li a {
-        width: 100%;
-        display: inline-flex;
-        padding-left: 5px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-right: 5px;
-        font-size: 18px;
-    }
-    
-    .button_label {
-        cursor: pointer;
-    }
-    
-    .right_icon {
-        right: 17%;
-        position: absolute;
-    }
-    
-    .auth_label {
-        width: 100%;
-        display: inline-flex;
-        margin-bottom: 15px;
-        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    }
-    
-    .input {
-        background: none;
-        border: none;
-        border-bottom-color: currentcolor;
-        border-bottom-style: none;
-        border-bottom-width: medium;
-        border-bottom: 3px solid #fff;
-        font-size: 15px;
-        color: #fff;
-    }
-    
-    .input:focus {
-        outline: none;
-    }
-    /** box arrows **/
-    
-    .article_arrow {
-        position: relative;
-    }
-    
-    .article_arrow:after,
-    .article_arrow:before {
-        top: 100%;
-        left: 50%;
-        border: solid transparent;
-        content: "";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-    }
-    
-    .article_arrow:after {
-        border-color: rgba(136, 183, 213, 0);
-        border-top-color: #4B9DA6;
-        border-width: 30px;
-        margin-left: -30px;
-    }
-    /** back to top button **/
-    
-    #goTopButton {
-        display: none;
-        /* Hidden by default */
-        position: fixed;
-        /* Fixed/sticky position */
-        bottom: 20px;
-        /* Place the button at the bottom of the page */
-        right: 30px;
-        /* Place the button 30px from the right */
-        z-index: 99;
-        /* Make sure it does not overlap */
-        border: none;
-        /* Remove borders */
-        outline: none;
-        /* Remove outline */
-        cursor: pointer;
-        /* Add a mouse pointer on hover */
-        padding: 15px;
-        /* Some padding */
-        border-radius: 10px;
-        /* Rounded corners */
-        font-size: 18px;
-        /* Increase font size */
-    }
-    
-    #expandless {
-        cursor: pointer;
-        font-size: xx-large !important;
-    }
+/** main container**/
+
+body {
+    background-color: #bfbfbf;
+    text-align: center;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+#wrapper {
+    width: 31.25%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.menu {
+    list-style-type: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+}
+
+nav {
+    font-size: xx-large;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.nav-btn {
+    display: inline;
+}
+
+.nav-btn a:link {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.nav-btn a:visited {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.content-container {
+    margin-top: 50px;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.material-icons_xxl {
+    font-size: xxx-large !important;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+p {
+    text-align: justify;
+}
+
+.feed_image {
+    top: 15px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.feed_post_image_video {
+    width: 88%;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+/** feed **/
+
+.feed_headline {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+}
+
+.feed_author {
+    padding-right: 2px;
+    padding-left: 2px;
+    font-size: 26px;
+}
+
+textarea {
+    width: 95%;
+    resize: none;
+    height: 100px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    margin-top: 15px;
+    padding-top: 11px;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-bottom: 11px;
+    margin-bottom: 15px;
+}
+
+.feed_comment {
+    padding-top: 6px;
+}
+
+.feed_content p {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.toolbar {
+    float: left;
+    width: 5%;
+    padding-right: 20px;
+}
+
+.feed_video {
+    width: 88%;
+}
+
+.comment {
+    border-radius: 10px;
+}
+
+.comment_material_icon {
+    top: 15px;
+    position: relative;
+    padding-right: 5px;
+}
+
+.comment_user_icon {
+    width: 100%;
+    margin-top: 19px;
+    margin-left: 9px;
+    border-radius: 50%;
+}
+
+.comment p {
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-left: 42px;
+    margin-right: 42px;
+}
+
+.submit_button {
+    border: 1px;
+    border-radius: 10%;
+    color: #4B9DA6;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.feed_user_image {
+    border-radius: 50%;
+    width: 10%;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.delete_comment {
+    padding-left: 15px;
+}
+
+.add_comment {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.likebutton {
+    cursor: pointer;
+}
+
+.add_comment .submit_button {
+    color: #fff;
+    background-color: #4B9DA6;
+}
+
+.comment_list {
+    padding-left: 0px;
+}
+
+.comment_box {
+    display: none;
+}
+
+.read-more-state {
+    display: none;
+}
+
+.read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+}
+
+.read-more-state:checked~.read-more-wrap .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+}
+
+.read-more-state~.read-more-trigger:before {
+    content: 'expand_more';
+    display: flex;
+    justify-content: center;
+}
+
+.read-more-state:checked~.read-more-trigger:before {
+    content: 'expand_less';
+}
+
+.read-more-trigger {
+    cursor: pointer;
+}
+
+
+/** profile **/
+
+#profile_caption {
+    font-size: x-large;
+}
+
+#profile_image {
+    border-radius: 50%;
+    width: 25%;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.friend_status {
+    width: 3%;
+    padding-left: 15px;
+}
+
+.friends_list {
+    list-style-type: none;
+}
+
+.setting_list {
+    list-style-type: none;
+}
+
+.setting_entry {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.show {
+    display: block;
+}
+
+hr {
+    background: #fff;
+    height: 4px;
+    border: none;
+    border-radius: 4px;
+    width: 60%;
+    display: inline-block;
+}
+
+#profile_header {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#profile_quote {
+    position: relative;
+    bottom: 15px;
+}
+
+#profile_caption {
+    width: 55%;
+    display: inline-block;
+}
+
+#profile_town {
+    font-size: 18px;
+}
+
+#profile_location {
+    position: relative;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    top: 4px;
+}
+
+
+/** login / register **/
+
+.mid_box {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.bottom_box {
+    font-size: 11px;
+}
+
+#login_logo {
+    border-radius: 50%;
+    width: 30%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#login_selection {
+    list-style: none;
+    padding-left: 0px;
+}
+
+#login_selection li {
+    display: inline-block;
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#login_selection li a {
+    width: 100%;
+    display: inline-flex;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    font-size: 18px;
+}
+
+.button_label {
+    cursor: pointer;
+}
+
+.right_icon {
+    right: 17%;
+    position: absolute;
+}
+
+.auth_label {
+    width: 100%;
+    display: inline-flex;
+    margin-bottom: 15px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+.input {
+    background: none;
+    border: none;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-bottom: 3px solid #fff;
+    font-size: 15px;
+    color: #fff;
+}
+
+.input:focus {
+    outline: none;
+}
+
+
+/** box arrows **/
+
+.article_arrow {
+    position: relative;
+}
+
+.article_arrow:after,
+.article_arrow:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.article_arrow:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-top-color: #4B9DA6;
+    border-width: 30px;
+    margin-left: -30px;
+}
+
+
+/** back to top button **/
+
+#goTopButton {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
+}
+
+#expandless {
+    cursor: pointer;
+    font-size: xx-large !important;
+}
