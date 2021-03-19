@@ -48,6 +48,11 @@ nav {
     padding-bottom: 15px;
 }
 
+.close_icon {
+    color: red;
+    width: 7px;
+}
+
 .material-icons_xxl {
     font-size: xxx-large !important;
 }
