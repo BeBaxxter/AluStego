@@ -48,6 +48,10 @@ nav {
     padding-bottom: 15px;
 }
 
+.delete {
+    color: red !important;
+}
+
 .close_icon {
     color: red;
     width: 7px;
