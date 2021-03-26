@@ -1,4 +1,4 @@
-from SocialNetwork import TextPost, VideoPost, PhotoPost, Comment
+from Post import TextPost, VideoPost, PhotoPost, Comment
 import csv
 from datetime import datetime
 
@@ -6,7 +6,7 @@ class PostsReader():
     def readPosts(self):
         comments = self.readComments()
         posts = []
-        with open('testPosts.csv', "r", newline='') as csvfile:
+        with open('alustego/alustego/testPosts.csv', "r", newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=';', quotechar='"')
             for row in reader:
                 if row[1] == "text":
@@ -33,7 +33,7 @@ class PostsReader():
         return posts
 
     def addPost(self, post):
-        with open('testPosts.csv', 'a', newline='') as csvfile:
+        with open('alustego/alustego/testPosts.csv', 'a', newline='') as csvfile:
             writer = csv.writer(csvfile, delimiter=';', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             if post.type == "text":
                 writer.writerow([post.id, post.type, post.author, post.avatar, post.time, post.text])
@@ -45,7 +45,7 @@ class PostsReader():
                 writer.writerow([post.id, post.type, post.author, post.avatar, post.time, post.video, post.poster])
 
     def lenPosts(self):
-        with open('testPosts.csv', "r", newline='') as csvfile:
+        with open('alustego/alustego/testPosts.csv', "r", newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=';', quotechar='"')
             i = 0
             for row in reader:
@@ -55,7 +55,7 @@ class PostsReader():
 
     def readComments(self):
         comments = []
-        with open('testComments.csv', "r", newline='') as csvfile:
+        with open('alustego/alustego/testComments.csv', "r", newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=';', quotechar='"')
             for row in reader:
                 comment = Comment(row[0], row[1], row[2], row[3], row[4])
@@ -64,14 +64,14 @@ class PostsReader():
         return comments
 
     def addComment(self, comment):
-        with open('testComments.csv', 'a', newline='') as csvfile:
+        with open('alustego/alustego/testComments.csv', 'a', newline='') as csvfile:
             writer = csv.writer(csvfile, delimiter=';',
                                     quotechar='"', quoting=csv.QUOTE_MINIMAL)
             writer.writerow([comment.id, comment.postID, comment.avatar, comment.name, comment.text])
 
     def lenComments(self):
         comments = []
-        with open('testComments.csv', "r", newline='') as csvfile:
+        with open('alustego/alustego/testComments.csv', "r", newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=';', quotechar='"')
             i = 0
             for row in reader:

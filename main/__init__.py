@@ -1,6 +1,8 @@
 import os
 from flask import Flask, render_template, request, Markup, redirect
 from werkzeug.utils import secure_filename
+
+#for server deploy change to:  from main.SocialNetwork
 from SocialNetwork import User, TextPost, PhotoPost, VideoPost, PostsReader, Comment
 from datetime import datetime
 
