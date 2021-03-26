@@ -54,7 +54,7 @@
                 <img id="profile_image" src="../../main/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
 
                 <section>
-                    <span class="feed_author">Lucas Carmohn</span>
+                    <span class="big_title">Lucas Carmohn</span>
                 </section>
 
                 <section>
@@ -81,8 +81,8 @@
 
             <!-- header -->
             <header>
-                <span>4 Friends:</span>
-                <a href="#" class="link" title="default">
+                <span class="big_title">4 Friends:</span>
+                <a class="link" id="delete_friends" href="#" title="default">
                     <span class="material-icons">delete</span>
                 </a>
             </header>
@@ -91,20 +91,20 @@
             <section>
                 <ul class="friends_list">
                     <li class="friend_entry">
-                        <span class="material-icons material-icons_xxl">account_circle</span>
+                        <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
                         <span class="friend_name">Roobin Wettstädt (online ansicht)</span>
-                        <img class="friend_status" alt="dummy" title="dummy" src="../../main/static/css/icons/offline_icon.svg">
+                        <span class="material-icons active friend_icons">circle</span>
                     </li>
                     <li class="friend_entry">
-                        <span class="material-icons">account_circle</span>
+                        <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
                         <span class="friend_name">Roobin Wettstädt (offline ansicht)</span>
-                        <img class="friend_status" alt="dummy" title="dummy" src="../../main/static/css/icons/online_icon.svg">
+                        <span class="material-icons delete friend_icons">circle</span>
                     </li>
                     <li class="friend_entry">
-                        <span class="material-icons">account_circle</span>
-                        <span class="friend_name">Roobin Wettstädt (löschen ansicht)</span>
+                        <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
+                        <span class="friend_name">Roobin Wettstädt (offline ansicht)</span>
                         <a href="#" class="link" title="default">
-                            <img class="friend_status" alt="dummy" title="dummy" src="../../main/static/css/icons/close_icon.svg">
+                            <span class="material-icons delete friend_icons">close</span>
                         </a>
                     </li>
                 </ul>

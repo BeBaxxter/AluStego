@@ -52,6 +52,10 @@ nav {
     color: red !important;
 }
 
+.active {
+    color: greenyellow !important;
+}
+
 .close_icon {
     color: red;
     width: 7px;
@@ -97,12 +101,6 @@ p {
     margin-right: 16px;
     padding-bottom: 15px;
     padding-right: 15px;
-}
-
-.feed_author {
-    padding-right: 2px;
-    padding-left: 2px;
-    font-size: 26px;
 }
 
 textarea {
@@ -262,6 +260,12 @@ textarea {
 
 /** profile **/
 
+.big_title {
+    padding-right: 2px;
+    padding-left: 2px;
+    font-size: 26px;
+}
+
 #profile_caption {
     font-size: x-large;
 }
@@ -275,13 +279,13 @@ textarea {
     margin-bottom: 15px;
 }
 
-.friend_status {
-    width: 3%;
-    padding-left: 15px;
-}
-
 .friends_list {
     list-style-type: none;
+}
+
+.friend_name {
+    width: 40%;
+    display: inline-block;
 }
 
 .setting_list {
@@ -332,6 +336,24 @@ hr {
     margin-left: 5px;
     margin-bottom: 5px;
     top: 4px;
+}
+
+#delete_friends {
+    top: 5px;
+    position: relative;
+}
+
+.friend_entry {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.friend_icons {
+    width: 5%;
+    position: relative;
+    top: 7px;
 }
 
 
