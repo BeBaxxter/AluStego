@@ -237,6 +237,7 @@ textarea {
     opacity: 1;
     font-size: inherit;
     max-height: 999em;
+    min-height: 92px;
 }
 
 .read-more-state~.read-more-trigger:before {
