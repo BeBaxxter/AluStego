@@ -395,13 +395,50 @@
             <!-- settings-lists -->
             <section class="settings_section">
                 <ul class="setting_list">
+
+                    <!-- Logout button -->
                     <li class="setting_entry">
-                        <!-- dropdown -->
+                        <a href="#" id="show_pwv">
+                            <label class="button_label color_day font_d_n">Logout</label>
+                            <span class="material-icons color_day font_d_n right_icon">password</span>
+                        </a>
                     </li>
+
+                    <!-- switch color day / night -->
                     <li class="setting_entry">
-                        <!-- Logout Button -->
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
                     </li>
-                    <li class="setting_entry"></li>
+
+                    <!-- change profile image -->
+                    <li class="setting_entry">
+                        <form action="#">
+                            <label for="myimg">Dein Bild:</label><br>
+                            <input type="file" id="myimg" name="filename" multiple accept="image/*">
+                            <input class="submit_button" type="submit" value="Posten">
+                        </form>
+                    </li>
+
+                    <!-- change profile caption -->
+                    <li class="setting_entry">
+                        <form action="#">
+                            <label for="message">Deine Nachricht:</label><br>
+                            <textarea name="message" id="message" placeholder="Hier tippen..."></textarea>
+                            <input class="submit_button" type="submit" value="Posten">
+                        </form>
+                    </li>
+
+                    <!-- dropdown for later use-->
+                    <!-- <li class="setting_entry">
+                        <select name="cars" id="cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </li> -->
                 </ul>
             </section>
 
