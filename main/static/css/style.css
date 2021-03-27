@@ -466,8 +466,6 @@ input:checked+.slider:before {
 }
 
 #login_selection li a {
-    width: 100%;
-    display: inline-flex;
     padding-left: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -479,9 +477,20 @@ input:checked+.slider:before {
     cursor: pointer;
 }
 
+.left_text {
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
 .right_icon {
-    right: 17%;
-    position: absolute;
+    float: right;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding-right: 10px;
 }
 
 .auth_label {
