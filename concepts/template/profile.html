@@ -398,15 +398,16 @@
 
                     <!-- Logout button -->
                     <li class="setting_entry">
-                        <a href="#" id="show_pwv">
-                            <label class="button_label color_day font_d_n">Logout</label>
-                            <span class="material-icons color_day font_d_n right_icon">password</span>
+                        <a href="#" id="show_login">
+                            <label class="button_label color_day font_d_n left_text">Anmelden</label>
+                            <span class="material-icons color_day font_d_n right_icon">login</span>
                         </a>
                     </li>
 
                     <!-- switch color day / night -->
                     <li class="setting_entry">
-                        <label class="switch">
+                        <label id="day_night_switch" class="button_label color_day font_d_n left_text">Farbe wechseln: Tag</label>
+                        <label class="switch right_icon">
                             <input type="checkbox">
                             <span class="slider"></span>
                         </label>
@@ -415,18 +416,19 @@
                     <!-- change profile image -->
                     <li class="setting_entry">
                         <form action="#">
-                            <label for="myimg">Dein Bild:</label><br>
+                            <label class="button_label color_day font_d_n left_text">Dein Bild:</label><br>
                             <input type="file" id="myimg" name="filename" multiple accept="image/*">
-                            <input class="submit_button" type="submit" value="Posten">
+                            <input class="submit_button" type="submit" value="Hochladen">
                         </form>
+
                     </li>
 
                     <!-- change profile caption -->
                     <li class="setting_entry">
                         <form action="#">
-                            <label for="message">Deine Nachricht:</label><br>
+                            <label class="button_label color_day font_d_n left_text">Profilbeschreibung ändern:</label><br>
                             <textarea name="message" id="message" placeholder="Hier tippen..."></textarea>
-                            <input class="submit_button" type="submit" value="Posten">
+                            <input class="submit_button" type="submit" value="Ändern">
                         </form>
                     </li>
 
