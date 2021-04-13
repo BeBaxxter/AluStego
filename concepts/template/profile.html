@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../main/python/static/css/day_skin.css">
-    <link rel="stylesheet" href="../../main/python/static/css/night_skin.css">
-    <link rel="stylesheet" href="../../main/python/static/css/style.css">
+    <link rel="stylesheet" href="../../main/static/css/day_skin.css">
+    <link rel="stylesheet" href="../../main/static/css/night_skin.css">
+    <link rel="stylesheet" href="../../main/static/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Profile</title>
 </head>
@@ -17,8 +17,8 @@
     <button class="color_day" onclick="topFunction()" id="goTopButton" title="Go to top"><label class="material-icons material-icons_xxl" id="expandless">expand_less</label></button>
 
     <!-- javascript box / DONT TOUCH -->
-    <script src="../../main/python/static/js/query.min.js"></script>
-    <script src="../../main/python/static/js/functions.js"></script>
+    <script src="../../main/static/js/query.min.js"></script>
+    <script src="../../main/static/js/functions.js"></script>
     <script type="text/javascript">
         profile_selection();
     </script>
@@ -51,10 +51,10 @@
 
             <!-- Profile info -->
             <section>
-                <img id="profile_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
+                <img id="profile_image" src="../../main/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
 
                 <section>
-                    <span class="feed_author">Lucas Carmohn</span>
+                    <span class="big_title">Lucas Carmohn</span>
                 </section>
 
                 <section>
@@ -81,8 +81,8 @@
 
             <!-- header -->
             <header>
-                <span>4 Friends:</span>
-                <a href="#" class="link" title="default">
+                <span class="big_title">4 Friends:</span>
+                <a class="link" id="delete_friends" href="#" title="default">
                     <span class="material-icons">delete</span>
                 </a>
             </header>
@@ -91,20 +91,20 @@
             <section>
                 <ul class="friends_list">
                     <li class="friend_entry">
-                        <span class="material-icons material-icons_xxl">account_circle</span>
+                        <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
                         <span class="friend_name">Roobin Wettstädt (online ansicht)</span>
-                        <img class="friend_status" alt="dummy" title="dummy" src="../../main/python/static/css/icons/offline_icon.svg">
+                        <span class="material-icons active friend_icons">circle</span>
                     </li>
                     <li class="friend_entry">
-                        <span class="material-icons">account_circle</span>
+                        <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
                         <span class="friend_name">Roobin Wettstädt (offline ansicht)</span>
-                        <img class="friend_status" alt="dummy" title="dummy" src="../../main/python/static/css/icons/online_icon.svg">
+                        <span class="material-icons delete friend_icons">circle</span>
                     </li>
                     <li class="friend_entry">
-                        <span class="material-icons">account_circle</span>
-                        <span class="friend_name">Roobin Wettstädt (löschen ansicht)</span>
+                        <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
+                        <span class="friend_name">Roobin Wettstädt (offline ansicht)</span>
                         <a href="#" class="link" title="default">
-                            <img class="friend_status" alt="dummy" title="dummy" src="../../main/python/static/css/icons/close_icon.svg">
+                            <span class="material-icons delete friend_icons">close</span>
                         </a>
                     </li>
                 </ul>
@@ -125,7 +125,7 @@
 
                 <!-- header -->
                 <header class="feed_headline">
-                    <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                    <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
                     <span class="feed_author">Lucas Carmohn</span><br>
                     <span class="feed_time">3h ago</span>
                 </header>
@@ -140,6 +140,7 @@
                             <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
                             <span class="material-icons material-icons_xxl"><a onclick="showCommentBox('comment-box-1');" href="#" class="link" title="default">add_comment</a></span>
                             <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                            <span class="material-icons material-icons_xxl"><a href="#" class="link delete" title="default">close</a></span>
                         </section>
 
                         <!-- post with text -->
@@ -174,7 +175,7 @@
 
                             <!-- toolbar -->
                             <section class="toolbar read-more-hide">
-                                <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                                <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                                 <!-- delete comment -->
                                 <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -193,7 +194,7 @@
 
                             <!-- toolbar -->
                             <section class="toolbar read-more-hide">
-                                <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                                <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                                 <!-- delete comment -->
                                 <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -212,7 +213,7 @@
 
                             <!-- toolbar -->
                             <section class="toolbar read-more-hide">
-                                <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                                <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                                 <!-- delete comment -->
                                 <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -231,7 +232,7 @@
 
                             <!-- toolbar -->
                             <section class="toolbar read-more-hide">
-                                <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                                <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                                 <!-- delete comment -->
                                 <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -258,7 +259,7 @@
 
                 <!-- header -->
                 <header class="feed_headline">
-                    <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                    <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
                     <span class="feed_author">Lucas Carmohn</span><br>
                     <span class="feed_time">3h ago</span>
                 </header>
@@ -307,7 +308,7 @@
 
                             <!-- toolbar -->
                             <section class="toolbar read-more-hide">
-                                <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                                <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                                 <!-- delete comment -->
                                 <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -326,7 +327,7 @@
 
                             <!-- toolbar -->
                             <section class="toolbar read-more-hide">
-                                <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                                <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                                 <!-- delete comment -->
                                 <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -345,7 +346,7 @@
 
                             <!-- toolbar -->
                             <section class="toolbar read-more-hide">
-                                <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                                <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                                 <!-- delete comment -->
                                 <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -364,7 +365,7 @@
 
                             <!-- toolbar -->
                             <section class="toolbar read-more-hide">
-                                <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                                <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                                 <!-- delete comment -->
                                 <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -394,13 +395,52 @@
             <!-- settings-lists -->
             <section class="settings_section">
                 <ul class="setting_list">
+
+                    <!-- Logout button -->
                     <li class="setting_entry">
-                        <!-- dropdown -->
+                        <a href="#" id="show_login">
+                            <label class="button_label color_day font_d_n left_text">Anmelden</label>
+                            <span class="material-icons color_day font_d_n right_icon">login</span>
+                        </a>
                     </li>
+
+                    <!-- switch color day / night -->
                     <li class="setting_entry">
-                        <!-- Logout Button -->
+                        <label id="day_night_switch" class="button_label color_day font_d_n left_text">Farbe wechseln: Tag</label>
+                        <label class="switch right_icon">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
                     </li>
-                    <li class="setting_entry"></li>
+
+                    <!-- change profile image -->
+                    <li class="setting_entry">
+                        <form action="#">
+                            <label class="button_label color_day font_d_n left_text">Dein Bild:</label><br>
+                            <input type="file" id="myimg" name="filename" multiple accept="image/*">
+                            <input class="submit_button" type="submit" value="Hochladen">
+                        </form>
+
+                    </li>
+
+                    <!-- change profile caption -->
+                    <li class="setting_entry">
+                        <form action="#">
+                            <label class="button_label color_day font_d_n left_text">Profilbeschreibung ändern:</label><br>
+                            <textarea name="message" id="message" placeholder="Hier tippen..."></textarea>
+                            <input class="submit_button" type="submit" value="Ändern">
+                        </form>
+                    </li>
+
+                    <!-- dropdown for later use-->
+                    <!-- <li class="setting_entry">
+                        <select name="cars" id="cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </li> -->
                 </ul>
             </section>
 

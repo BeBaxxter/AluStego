@@ -1,0 +1,246 @@
+{% extends "main.html" %} {% block main %}
+
+
+<!-- call profile switch -->
+<script type="text/javascript">
+    profile_selection();
+</script>
+
+<!-- profile -->
+<article class="content-container color_day article_arrow">
+
+    <!-- header -->
+    <header id="profile_header">
+        <span id="profile_quote" class="material-icons material-icons_xxl">format_quote</span>
+        <span id="profile_caption">Webdeveloper and Fan of this App!!! Lorem ipsum second line</span>
+    </header>
+
+    <!-- Profile info -->
+    <section>
+        <img id="profile_image" src="../static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
+
+        <section>
+            <span class="feed_author">Lucas Carmohn</span>
+        </section>
+
+        <section>
+            <span class="material-icons" id="profile_location">place</span>
+            <span id="profile_town">Berlin</span>
+        </section>
+
+    </section>
+
+    <!-- Line -->
+    <hr>
+
+    <!-- Profile bar -->
+    <section>
+        <span class="material-icons material-icons_xxl"><a id="show_friends" href="#" class="link" title="default">supervisor_account</a></span>
+        <span class="material-icons material-icons_xxl"><a id="show_feed" href="#" class="link" title="default">article</a></span>
+        <span class="material-icons material-icons_xxl"><a id="show_settings" href="#" class="link" title="default">settings</a></span>
+    </section>
+</article>
+
+
+<!-- friendlist-->
+<article id="friendlist" class="content-container {{colorTheme}}">
+
+    <!-- header -->
+    <header>
+        <span>4 Friends:</span>
+        <a href="#" class="link" title="default">
+            <span class="material-icons">delete</span>
+        </a>
+    </header>
+
+    <!-- friend-lists -->
+    <section>
+        <ul class="friends_list">
+            <li class="friend_entry">
+                <span><img class="feed_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
+                <span class="friend_name">Roobin Wettstädt (online ansicht)</span>
+                <span class="material-icons active friend_icons">circle</span>
+            </li>
+            <li class="friend_entry">
+                <span><img class="feed_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
+                <span class="friend_name">Roobin Wettstädt (offline ansicht)</span>
+                <span class="material-icons delete friend_icons">circle</span>
+            </li>
+            <li class="friend_entry">
+                <span><img class="feed_image" src="../static/data/images/lcarmohn/img_avatar.png"></span>
+                <span class="friend_name">Roobin Wettstädt (offline ansicht)</span>
+                <a href="#" class="link" title="default">
+                    <span class="material-icons delete friend_icons">close</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+</article>
+
+<style>
+
+</style>
+<script>
+</script>
+
+<!-- feedlist -->
+<article id="feedlist">
+
+    {% for post in posts %}
+
+
+    <article class="content-container {{colorTheme}} {{" article_arrow " if not loop.last}}" id="post_{{post.id}}">
+
+        <!-- header -->
+        <header class="feed_headline">
+            <span><img class="feed_image" src="{{post.avatar}}"></span>
+            <span class="feed_author">{{post.author}}</span>
+            <span class="feed_time">{{post.time}}</span>
+        </header>
+
+        <!-- content -->
+        <section class="feed_signle">
+
+            <article class="feed_content">
+
+                <!-- toolbar -->
+                <section class="toolbar">
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
+                    <span class="material-icons material-icons_xxl"><a onclick="showCommentBox('comment-box-{{post.id}}');" class="link likebutton" title="default">add_comment</a></span>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link delete" title="default">close</a></span>
+                </section>
+
+                <!-- text post -->
+                {% if post.type == "text" %}
+                <!-- post with text -->
+                <p>{{post.text}}</p>
+                {% endif %}
+                <!-- image post -->
+                {% if post.type == "image" %}
+                <!-- post with image -->
+                <img class="feed_post_image_video" src="{{post.photo}}" title="{{post.title}}" alt="{{post.alt}}"> {% endif %}
+
+                <!-- video post -->
+                {% if post.type == "video" %}
+                <!-- post with video -->
+                <video class="feed_post_image_video" src="{{post.video}}" poster="{{post.poster}}">
+                              </video> {% endif %}
+
+            </article>
+
+        </section>
+
+        <!-- comments -->
+        <section class="feed_comment">
+
+            <input type="checkbox" class="read-more-state" id="post-{{post.id}}" />
+
+            <ul class="comment_list read-more-wrap">
+
+                <!-- new comment with text -->
+                <article id="comment-box-{{post.id}}" class="comment comment_box">
+
+                    <form action="/addComment" method="post" class="add_comment">
+                        <label>Kommentar:</label><br>
+                        <textarea name="message" placeholder="Hier tippen..."></textarea>
+                        <input type="hidden" name="postId" value="{{post.id}}">
+                        <input class="submit_button" type="submit" value="Posten">
+                    </form>
+
+                </article>
+
+                {% for comment in post.comments %}
+
+                <!-- comment -->
+                <article class="comment read-more-target">
+
+                    <!-- toolbar -->
+                    <section class="toolbar read-more-hide">
+                        <span><img class="comment_user_icon" src="{{comment.avatar}}" title="Dummy" alt="Dummy"></span>
+
+                        <!-- delete comment -->
+                        <span><a href="#" title="default "><span class="material-icons close_icon">close</span></a>
+                        </span>
+                    </section>
+
+                    <!-- comment with text -->
+                    <section>
+                        <p>{{comment.text}}</p>
+                    </section>
+                </article>
+
+                {% endfor %}
+
+            </ul>
+
+
+            <label for="post-{{post.id}}" class="read-more-trigger material-icons material-icons_xxl"></label>
+
+
+        </section>
+
+    </article>
+
+    {% endfor %}
+
+</article>
+
+<!-- settings -->
+<article id="settings" class="content-container {{colorTheme}}">
+
+    <section class="settings_section">
+        <ul class="setting_list">
+
+            <!-- Logout button -->
+            <li class="setting_entry">
+                <a href="#" id="show_login">
+                    <label class="button_label color_day font_d_n left_text">Anmelden</label>
+                    <span class="material-icons color_day font_d_n right_icon">login</span>
+                </a>
+            </li>
+
+            <!-- switch color day / night -->
+            <li class="setting_entry">
+                <label id="day_night_switch" class="button_label color_day font_d_n left_text">Farbe wechseln: Tag</label>
+                <label class="switch right_icon">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </li>
+
+            <!-- change profile image -->
+            <li class="setting_entry">
+                <form action="#">
+                    <label class="button_label color_day font_d_n left_text">Dein Bild:</label><br>
+                    <input type="file" id="myimg" name="filename" multiple accept="image/*">
+                    <input class="submit_button" type="submit" value="Hochladen">
+                </form>
+
+            </li>
+
+            <!-- change profile caption -->
+            <li class="setting_entry">
+                <form action="#">
+                    <label class="button_label color_day font_d_n left_text">Profilbeschreibung ändern:</label><br>
+                    <textarea name="message" id="message" placeholder="Hier tippen..."></textarea>
+                    <input class="submit_button" type="submit" value="Ändern">
+                </form>
+            </li>
+
+            <!-- dropdown for later use-->
+            <!-- <li class="setting_entry">
+                <select name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </li> -->
+        </ul>
+    </section>
+
+</article>
+
+
+{% endblock %}

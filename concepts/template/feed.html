@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../main/python/static/css/day_skin.css">
-    <link rel="stylesheet" href="../../main/python/static/css/night_skin.css">
-    <link rel="stylesheet" href="../../main/python/static/css/style.css">
+    <link rel="stylesheet" href="../../main/static/css/day_skin.css">
+    <link rel="stylesheet" href="../../main/static/css/night_skin.css">
+    <link rel="stylesheet" href="../../main/static/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Feed</title>
 </head>
@@ -18,8 +18,8 @@
     <button class="color_day" onclick="topFunction()" id="goTopButton" title="Go to top"><label class="material-icons material-icons_xxl" id="expandless">expand_less</label></button>
 
     <!-- javascript box / DONT TOUCH -->
-    <script src="../../main/python/static/js/query.min.js"></script>
-    <script src="../../main/python/static/js/functions.js"></script>
+    <script src="../../main/static/js/query.min.js"></script>
+    <script src="../../main/static/js/functions.js"></script>
     <!-- / javascript box / DONT TOUCH -->
 
     <!-- structure-container -->
@@ -86,7 +86,7 @@
 
             <!-- header -->
             <header class="feed_headline">
-                <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
                 <span class="feed_author">Lucas Carmohn</span><br>
                 <span class="feed_time">3h ago</span>
             </header>
@@ -101,6 +101,7 @@
                         <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite</a></span>
                         <span class="material-icons material-icons_xxl"><a onclick="showCommentBox('comment-box-1');" href="#" class="link" title="default">add_comment</a></span>
                         <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link delete" title="default">close</a></span>
                     </section>
 
                     <!-- post with text -->
@@ -135,7 +136,7 @@
 
                         <!-- toolbar -->
                         <section class="toolbar read-more-hide">
-                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                            <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                             <!-- delete comment -->
                             <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -154,7 +155,7 @@
 
                         <!-- toolbar -->
                         <section class="toolbar read-more-hide">
-                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                            <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                             <!-- delete comment -->
                             <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -173,7 +174,7 @@
 
                         <!-- toolbar -->
                         <section class="toolbar read-more-hide">
-                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                            <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                             <!-- delete comment -->
                             <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -192,7 +193,7 @@
 
                         <!-- toolbar -->
                         <section class="toolbar read-more-hide">
-                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                            <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                             <!-- delete comment -->
                             <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -219,7 +220,7 @@
 
             <!-- header -->
             <header class="feed_headline">
-                <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
                 <span class="feed_author">Lucas Carmohn</span><br>
                 <span class="feed_time">3h ago</span>
             </header>
@@ -231,10 +232,11 @@
                     <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
                     <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
                     <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                    <span class="material-icons material-icons_xxl"><a href="#" class="link delete" title="default">close</a></span>
                 </section>
 
                 <!-- post with image -->
-                <img class="feed_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.jpg" title="dummy" alt="dummy">
+                <img class="feed_post_image_video" src="../../main/static/data/images/lcarmohn/dummy.jpg" title="dummy" alt="dummy">
             </article>
 
 
@@ -261,7 +263,7 @@
 
                         <!-- toolbar -->
                         <section class="toolbar read-more-hide">
-                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                            <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                             <!-- delete comment -->
                             <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -279,7 +281,7 @@
 
                         <!-- toolbar -->
                         <section class="toolbar read-more-hide">
-                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                            <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                             <!-- delete comment -->
                             <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -298,7 +300,7 @@
 
                         <!-- toolbar -->
                         <section class="toolbar read-more-hide">
-                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                            <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                             <!-- delete comment -->
                             <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -325,7 +327,7 @@
 
             <!-- header -->
             <header class="feed_headline">
-                <span><img class="feed_image" src="../../main/python/static/data/images/lcarmohn/img_avatar.png"></span>
+                <span><img class="feed_image" src="../../main/static/data/images/lcarmohn/img_avatar.png"></span>
                 <span class="feed_author">Lucas Carmohn</span><br>
                 <span class="feed_time">3h ago</span>
             </header>
@@ -340,10 +342,11 @@
                         <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">favorite_border</a></span>
                         <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">add_comment</a></span>
                         <span class="material-icons material-icons_xxl"><a href="#" class="link" title="default">reply</a></span>
+                        <span class="material-icons material-icons_xxl"><a href="#" class="link delete" title="default">close</a></span>
                     </section>
 
                     <!-- post with video -->
-                    <video class="feed_post_image_video" src="../../main/python/static/data/images/lcarmohn/dummy.mp4" poster="posterimage.jpg">
+                    <video class="feed_post_image_video" src="../../main/static/data/images/lcarmohn/dummy.mp4" poster="posterimage.jpg">
                       </video>
                 </article>
 
@@ -372,7 +375,7 @@
 
                         <!-- toolbar -->
                         <section class="toolbar read-more-hide">
-                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                            <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                             <!-- delete comment -->
                             <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -390,7 +393,7 @@
 
                         <!-- toolbar -->
                         <section class="toolbar read-more-hide">
-                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                            <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                             <!-- delete comment -->
                             <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>
@@ -409,7 +412,7 @@
 
                         <!-- toolbar -->
                         <section class="toolbar read-more-hide">
-                            <span><img class="comment_user_icon" src="../../main/python/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
+                            <span><img class="comment_user_icon" src="../../main/static/data/images/lcarmohn/img_avatar.png " title="Dummy" alt="Dummy"></span>
 
                             <!-- delete comment -->
                             <span><a href="# " title="default "><span class="material-icons close_icon">close</span></a>

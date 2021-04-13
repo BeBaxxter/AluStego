@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../main/python/static/css/day_skin.css">
-    <link rel="stylesheet" href="../../main/python/static/css/night_skin.css">
-    <link rel="stylesheet" href="../../main/python/static/css/style.css">
+    <link rel="stylesheet" href="../../main/static/css/day_skin.css">
+    <link rel="stylesheet" href="../../main/static/css/night_skin.css">
+    <link rel="stylesheet" href="../../main/static/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Auth</title>
 </head>
@@ -15,11 +15,11 @@
 <body>
 
     <!-- back to top button -->
-    <button onclick="topFunction()" id="goTopButton" title="Go to top">Top</button>
+    <button class="color_day" onclick="topFunction()" id="goTopButton" title="Go to top"><label class="material-icons material-icons_xxl" id="expandless">expand_less</label></button>
 
     <!-- javascript box / DONT TOUCH -->
-    <script src="../../main/python/static/js/query.min.js"></script>
-    <script src="../../main/python/static/js/functions.js"></script>
+    <script src="../../main/static/js/query.min.js"></script>
+    <script src="../../main/static/js/functions.js"></script>
     <script type="text/javascript">
         auth_selection();
     </script>
@@ -39,7 +39,7 @@
             <!-- header -->
             <header class="head_box">
                 <h1>Willkommen!</h1>
-                <img id="login_logo" src="../../main/python/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
+                <img id="login_logo" src="../../main/static/data/images/lcarmohn/img_avatar.png" alt="Dummy" title="Dummy" />
             </header>
 
             <!-- login / signup switch -->
@@ -47,21 +47,22 @@
                 <ul id="login_selection">
                     <li>
                         <a href="#" id="show_login">
-                            <label class="button_label color_day font_d_n">Anmelden</label>
+                            <label class="button_label color_day font_d_n left_text">Anmelden</label>
                             <span class="material-icons color_day font_d_n right_icon">login</span>
                         </a>
-                    </li><br>
+                    </li>
                     <li>
                         <a href="#" id="show_register">
-                            <label class="button_label color_day font_d_n">Registrieren</label>
+                            <label class="button_label color_day font_d_n left_text">Registrieren</label>
                             <span class="material-icons color_day font_d_n right_icon">add</span>
                         </a>
-                    </li><br>
+                    </li>
                     <li>
                         <a href="#" id="show_pwv">
-                            <label class="button_label color_day font_d_n">Passwort vergessen</label>
+                            <label class="button_label color_day font_d_n left_text">Passwort vergessen</label>
                             <span class="material-icons color_day font_d_n right_icon">password</span>
                         </a>
+                    </li>
                 </ul>
             </section>
 
