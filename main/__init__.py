@@ -3,7 +3,9 @@ from flask import Flask, render_template, request, Markup, redirect
 from werkzeug.utils import secure_filename
 
 # for server deploy change to:  from main.common
-from main.main.common import User, TextPost, PhotoPost, VideoPost, PostsReader, Comment
+from main.common.posts.Post import TextPost, PhotoPost, VideoPost, Comment
+from main.common.posts.postHandler import PostsReader
+from main.common.user.User import User
 from datetime import datetime
 
 app = Flask(__name__)
