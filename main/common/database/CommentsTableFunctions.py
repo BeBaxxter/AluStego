@@ -5,22 +5,24 @@ from UsersTableFunctions import *
 from FriendsTableFunctions import *
 from PostsTableFunctions import *
 from LikesTableFunctions import *
+from datetime import datetime
 
 
 # Insert Functions:
 
 def insert_new_comment(values):
     """ inserts a new comment into the database
-    :param values: 1.: post_id, 2.: author_user_name, 3.: date_time, 4.: comm_content,
+    :param values: 1.: post_id, 2.: author_user_name, 3.: comm_content,
     return: None
     """
     try:
+        time = int(datetime.now().timestamp())
         author_id = UsersTableFunctions.get_user_id(values[1])
         conn = create_connection()
         c = conn.cursor()
         c.execute("""
             INSERT INTO comments (comm_post_id, comm_author_id, date_time, comm_content) 
-            VALUES (?, ?, ?, ?);""", (values[0], author_id, values[2], values[3]))
+            VALUES (?, ?, ?, ?);""", (values[0], author_id, time, values[2]))
         conn.commit()
         conn.close()
     except Error as e:

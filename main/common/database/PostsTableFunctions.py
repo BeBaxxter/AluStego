@@ -7,25 +7,27 @@ from UsersTableFunctions import *
 from FriendsTableFunctions import *
 from CommentsTableFunctions import *
 from LikesTableFunctions import *
+from datetime import datetime
 
 
 # Insert Functions:
 
 def insert_new_post(values):
     """ inserts a new post into the database
-    :param values: 0.: author_name, 1.: og_author_name, 2.: date_time,
-                   3.: date_time, 4.: content, 5.: type_of_post,
-                   6.: number_of_likes
+    :param values: 1.: author name, 2.: og author name (post might be a repost,
+                   then name of the original author, otherwise same as author name),
+                   3.: content of the post, type_of_post (1 = Text, 2 = Pic, 3 = Vid)
     return: None
     """
     try:
+        time = int(datetime.now().timestamp())
         author_id = UsersTableFunctions.get_user_id(values[0])
         og_author_id = UsersTableFunctions.get_user_id(values[1])
         conn = create_connection()
         c = conn.cursor()
         c.execute("""
             INSERT INTO posts (author_id, og_author_id, date_time, content, type_of_post, number_of_likes) 
-            VALUES (?, ?, ?, ?, ?, 0);""", (author_id, og_author_id, values[2], values[3], values[4], ))
+            VALUES (?, ?, ?, ?, ?, 0);""", (author_id, og_author_id, time, values[2], values[3], ))
         conn.commit()
         conn.close()
     except Error as e:
