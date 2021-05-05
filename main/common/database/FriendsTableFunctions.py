@@ -1,12 +1,12 @@
 import sqlite3
 from sqlite3 import Error
 
-import UsersTableFunctions
-from TableCreationFunctions import *
-from UsersTableFunctions import *
-from PostsTableFunctions import *
-from CommentsTableFunctions import *
-from LikesTableFunctions import *
+#import UsersTableFunctions
+from .TableCreationFunctions import *
+from .UsersTableFunctions import *
+from .PostsTableFunctions import *
+from .CommentsTableFunctions import *
+from .LikesTableFunctions import *
 
 
 # Insert Functions:

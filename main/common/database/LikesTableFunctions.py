@@ -1,7 +1,7 @@
-import PostsTableFunctions
-import UsersTableFunctions
-from CommentsTableFunctions import *
-from UsersTableFunctions import *
+#import PostsTableFunctions
+#import UsersTableFunctions
+from .CommentsTableFunctions import *
+from .UsersTableFunctions import *
 
 
 # Insert Functions:

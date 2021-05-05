@@ -1,12 +1,12 @@
 import sqlite3
 from sqlite3 import Error
-import FriendsTableFunctions
-import UsersTableFunctions
-from TableCreationFunctions import *
-from UsersTableFunctions import *
-from FriendsTableFunctions import *
-from CommentsTableFunctions import *
-from LikesTableFunctions import *
+#import FriendsTableFunctions
+#import UsersTableFunctions
+from .TableCreationFunctions import *
+from .UsersTableFunctions import *
+from .FriendsTableFunctions import *
+from .CommentsTableFunctions import *
+from .LikesTableFunctions import *
 from datetime import datetime
 
 

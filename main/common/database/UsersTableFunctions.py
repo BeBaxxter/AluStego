@@ -1,10 +1,10 @@
 import sqlite3
 from sqlite3 import Error
-from TableCreationFunctions import *
-from FriendsTableFunctions import *
-from PostsTableFunctions import *
-from CommentsTableFunctions import *
-from LikesTableFunctions import *
+from .TableCreationFunctions import *
+from .FriendsTableFunctions import *
+from .PostsTableFunctions import *
+from .CommentsTableFunctions import *
+from .LikesTableFunctions import *
 
 # Insert Functions:
 

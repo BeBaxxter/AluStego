@@ -3,18 +3,25 @@ from flask import Flask, render_template, request, Markup, redirect
 from werkzeug.utils import secure_filename
 
 # for server deploy change to:  from main.common
-from main.common.posts.Post import TextPost, PhotoPost, VideoPost, Comment
-from main.common.posts.postHandler import PostsReader
-from main.common.user.User import User
+from common.posts.Post import TextPost, PhotoPost, VideoPost, Comment
+from common.posts.postHandler import PostsReader
+from common.user.User import User
 from datetime import datetime
+from common.database import UsersTableFunctions
 
 app = Flask(__name__)
 
-# change the color theme here "color_day" or "color_night"
-colorTheme = "color_day"
-# colorTheme = "color_night"
+user_name = "madmax"
 
-currentUser = User(1, "Max Decken", "mdecken", "1234", "../static/data/images/lcarmohn/img_avatar.png")
+# change the color theme here "color_day" or "color_night"
+if UsersTableFunctions.get_user_color_theme(user_name) == 0:
+    colorTheme = "color_day"
+elif UsersTableFunctions.get_user_color_theme(user_name) == 1:
+    colorTheme = "color_night"
+
+#currentUser = User(1, "Max Decken", "mdecken", "1234", "../static/data/images/lcarmohn/img_avatar.png")
+#currentUSer = User(UsersTableFunctions.get_user_id(user_name))
+user_picture = UsersTableFunctions.get_user_profile_pic(user_name)
 
 app.config["IMAGE_UPLOADS"] = "static/data/uploads/"
 app.config["VIDEO_UPLOADS"] = "static/data/uploads/"
@@ -63,7 +70,7 @@ def start():
 @app.route('/feed', methods=['POST', 'GET'])
 def feed():
     reader = PostsReader()
-    posts = reader.readPosts()
+    posts = reader.readFeedPosts(user_name)
 
     title = "Feed"
     site = "feed"
@@ -75,9 +82,9 @@ def uploadText():
     if request.method == 'POST':
         message = request.form["message"]
         reader = PostsReader()
-        id = reader.lenPosts() + 1
+        #id = reader.lenPosts() + 1
         time = int(datetime.now().timestamp())
-        reader.addPost(TextPost(id, "text", currentUser.name, currentUser.avatar, time, message))
+        reader.addPost(TextPost("--", "text", user_name, user_picture, time, message))
         return redirect("/feed")
 
 
@@ -98,12 +105,12 @@ def uploadImage():
                 image.save(os.path.join(os.path.dirname(__file__), path))
                 print(path)
                 reader = PostsReader()
-                id = reader.lenPosts() + 1
+                #id = reader.lenPosts() + 1
                 alt = str(image.filename)
-                title = "Posted by " + currentUser
+                title = "Posted by " + user_name
                 time = int(datetime.now().timestamp())
                 reader.addPost(
-                    PhotoPost(id, "image", currentUser.name, currentUser.avatar, time, "../" + path, alt, title))
+                    PhotoPost("--", "image", user_name, user_picture, time, "../" + path, alt, title))
                 return redirect("/feed")
             else:
                 print("That file extension is not allowed")
@@ -126,10 +133,10 @@ def uploadVideo():
                 path = os.path.join(app.config["VIDEO_UPLOADS"], filename)
                 video.save(os.path.join(os.path.dirname(__file__), path))
                 reader = PostsReader()
-                id = reader.lenPosts() + 1
+                #id = reader.lenPosts() + 1
                 time = int(datetime.now().timestamp())
                 reader.addPost(
-                    VideoPost(id, "video", currentUser.name, currentUser.avatar, time, "../" + path, "posterimage.jpg"))
+                    VideoPost("--", "video", user_name, user_picture, time, "../" + path, "posterimage.jpg"))
                 return redirect("/feed")
             else:
                 print("That file extension is not allowed")
@@ -142,8 +149,8 @@ def addComment():
         postID = request.form["postId"]
         message = request.form["message"]
     reader = PostsReader()
-    id = reader.lenComments() + 1
-    reader.addComment(Comment(id, postID, currentUser.avatar, currentUser.userName, message))
+    #id = reader.lenComments() + 1
+    reader.addComment(Comment("--", postID, user_picture, user_name, message))
     url = "/feed#post_" + str(postID)
     return redirect(url)
 
@@ -153,11 +160,7 @@ def profile():
     title = "Profile"
     site = "profile"
     reader = PostsReader()
-    allPosts = reader.readPosts()
-    posts = []
-    for post in allPosts:
-        if post.author == currentUser.name:
-            posts.append(post)
+    posts = reader.readUserPosts(user_name)
     return render_template("profile.html", site=site, title=title, colorTheme=colorTheme, posts=posts)
 
 
