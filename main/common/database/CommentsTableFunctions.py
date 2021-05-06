@@ -1,10 +1,6 @@
 import sqlite3
 from sqlite3 import Error
-from .TableCreationFunctions import *
-from .UsersTableFunctions import *
-from .FriendsTableFunctions import *
-from .PostsTableFunctions import *
-from .LikesTableFunctions import *
+from . import *
 from datetime import datetime
 
 
@@ -18,7 +14,7 @@ def insert_new_comment(values):
     try:
         time = int(datetime.now().timestamp())
         author_id = UsersTableFunctions.get_user_id(values[1])
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         c = conn.cursor()
         c.execute("""
             INSERT INTO comments (comm_post_id, comm_author_id, date_time, comm_content) 
@@ -39,7 +35,7 @@ def delete_comment(values):
     """
     try:
         comment_id = get_comment_id(values)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"DELETE FROM comments WHERE comment_id=?;", (comment_id, ))
         conn.commit()
@@ -55,7 +51,7 @@ def delete_all_comments_of_post(post_id):
     :return: None
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"DELETE FROM comments WHERE comm_post_id=?;", (post_id,))
         conn.commit()
@@ -72,7 +68,7 @@ def delete_all_comments_of_user(user_name):
     """
     try:
         user_id = UsersTableFunctions.get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"DELETE FROM comments WHERE comm_author_id=?;", (user_id,))
         conn.commit()
@@ -88,7 +84,7 @@ def delete_all_comments_of_posts_from_user(post_id_tuple):
     :return: None
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         if post_id_tuple is not None:
             for post_id in post_id_tuple:
@@ -108,7 +104,7 @@ def get_all_comments_of_post(post_id):
     :return: all comments of a given post (Integers in Tuple)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT comment_id FROM comments
@@ -135,7 +131,7 @@ def get_comment_id(values):
     """
     try:
         author_id = UsersTableFunctions.get_user_id(values[1])
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT comment_id FROM comments 
@@ -153,4 +149,93 @@ def get_comment_id(values):
         conn.rollback()
 
 
+def get_comment_post_id(comment_id):
+    """ returns the comm_post_id of a given comment
+    :param comment_id:
+    :return: comm_post_id (Integer) // ID of the post
+    """
+    try:
+        conn = TableCreationFunctions.create_connection()
+        cur = conn.cursor()
+        cur.execute(f"""
+                        SELECT comm_post_id FROM comments 
+                        WHERE comment_id = ?;""", comment_id)
+        row = cur.fetchone()
+        conn.commit()
+        conn.close()
+        if row:
+            return row[0]
+        else:
+            return None
+    except Error as e:
+        print(e)
+        conn.rollback()
 
+
+def get_comment_author_id(comment_id):
+    """ returns the comm_post_id of a given comment
+    :param comment_id:
+    :return: comm_author_id (Integer) // ID of the comment's author
+    """
+    try:
+        conn = TableCreationFunctions.create_connection()
+        cur = conn.cursor()
+        cur.execute(f"""
+                        SELECT comm_author_id FROM comments 
+                        WHERE comment_id = ?;""", comment_id)
+        row = cur.fetchone()
+        conn.commit()
+        conn.close()
+        if row:
+            return row[0]
+        else:
+            return None
+    except Error as e:
+        print(e)
+        conn.rollback()
+
+
+def get_comment_date_time(comment_id):
+    """ returns the comm_post_id of a given comment
+    :param comment_id:
+    :return: date_time: unix timestamp
+    """
+    try:
+        conn = TableCreationFunctions.create_connection()
+        cur = conn.cursor()
+        cur.execute(f"""
+                        SELECT date_time FROM comments 
+                        WHERE comment_id = ?;""", comment_id)
+        row = cur.fetchone()
+        conn.commit()
+        conn.close()
+        if row:
+            return row[0]
+        else:
+            return None
+    except Error as e:
+        print(e)
+        conn.rollback()
+
+
+def get_comment_content(comment_id):
+    """ returns the comm_post_id of a given comment
+    :param comment_id:
+    :return: comm_content: text content of the comment
+    """
+    try:
+        conn = TableCreationFunctions.create_connection()
+        cur = conn.cursor()
+        cur.execute(f"""
+                        SELECT comm_content FROM comments 
+                        WHERE comment_id = ?;""", comment_id)
+        row = cur.fetchone()
+        conn.commit()
+        conn.close()
+        if row:
+            return row[0]
+        else:
+            return None
+    except Error as e:
+        print(e)
+        conn.rollback()

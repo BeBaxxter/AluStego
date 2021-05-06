@@ -1,10 +1,6 @@
 import sqlite3
 from sqlite3 import Error
-from .TableCreationFunctions import *
-from .FriendsTableFunctions import *
-from .PostsTableFunctions import *
-from .CommentsTableFunctions import *
-from .LikesTableFunctions import *
+from . import *
 
 # Insert Functions:
 
@@ -16,7 +12,7 @@ def insert_new_user(values):
     :return: NONE
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         c = conn.cursor()
         c.execute(f"""INSERT INTO users (username, password, email, profile_pic, color_theme, description) 
                       VALUES (?, ?, ?, ?, ?, ?);""", values)
@@ -38,7 +34,7 @@ def update_user_name(user_name, new_user_name):
     """
     try:
         user_id = get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""UPDATE users
                         SET username = ?
@@ -58,7 +54,7 @@ def update_user_email(user_name, new_user_email):
     """
     try:
         user_id = get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""UPDATE users
                         SET email = ?
@@ -78,7 +74,7 @@ def update_user_profile_pic(user_name, link_to_new_pic):
     """
     try:
         user_id = get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""UPDATE users
                         SET profile_pic = ?
@@ -98,7 +94,7 @@ def update_user_color_theme(user_name, new_user_color_theme):
     """
     try:
         user_id = get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""UPDATE users
                         SET color_theme = ?
@@ -118,7 +114,7 @@ def update_user_description(user_name, new_description):
     """
     try:
         user_id = get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""UPDATE users
                         SET description = ?
@@ -140,18 +136,18 @@ def delete_user(user_name):
     try:
         user_id = get_user_id(user_name)
 
-        delete_all_comments_of_user(user_name)
+        CommentsTableFunctions.delete_all_comments_of_user(user_name)
 
-        post_id_tuple = get_all_posts_of_user(user_id)
-        delete_all_comments_of_posts_from_user(post_id_tuple)
+        post_id_tuple = PostsTableFunctions.get_all_posts_of_user(user_id)
+        CommentsTableFunctions.delete_all_comments_of_posts_from_user(post_id_tuple)
 
-        delete_all_likes_of_user(user_name)
+        LikesTableFunctions.delete_all_likes_of_user(user_name)
 
-        delete_all_posts_of_user(user_id)
+        PostsTableFunctions.delete_all_posts_of_user(user_id)
 
-        delete_all_friendships_of_user(user_name)
+        FriendsTableFunctions.delete_all_friendships_of_user(user_name)
 
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"DELETE FROM users WHERE id=?;", (user_id, ))
         conn.commit()
@@ -170,7 +166,7 @@ def get_user_id(user_name):
     :return: user_id (Integer)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""SELECT id FROM users 
                         WHERE username = ?""", (user_name,))
@@ -192,7 +188,7 @@ def get_username(user_id):
     :return: username (String)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""SELECT username FROM users 
                         WHERE id = ?""", (user_id,))
@@ -215,7 +211,7 @@ def get_user_email(user_name):
     """
     try:
         user_id = get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""SELECT email FROM users 
                         WHERE id = ?""", (user_id,))
@@ -238,7 +234,7 @@ def get_user_profile_pic(user_name):
     """
     try:
         user_id = get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""SELECT profile_pic FROM users 
                         WHERE id = ?""", (user_id,))
@@ -261,7 +257,7 @@ def get_user_color_theme(user_name):
     """
     try:
         user_id = get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""SELECT color_theme FROM users 
                         WHERE id = ?""", (user_id,))
@@ -284,7 +280,7 @@ def get_user_description(user_name):
     """
     try:
         user_id = get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""SELECT description FROM users 
                         WHERE id = ?""", (user_id,))
@@ -309,7 +305,7 @@ def get_user_hashed_pw(user_name):
     """
     try:
         user_id = get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""SELECT password FROM users 
                         WHERE id = ?""", (user_id,))

@@ -1,7 +1,6 @@
-#import PostsTableFunctions
-#import UsersTableFunctions
-from .CommentsTableFunctions import *
-from .UsersTableFunctions import *
+import sqlite3
+from sqlite3 import Error
+from . import *
 
 
 # Insert Functions:
@@ -12,7 +11,7 @@ def insert_new_like(values):
     :return: None
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         c = conn.cursor()
         post_exists_check = PostsTableFunctions.check_if_post_exists(values[0])
         if post_exists_check == values[0]:
@@ -51,7 +50,7 @@ def delete_like(values):
             current_number_of_likes = PostsTableFunctions.get_post_number_of_likes(post_id)
             if current_number_of_likes is not None:
                 new_number_of_likes = current_number_of_likes - 1
-                conn = create_connection()
+                conn = TableCreationFunctions.create_connection()
                 c = conn.cursor()
                 c.execute(f"""UPDATE posts
                               SET number_of_likes = ?
@@ -72,7 +71,7 @@ def delete_all_likes_of_user(user_name):
     :return: None
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
 
         user_id = UsersTableFunctions.get_user_id(user_name)
@@ -104,7 +103,7 @@ def get_like_id(values):
     :return: like_id (Integer in Tuple)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT like_id FROM likes
@@ -127,7 +126,7 @@ def get_like_post_id(like_id):
     :return: like_post_id (Integer in Tuple)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT like_post_id FROM likes
@@ -150,7 +149,7 @@ def get_like_user_id(like_id):
     :return: like_user_id (Integer in Tuple)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT like_user_id FROM likes
@@ -173,7 +172,7 @@ def get_all_likes_of_user(user_id):
     :return: Tuple of like_id's (Integer)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT like_id FROM likes
@@ -200,7 +199,7 @@ def get_all_post_ids_of_users_likes(user_name):
     :return: Tuple of like_post_id's (Integer)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         user_id = UsersTableFunctions.get_user_id(user_name)
         cur.execute(f"""
@@ -231,7 +230,7 @@ def check_if_like_exists(values):
     :return: values (like_post_id, like_user_id)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT like_post_id, like_user_id FROM likes

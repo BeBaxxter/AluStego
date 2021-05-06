@@ -1,12 +1,6 @@
 import sqlite3
 from sqlite3 import Error
-#import FriendsTableFunctions
-#import UsersTableFunctions
-from .TableCreationFunctions import *
-from .UsersTableFunctions import *
-from .FriendsTableFunctions import *
-from .CommentsTableFunctions import *
-from .LikesTableFunctions import *
+from . import *
 from datetime import datetime
 
 
@@ -23,7 +17,7 @@ def insert_new_post(values):
         time = int(datetime.now().timestamp())
         author_id = UsersTableFunctions.get_user_id(values[0])
         og_author_id = UsersTableFunctions.get_user_id(values[1])
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         c = conn.cursor()
         c.execute("""
             INSERT INTO posts (author_id, og_author_id, date_time, content, type_of_post, number_of_likes) 
@@ -42,8 +36,8 @@ def delete_post(post_id):
     :return: None
     """
     try:
-        delete_all_comments_of_post(post_id)
-        conn = create_connection()
+        CommentsTableFunctions.delete_all_comments_of_post(post_id)
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"DELETE FROM likes WHERE like_post_id = ?;", (post_id, ))
         cur.execute(f"DELETE FROM posts WHERE post_id=?;", (post_id, ))
@@ -60,7 +54,7 @@ def delete_all_posts_of_user(user_id):
     :return: None
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         post_id_tuple = get_all_posts_of_user(user_id)
         if post_id_tuple is not None:
@@ -106,7 +100,7 @@ def get_news_feed_post_ids(user_name):
         user_id = UsersTableFunctions.get_user_id(user_name)
         friends_of_user = FriendsTableFunctions.get_all_friends_ids(user_id)
         list_of_post_ids = []
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         if friends_of_user is not None:
             for friend in friends_of_user:
@@ -140,7 +134,7 @@ def get_all_posts_of_user(user_name):
         """
     try:
         user_id = UsersTableFunctions.get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                             SELECT post_id FROM posts
@@ -167,7 +161,7 @@ def get_post_number_of_likes(post_id):
     :return: number_of_likes (Integer)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT number_of_likes FROM posts
@@ -192,7 +186,7 @@ def get_post_id(values):
     try:
         author_id = UsersTableFunctions.get_user_id(values[0])
         og_author_id = UsersTableFunctions.get_user_id(values[1])
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT post_id FROM posts
@@ -219,7 +213,7 @@ def get_post_author_id(post_id):
     :return: author_id (Integer)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT author_id FROM posts
@@ -242,7 +236,7 @@ def get_post_og_author_id(post_id):
     :return: og_author_id (Integer)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT og_author_id FROM posts
@@ -265,7 +259,7 @@ def get_post_date_time(post_id):
     :return: date_time (String)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT date_time FROM posts
@@ -288,7 +282,7 @@ def get_post_content(post_id):
     :return: content of the post / may be a link to the picture or video on the server (String)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT content FROM posts
@@ -314,7 +308,7 @@ def get_type_of_post(post_id):
     :return: type_of_post (Integer)
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT type_of_post FROM posts
@@ -340,7 +334,7 @@ def check_if_post_exists(post_id):
     :return: post_id (if the post exists) / None if not
     """
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT post_id FROM posts

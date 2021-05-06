@@ -1,12 +1,6 @@
 import sqlite3
 from sqlite3 import Error
-
-#import UsersTableFunctions
-from .TableCreationFunctions import *
-from .UsersTableFunctions import *
-from .PostsTableFunctions import *
-from .CommentsTableFunctions import *
-from .LikesTableFunctions import *
+from . import *
 
 
 # Insert Functions:
@@ -30,7 +24,7 @@ def insert_new_friendship(values):
         if unconfirmed_check != values_tuple and confirmed_check != values_tuple:
             requester_id = UsersTableFunctions.get_user_id(values[0])
             receiver_id = UsersTableFunctions.get_user_id(values[1])
-            conn = create_connection()
+            conn = TableCreationFunctions.create_connection()
             c = conn.cursor()
             c.execute(f"""
                     INSERT INTO friends (requester_id, receiver_id, confirmed) 
@@ -64,7 +58,7 @@ def confirm_friendship(values):
         if friendship_id is not None:
             if checked_values_tuple == values_tuple:
                 try:
-                    conn = create_connection()
+                    conn = TableCreationFunctions.create_connection()
                     c = conn.cursor()
                     c.execute(f"""
                                     UPDATE friends
@@ -99,7 +93,7 @@ def delete_confirmed_friendship(values):
         if checked_values_tuple == confirmed_check:
             try:
                 friendship_id = get_friendship_id(values)
-                conn = create_connection()
+                conn = TableCreationFunctions.create_connection()
                 c = conn.cursor()
                 c.execute(f"""  
                                 DELETE FROM friends 
@@ -132,7 +126,7 @@ def delete_unconfirmed_friendship(values):
         if checked_values_tuple == unconfirmed_check:
             try:
                 friendship_id = get_friendship_id(values)
-                conn = create_connection()
+                conn = TableCreationFunctions.create_connection()
                 c = conn.cursor()
                 c.execute(f"""  
                                 DELETE FROM friends 
@@ -154,7 +148,7 @@ def delete_all_friendships_of_user(user_name):
     """
     try:
         user_id = UsersTableFunctions.get_user_id(user_name)
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         c = conn.cursor()
         c.execute(f"""  
                         DELETE FROM friends 
@@ -166,7 +160,7 @@ def delete_all_friendships_of_user(user_name):
         conn.rollback()
 
     try:
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         c = conn.cursor()
         c.execute(f"""  
                         DELETE FROM friends 
@@ -188,7 +182,7 @@ def get_all_friends_ids(user_name):
     try:
         user_id = UsersTableFunctions.get_user_id(user_name)
         friends_list = []
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
 
         cur.execute(f"""SELECT receiver_id FROM friends GROUP BY confirmed, requester_id, receiver_id
@@ -227,7 +221,7 @@ def get_all_unconfirmed_friends_ids(user_name):
     try:
         user_id = UsersTableFunctions.get_user_id(user_name)
         unconfirmed_friends_list = []
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
 
         cur.execute(f"""SELECT receiver_id FROM friends GROUP BY confirmed, requester_id, receiver_id
@@ -266,7 +260,7 @@ def get_friendship_id(values):
     try:
         requester_id = UsersTableFunctions.get_user_id(values[0])
         receiver_id = UsersTableFunctions.get_user_id(values[1])
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                         SELECT friendship_id FROM friends
@@ -291,7 +285,7 @@ def check_for_unconfirmed_friendship(values):
     try:
         requester_id = UsersTableFunctions.get_user_id(values[0])
         receiver_id = UsersTableFunctions.get_user_id(values[1])
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                     SELECT requester_id, receiver_id FROM friends
@@ -315,7 +309,7 @@ def check_for_confirmed_friendship(values):
     try:
         requester_id = UsersTableFunctions.get_user_id(values[0])
         receiver_id = UsersTableFunctions.get_user_id(values[1])
-        conn = create_connection()
+        conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()
         cur.execute(f"""
                             SELECT requester_id, receiver_id FROM friends
