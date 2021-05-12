@@ -97,8 +97,7 @@ def get_news_feed_post_ids(user_name):
         :return: post_id's in a Tuple
         """
     try:
-        user_id = UsersTableFunctions.get_user_id(user_name)
-        friends_of_user = FriendsTableFunctions.get_all_friends_ids(user_id)
+        friends_of_user = FriendsTableFunctions.get_all_friends_ids(user_name)
         list_of_post_ids = []
         conn = TableCreationFunctions.create_connection()
         cur = conn.cursor()

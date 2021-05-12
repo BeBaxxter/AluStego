@@ -202,8 +202,9 @@ def get_all_friends_ids(user_name):
 
         if rows1 or rows2:
             friends_tuple = ()
-            for friend in friends_list[0]:
-                friends_tuple = friends_tuple + friend
+            for friends in friends_list:
+                for friend in friends:
+                    friends_tuple = friends_tuple + friend
             return friends_tuple
         else:
             return None
