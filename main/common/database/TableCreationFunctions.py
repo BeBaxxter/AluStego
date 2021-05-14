@@ -1,15 +1,21 @@
 import sqlite3
 from sqlite3 import Error
-from . import *
+#from . import *
 
+from common.database import PostsTableFunctions
+from common.database import FriendsTableFunctions
+from common.database import LikesTableFunctions
+from common.database import UsersTableFunctions
+from common.database import CommentsTableFunctions
 
 def create_connection():
     """ create a database connection to the SQLite database
     :return: Connection object or None
     """
     conn = None
+    database = "C:/Users/maxde/Git-Projekte/AluStego/main/common/database/data.db"
     try:
-        conn = sqlite3.connect("data.db")
+        conn = sqlite3.connect(database)
     except Error as e:
         print(e)
 

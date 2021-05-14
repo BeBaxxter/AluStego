@@ -9,6 +9,7 @@ class PostsReader():
 
     def readFeedPosts(self, user_name):
         postIDs = PostsTableFunctions.get_news_feed_post_ids(user_name)
+        print(postIDs)
         return self.readPosts(postIDs)
 
 

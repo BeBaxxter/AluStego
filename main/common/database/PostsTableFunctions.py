@@ -1,8 +1,14 @@
 import sqlite3
 from sqlite3 import Error
-from . import *
+#from . import *
 from datetime import datetime
 
+#from common.database import PostsTableFunctions
+from common.database import FriendsTableFunctions
+from common.database import LikesTableFunctions
+from common.database import  UsersTableFunctions
+from common.database import CommentsTableFunctions
+from common.database import  TableCreationFunctions
 
 # Insert Functions:
 

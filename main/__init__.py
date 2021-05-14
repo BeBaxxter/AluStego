@@ -9,6 +9,7 @@ from common.user.User import User
 from datetime import datetime
 from common.database import UsersTableFunctions
 
+
 app = Flask(__name__)
 
 user_name = "madmax"
@@ -18,6 +19,8 @@ if UsersTableFunctions.get_user_color_theme(user_name) == 0:
     colorTheme = "color_day"
 elif UsersTableFunctions.get_user_color_theme(user_name) == 1:
     colorTheme = "color_night"
+
+
 
 #currentUser = User(1, "Max Decken", "mdecken", "1234", "../static/data/images/lcarmohn/img_avatar.png")
 #currentUSer = User(UsersTableFunctions.get_user_id(user_name))
@@ -56,7 +59,7 @@ def allowed_video(filename):
 def renameFile(filename):
     ext = filename.rsplit(".", 1)[1]
     name = filename.rsplit(".", 1)[0]
-    newName = currentUser.userName + datetime.today().strftime('%Y-%m-%d') + "_" + name.lower()
+    newName = user_name + datetime.today().strftime('%Y-%m-%d') + "_" + name.lower()
     return newName + "." + ext
 
 
